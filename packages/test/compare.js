@@ -1,7 +1,8 @@
-const { Assert } = require('./node_modules/@hiherto-elements/assert/Assert.js');
-const {isObject} = require('../isObject');
+import {Assert} from './node_modules/@hiherto-elements/assert/Assert.js';
+import {isObject} from './isObject.js';
 const LINEBREAKS = /\r\n|\r|\n/;
-exports.compare = function compare(test, actual, expected, options = {lines: true}) {
+
+export function compare(test, actual, expected, options = {lines: true}) {
 	if (actual === expected) {
 		return;
 	}
@@ -24,7 +25,7 @@ exports.compare = function compare(test, actual, expected, options = {lines: tru
 			Assert.strictEqual(actual, expected);
 		}
 	}
-};
+}
 
 function hasLineBreak(string) {
 	return typeof string === 'string' && LINEBREAKS.test(string);
