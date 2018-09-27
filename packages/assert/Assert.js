@@ -140,8 +140,22 @@ export class Assert
         }
     }
     
+
     /**
-     * @param {boolean} value
+     * @param value
+     * @param {string} [message]
+     */
+    static deepEqual(value, otherValue, message = "")
+    {        
+        this.string(message, "Custom error message passed to Assert.false needs to be a valid string.");
+        
+        if (!Object.is(value, otherValue)) {
+            throw InvalidValueException.expected("value to deepls equal otherValue", JSON.stringify(value) + ' !== ' + JSON.stringify(otherValue) , message);
+        }
+    }
+
+    /**
+     * @param value
      * @param {string} [message]
      */
     static strictEqual(value, otherValue, message = "")

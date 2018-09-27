@@ -1,8 +1,8 @@
 {
-  "name": "@hiherto-elements/test",
+  "name": "@hiherto-elements/sweetie",
   "version": "0.0.1",
   "description": "minimal es6 test runner",
-  "main": "Test.js",
+  "main": "Sweetie.js",
   "directories": {
     "test": "test"
   },
