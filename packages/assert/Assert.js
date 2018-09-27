@@ -125,9 +125,10 @@ export class Assert
             throw InvalidValueException.expected("false", value, message);
         }
     }
-
-       /**
-     * @param {boolean} value
+    
+    /**
+     * @param value
+     * @param otherValue
      * @param {string} [message]
      */
     static equal(value, otherValue, message = "")
@@ -138,6 +139,46 @@ export class Assert
             throw InvalidValueException.expected("value to equal otherValue", value + ' !== ' + otherValue , message);
         }
     }
+    
+    /**
+     * @param {boolean} value
+     * @param {string} [message]
+     */
+    static strictEqual(value, otherValue, message = "")
+    {        
+        this.string(message, "Custom error message passed to Assert.false needs to be a valid string.");
+
+        if (value !== otherValue) {
+            throw InvalidValueException.expected("value to strictly equal otherValue", value + ' !== ' + otherValue , message);
+        }
+    }
+
+    /**
+     * @param {boolean} value
+     * @param {string} [message]
+     */
+    static equal(value, otherValue, message = "")
+    {        
+        this.string(message, "Custom error message passed to Assert.false needs to be a valid string.");
+
+        if (value != otherValue) {
+            throw InvalidValueException.expected("value to equal otherValue", value + ' != ' + otherValue , message);
+        }
+    }
+
+    /**
+     * @param {boolean} value
+     * @param {string} [message]
+     */
+    static ok(value, message = "")
+    {        
+        this.string(message, "Custom error message passed to Assert.false needs to be a valid string.");
+
+        if (!value) {
+            throw InvalidValueException.expected("truthy", typeof value + ' ' + value , message);
+        }
+    }
+
 
     /**
      * @param {object} objectValue
