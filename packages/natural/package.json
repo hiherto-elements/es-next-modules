@@ -1,0 +1,25 @@
+{
+  "name": "@hiherto-elements/natural",
+  "version": "0.0.1",
+  "description": "minimal es6 natural language detection",
+  "main": "Assert.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@hiherto-elements/assert": "0.0.1"
+  },
+  "scripts": {
+    "test": "sh test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebs/deno-assert-js.git"
+  },
+  "author": "Sebastian Schürmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebs/deno-assert-js/issues"
+  },
+  "homepage": "https://github.com/sebs/deno-assert-js#readme"
+}

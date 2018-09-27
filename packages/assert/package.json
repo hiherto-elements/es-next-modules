@@ -1,0 +1,22 @@
+{
+  "name": "@hiherto-elements/assert",
+  "version": "0.0.1",
+  "description": "foo",
+  "main": "Assert.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "sh test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebs/deno-assert-js.git"
+  },
+  "author": "Sebastian Schürmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebs/deno-assert-js/issues"
+  },
+  "homepage": "https://github.com/sebs/deno-assert-js#readme"
+}

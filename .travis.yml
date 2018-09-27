@@ -1,0 +1,6 @@
+before_install:
+  - curl -sSf https://raw.githubusercontent.com/denoland/deno_install/master/install.py | python
+  - echo export PATH="/home/travis/.deno/bin":\$PATH
+language: node_js
+node_js:
+  - "9"

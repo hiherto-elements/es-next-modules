@@ -1,0 +1,47 @@
+0 silly input [ 'test' ]
+1 silly flags { _: [ 'run' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   script: 'test',
+1 silly flags   args: [] }
+2 verbose rootPath /Users/sebs/projects/opensource/es-next-modules
+3 info version 2.11.0
+4 silly existsSync /Users/sebs/projects/opensource/es-next-modules/VERSION
+5 silly initialize attempt
+6 silly initialize success
+7 silly execute attempt
+8 silly runScriptInDir test [] assert
+9 silly getExecOpts { cwd: '/Users/sebs/projects/opensource/es-next-modules/packages/assert' }
+10 silly runScriptInDir test [] natural
+11 silly getExecOpts { cwd: '/Users/sebs/projects/opensource/es-next-modules/packages/natural' }
+12 error test Errored while running script in '@hiherto-elements/natural'
+13 error execute callback with error
+14 error Error: Command failed: npm run test
+14 error npm ERR! code ELIFECYCLE
+14 error npm ERR! errno 1
+14 error npm ERR! @hiherto-elements/natural@0.0.1 test: `sh test.sh`
+14 error npm ERR! Exit status 1
+14 error npm ERR!
+14 error npm ERR! Failed at the @hiherto-elements/natural@0.0.1 test script.
+14 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+14 error
+14 error npm ERR! A complete log of this run can be found in:
+14 error npm ERR!     /Users/sebs/.npm/_logs/2018-09-27T11_27_28_622Z-debug.log
+14 error
+14 error > @hiherto-elements/natural@0.0.1 test /Users/sebs/projects/opensource/es-next-modules/packages/natural
+14 error > sh test.sh
+14 error
+14 error NotFound: Cannot resolve module "../../src/util/stopwords" from "/Users/sebs/projects/opensource/es-next-modules/packages/natural/test/util/stopwords.js"
+14 error     at maybeError (deno/js/errors.ts:25:12)
+14 error     at maybeThrowError (deno/js/errors.ts:14:15)
+14 error     at sendSync (deno/js/dispatch.ts:54:5)
+14 error     at Object.codeFetch (deno/js/os.ts:31:19)
+14 error     at DenoCompiler.resolveModule (deno/js/compiler.ts:522:38)
+14 error     at DenoCompiler._resolveModuleName (deno/js/compiler.ts:347:33)
+14 error     at moduleNames.map.name (deno/js/compiler.ts:654:33)
+14 error     at Array.map (<anonymous>)
+14 error     at DenoCompiler.resolveModuleNames (deno/js/compiler.ts:646:24)
+14 error     at Object.compilerHost.resolveModuleNames (deno/third_party/node_modules/typescript/lib/typescript.js:111649:117)
+14 error
+14 error     at Promise.all.then.arr (/Users/sebs/.nvm/versions/node/v9.11.2/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+14 error     at <anonymous>
