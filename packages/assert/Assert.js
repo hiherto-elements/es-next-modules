@@ -126,6 +126,19 @@ export class Assert
         }
     }
 
+       /**
+     * @param {boolean} value
+     * @param {string} [message]
+     */
+    static equal(value, otherValue, message = "")
+    {        
+        this.string(message, "Custom error message passed to Assert.false needs to be a valid string.");
+
+        if (value !== otherValue) {
+            throw InvalidValueException.expected("value to equal otherValue", value + ' !== ' + otherValue , message);
+        }
+    }
+
     /**
      * @param {object} objectValue
      * @param {string} [message]
