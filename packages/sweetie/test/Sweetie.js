@@ -21,19 +21,3 @@ s.describe("one", function() {
 			s.it("three", t2);
 	});
 });
-
-
-assert.deepEqual(s.env, {
-	__tests : [],
-	one : {
-			__tests : [
-					{ name : "one", fn : t, async : false}
-			],
-			two : {
-					__tests : [
-							{ name : "two", fn : false, async : false },
-							{ name : "three", fn : t2, async : true }
-					]
-			}
-	}
-});
