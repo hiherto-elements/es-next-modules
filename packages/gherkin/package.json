@@ -2,7 +2,7 @@
   "name": "@hiherto-elements/gherkin",
   "version": "0.0.1",
   "description": "minimal es6 test gherkin parser",
-  "main": "Gherkin.js",
+  "main": "parse.js",
   "directories": {
     "test": "test"
   },
