@@ -1,6 +1,6 @@
 # es6 without any babel
 
-[![Build Status](https://travis-ci.org/sebs/es-next-modules.svg?branch=master)](https://travis-ci.org/sebs/es-next-modules)
+[![Build Status](https://travis-ci.org/hiherto-elements/es-next-modules.svg?branch=master)](https://travis-ci.org/hiherto-elements/es-next-modules)
 
 1. Use a typescript environment that can interpret es6 modules
   * Hello deno 
