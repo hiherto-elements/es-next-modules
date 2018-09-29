@@ -6,6 +6,7 @@
   "directories": {
     "test": "test"
   },
+  "private": false,
   "scripts": {
     "test": "sh test.sh"
   },
