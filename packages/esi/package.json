@@ -16,7 +16,7 @@
         "swagger-es6": "^1.0.0"
     },
     "devDependencies": {
-        "@hiherto-elements/assert": "^0.0.1"
+        "@hiherto-elements/assert": "^0.0.2"
     },
     "scripts": {
         "test": "sh test.sh"
