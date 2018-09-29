@@ -7,19 +7,19 @@
     "test": "test"
   },
   "dependencies": {
-    "@hiherto-elements/assert": "10.0.1"
+    "@hiherto-elements/assert": "^0.0.1"
   },
   "scripts": {
     "test": "sh test.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebs/deno-assert-js.git"
+    "url": "git+https://github.com/hiherto-elements/es-next-modules.git"
   },
   "author": "Sebastian Schürmann",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sebs/deno-assert-js/issues"
+    "url": "https://github.com/hiherto-elements/es-next-modules/issues"
   },
-  "homepage": "https://github.com/sebs/deno-assert-js#readme"
+  "homepage": "https://github.com/hiherto-elements/es-next-modules#readme"
 }
