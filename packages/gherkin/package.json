@@ -18,7 +18,7 @@
   },
   "esdoc": {
     "source": ".",
-    "includes": ["gherkin.js", "parse.js"],
+    "includes": ["parse.js", "gherkin.js"],
     
     "destination": "./docs",
     "plugins": [{"name": "esdoc-standard-plugin"}]
