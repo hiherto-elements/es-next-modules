@@ -15,6 +15,7 @@
     "@hiherto-elements/assert": "^0.0.2"
   },
   "scripts": {
+    "docs": "rm -rf ./docs && esdoc",
     "test": "sh test.sh"
   },
   "repository": {

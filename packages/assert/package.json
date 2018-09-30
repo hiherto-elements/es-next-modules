@@ -8,6 +8,7 @@
   },
   "private": false,
   "scripts": {
+    "docs": "rm -rf ./docs && esdoc",
     "test": "sh test.sh"
   },
   "repository": {
@@ -16,7 +17,12 @@
   },
   "esdoc": {
     "source": ".",
-    "includes": ["Assert.js"],
+    "includes": [
+        "Assert.js",
+        "MessageFactory.js",
+        "InvalidValueException.js", 
+        "ValueConverter.js"
+    ],
     "destination": "./docs",
     "plugins": [{"name": "esdoc-standard-plugin"}]
   },
