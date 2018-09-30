@@ -6,6 +6,11 @@
   "directories": {
     "test": "test"
   },
+  "esdoc": {
+    "source": "./src",
+    "destination": "./docs",
+    "plugins": [{"name": "esdoc-standard-plugin"}]
+  },
   "dependencies": {
     "@hiherto-elements/assert": "^0.0.2"
   },

@@ -6,7 +6,7 @@
  * @see Speed test http://jsperf.com/build-a-regexp-table
  *
  * @param {Object.<string, string>} translationTable The translation table of key value.
- * @return {function(string): string} A translating function.
+ * @return {function} A translating function.
  */
 function replacer(translationTable) {
   /**

@@ -1,9 +1,6 @@
 
-/**
- * a topo sort for a digraph
- * @param {Digraph}
- */
 export class Topological {
+
 	constructor(g) {
 			this.isDag = true;
 			this.sorted = topoSort(uniqueVertexs(g.edges()), g.edges());
@@ -21,10 +18,6 @@ export class Topological {
 	}
 }
 
-/**
-* @param {Array} all vertex in digraph
-* @param {Object} all edges in the digraph
-*/
 function topoSort(vertexs, edges) {
 	const sorted = [];
 	let cursor = vertexs.length;
