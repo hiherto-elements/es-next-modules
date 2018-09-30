@@ -7,7 +7,6 @@ before_install:
   - npm i esdoc-coverage-plugin -g
   - npm i esdoc-accessor-plugin -g
   - npm i esdoc-type-inference-plugin -g
-  - npm i esdoc-type-interference-plugin -g
   - npm i esdoc-type-inference-plugin -g
   - npm i esdoc-external-ecmascript-plugin -g
   - npm i esdoc-brand-plugin -g
