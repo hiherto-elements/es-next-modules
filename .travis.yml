@@ -10,7 +10,7 @@ before_install:
   - npm i esdoc-type-inference-plugin -g
   - npm i esdoc-external-ecmascript-plugin -g
   - npm i esdoc-brand-plugin -g
-  - npm i esdoc-undocumented-identifier-pluzgin -g
+  - npm i esdoc-undocumented-identifier-plugin -g
   - npm i esdoc-undocumented-identifier-plugin -g
   - npm i esdoc-unexported-identifier-plugin -g
   - npm i esdoc-integrate-manual-plugin -g
