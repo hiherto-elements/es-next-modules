@@ -16,6 +16,11 @@
     "type": "git",
     "url": "git+https://github.com/sebs/deno-assert-js.git"
   },
+  "esdoc": {
+    "source": ".",
+    "destination": "./docs",
+    "plugins": [{"name": "esdoc-standard-plugin"}]
+  },
   "author": "Sebastian Schürmann",
   "license": "MIT",
   "bugs": {
