@@ -1,6 +1,23 @@
 before_install:
   - curl -sSf https://raw.githubusercontent.com/denoland/deno_install/master/install.py | python
   - echo export PATH="/home/travis/.deno/bin":\$PATH
+  - npm i -g esdoc
+  - npm i -g esdoc esdoc-standard-plugin
+  - npm i esdoc-lint-plugin -g
+  - npm i esdoc-coverage-plugin -g
+  - npm i esdoc-accessor-plugin -g
+  - npm i esdoc-type-interference -g
+  - npm i esdoc-type-interference-plugin -g
+  - npm i esdoc-type-inference-plugin -g
+  - npm i esdoc-external-ecmascript-plugin -g
+  - npm i esdoc-brand-plugin -g
+  - npm i esdoc-undocumented-identifier-pluzgin -g
+  - npm i esdoc-undocumented-identifier-plugin -g
+  - npm i esdoc-unexported-identifier-plugin -g
+  - npm i esdoc-integrate-manual-plugin -g
+  - npm i esdoc-integrate-test-plugin -g
+  - npm i esdoc-publish-html-plugin -g
+  - npm i esdoc-publish-html-plugin -g
 language: node_js
 node_js:
   - "9"
