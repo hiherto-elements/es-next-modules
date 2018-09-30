@@ -143,6 +143,7 @@ export class Assert
 
     /**
      * @param value
+     * @param otherValue
      * @param {string} [message]
      */
     static deepEqual(value, otherValue, message = "")
@@ -156,6 +157,7 @@ export class Assert
 
     /**
      * @param value
+     * @param otherValue
      * @param {string} [message]
      */
     static strictEqual(value, otherValue, message = "")
@@ -168,7 +170,8 @@ export class Assert
     }
 
     /**
-     * @param {boolean} value
+     * @param value
+     * @param otherValue
      * @param {string} [message]
      */
     static equal(value, otherValue, message = "")
