@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebs/deno-assert-js.git"
+    "url": "git+https://github.com/hiherto-elements/es-next-modules.git"
   },
   "author": "Sebastian Schürmann",
   "license": "MIT",
