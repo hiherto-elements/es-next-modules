@@ -16,7 +16,6 @@ before_install:
   - npm i esdoc-integrate-manual-plugin -g
   - npm i esdoc-integrate-test-plugin -g
   - npm i esdoc-publish-html-plugin -g
-  - npm i esdoc-publish-html-plugin -g
 language: node_js
 node_js:
   - "9"
