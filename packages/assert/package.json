@@ -1,6 +1,6 @@
 {
   "name": "@hiherto-elements/assert",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "foo",
   "main": "Assert.js",
   "directories": {
@@ -18,13 +18,17 @@
   "esdoc": {
     "source": ".",
     "includes": [
-        "Assert.js",
-        "MessageFactory.js",
-        "InvalidValueException.js", 
-        "ValueConverter.js"
+      "Assert.js",
+      "MessageFactory.js",
+      "InvalidValueException.js",
+      "ValueConverter.js"
     ],
     "destination": "./docs",
-    "plugins": [{"name": "esdoc-standard-plugin"}]
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      }
+    ]
   },
   "author": "Sebastian Schürmann",
   "license": "MIT",
