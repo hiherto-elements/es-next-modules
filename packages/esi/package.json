@@ -59,7 +59,7 @@
         "swagger-es6": "^1.0.0"
     },
     "devDependencies": {
-        "@hiherto-elements/assert": "^0.0.2"
+        "@hiherto-elements/assert": "^0.0.4"
     },
     "scripts": {
         "docs": "rm -rf ./docs && esdoc",
