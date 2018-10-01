@@ -150,8 +150,11 @@ export class Assert
     {        
         this.string(message, "Custom error message passed to Assert.false needs to be a valid string.");
         
-        if (!Object.is(value, otherValue)) {
-            throw InvalidValueException.expected("value to deepls equal otherValue", JSON.stringify(value) + ' !== ' + JSON.stringify(otherValue) , message);
+        let valueJson = JSON.stringify(value);
+        let otherValueJson = JSON.stringify(otherValue);
+        
+        if (valueJson !== otherValueJson) {
+            throw InvalidValueException.expected("value to deeply equal otherValue", JSON.stringify(value) + ' !== ' + JSON.stringify(otherValue) , message);
         }
     }
 
