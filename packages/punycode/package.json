@@ -1,0 +1,32 @@
+{
+  "name": "@hiherto-elements/punycode",
+  "version": "0.0.1",
+  "description": "minimal es6 punycode de- and encoder, forked from the 'original' ",
+  "main": "punycode.js",
+  "directories": {
+    "test": "test"
+  },
+  "esdoc": {
+    "source": ".",
+    "includes": ["punycode.js"],
+    "destination": "./docs",
+    "plugins": [{"name": "esdoc-standard-plugin"}]
+  },
+  "dependencies": {
+    "@hiherto-elements/assert": "^0.0.4"
+  },
+  "scripts": {
+    "docs": "rm -rf ./docs && esdoc",
+    "test": "sh test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiherto-elements/es-next-modules.git"
+  },
+  "author": "Sebastian Schürmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hiherto-elements/es-next-modules/issues"
+  },
+  "homepage": "https://github.com/hiherto-elements/es-next-modules#readme"
+}
