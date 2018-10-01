@@ -1,13 +1,12 @@
 import { punycode } from './node_modules/@hiherto-elements/punycode/punycode.js';
-import util from './util.js';
-import querystring from 'querystring';
+import {util} from './util.js';
+import querystring from './node_modules/@hiherto-elements/querystring/querystring.js';
 export {urlParse as parse};
 export {urlResolve as resolve};
 export {urlResolveObject as resolveObject};
 export {urlFormat as format};
-export {Url};
 
-class Url {
+export class Url {
   constructor() {
     this.protocol = null;
     this.slashes = null;
@@ -70,9 +69,10 @@ class Url {
     }
 
     let proto = protocolPattern.exec(rest);
+    let lowerProto;
     if (proto) {
       proto = proto[0];
-      const lowerProto = proto.toLowerCase();
+      lowerProto = proto.toLowerCase();
       this.protocol = lowerProto;
       rest = rest.substr(proto.length);
     }
@@ -231,7 +231,7 @@ class Url {
 
     // now rest is set to the post-host stuff.
     // chop off any delim chars.
-    if (!unsafeProtocol[lowerProto]) {
+    if (lowerProto && !unsafeProtocol[lowerProto]) {
 
       // First, make 100% sure that any "autoEscape" chars get
       // escaped, even if encodeURIComponent doesn't think they

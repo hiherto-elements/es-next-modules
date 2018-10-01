@@ -1,4 +1,4 @@
-export const utils = {
+export const util = {
   isString(arg) {
     return typeof(arg) === 'string';
   },
