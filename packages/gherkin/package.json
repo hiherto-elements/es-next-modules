@@ -1,6 +1,6 @@
 {
   "name": "@hiherto-elements/gherkin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "minimal es6 test gherkin parser",
   "main": "parse.js",
   "directories": {
@@ -19,10 +19,16 @@
   },
   "esdoc": {
     "source": ".",
-    "includes": ["parse.js", "gherkin.js"],
-    
+    "includes": [
+      "parse.js",
+      "gherkin.js"
+    ],
     "destination": "./docs",
-    "plugins": [{"name": "esdoc-standard-plugin"}]
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      }
+    ]
   },
   "author": "Sebastian Schürmann",
   "license": "MIT",
