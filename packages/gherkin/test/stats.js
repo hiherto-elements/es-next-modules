@@ -48,7 +48,7 @@ Scenario: Bar
 	`;
 let otherParsed = parse(otherFeature);
 let otherStats = stats(otherParsed);
-console.log(otherStats);
+
 Assert.equal(otherStats.features, 1);
 Assert.equal(otherStats.scenarios, 2);
 Assert.equal(otherStats.given, 2);

@@ -33,6 +33,8 @@ const R_WHEN = /^\s*When(.*)$/;
 const R_THEN = /^\s*Then (.*)$/;
 const R_AND = /^\s*And (.*)$/;
 const R_BUT = /^\s*But (.*)$/;
+const R_TAG = /^\s*\@(.*)$/;
+
 
 function extract(line, regex, index) {
   return line.match(regex)[index].trim();
@@ -44,8 +46,11 @@ export const parse = (text) => {
   let previous;
   const features = [];
   const lines = (text || '').toString().split(R_NEWLINE);
+  const tags = [
 
-  lines.forEach(line => {
+  ];
+
+  lines.forEach((line, lineCount) => {
     if (R_FEATURE.test(line)) {
       feature = {
         feature: extract(line, R_FEATURE, 1),
@@ -76,6 +81,10 @@ export const parse = (text) => {
 
       feature.scenarios.push(scenario);
     }
+    else if (R_TAG.test(line)) {
+      const extracted = extract(line, R_TAG, 1);     
+      tags.push({extracted, line: lineCount });
+    }
     else if (R_GIVEN.test(line)) {
       previous = scenario.given;
       scenario.given.push(extract(line, R_GIVEN, 1));
@@ -93,7 +102,7 @@ export const parse = (text) => {
     }
     else if (R_BUT.test(line)) {
       previous.push(extract(line, R_BUT, 1));
-    }
+    }    
     else if (line.trim().length > 0) {
       throw new SyntaxError(line.trim());
     }

@@ -32,3 +32,18 @@ let props = ['feature', 'scenarios', 'perspective', 'desire', 'reason'];
 props.map(prop => Assert.hasProperty(prop, feature, `the parsed feature is expected to host the property ${prop}`))
 Assert.equal(feature.scenarios.length, 2, 'has found 2 scenarios');
 
+let scenarioWithTag = `
+Feature: With Tag
+As a drinker
+I want to take beer off the wall
+In order to satisfy my thirst
+
+@foo
+Scenario: Can take a single beer
+	Given 100 bottles of beer on the wall
+	When a bottle is taken down
+	Then there are 99 bottles of beer on the wall
+	And Then foo
+`;
+
+let parsedWithTag = parse(scenarioWithTag);
