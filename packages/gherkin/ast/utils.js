@@ -23,7 +23,7 @@ const INDENTATION = '  ';
  * Object to build a text file, from lines.
  * @class
  */
-class Lines {
+export class Lines {
     /**
      * @constructor
      * @param {AssemblerConfig} [options]
@@ -49,7 +49,7 @@ class Lines {
             this._lines.push('');
         } else {
             texts.forEach(text => {
-                this._lines.push(...split(text || ''));
+                this._lines.push(text);
             });
         }
     }
@@ -89,7 +89,7 @@ class Lines {
     }
 }
 
-const utils = {
+export const utils = {
     /**
      * Indents the given text with
      * given number of space pairs.
@@ -175,5 +175,8 @@ const utils = {
         return Object.assign({}, DEFAULT_OPTIONS, options || {});
     }
 };
+export const lines = utils.lines;
+export const indent = utils.indent;
+export const normalize = utils.normalize;
 
 export default utils;
