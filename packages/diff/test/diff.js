@@ -6,4 +6,3 @@ Assert.instanceOf(d, Diff)
 let a = 'fooLong';
 let b = 'foobar';
 let res = d.diff(a, b)
-console.log(res);
