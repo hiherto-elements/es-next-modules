@@ -1,0 +1,1 @@
+~/.deno/bin/deno test/diff.js

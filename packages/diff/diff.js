@@ -1,161 +1,232 @@
-/*
- * Javascript Diff Algorithm
- *  By John Resig (http://ejohn.org/)
- *  Modified by Chu Alan "sprite"
- *
- * Released under the MIT license.
- *
- * More Info:
- *  http://ejohn.org/projects/javascript-diff-algorithm/
- */
+export function Diff() {}
 
-export function escape(s) {
-	var n = s;
-	n = n.replace(/&/g, "&amp;");
-	n = n.replace(/</g, "&lt;");
-	n = n.replace(/>/g, "&gt;");
-	n = n.replace(/"/g, "&quot;");
+Diff.prototype = {
+  diff(oldString, newString, options = {}) {
+    let callback = options.callback;
+    if (typeof options === 'function') {
+      callback = options;
+      options = {};
+    }
+    this.options = options;
 
-	return n;
+    let self = this;
+
+    function done(value) {
+      if (callback) {
+        setTimeout(function() { callback(undefined, value); }, 0);
+        return true;
+      } else {
+        return value;
+      }
+    }
+
+    // Allow subclasses to massage the input prior to running
+    oldString = this.castInput(oldString);
+    newString = this.castInput(newString);
+
+    oldString = this.removeEmpty(this.tokenize(oldString));
+    newString = this.removeEmpty(this.tokenize(newString));
+
+    let newLen = newString.length, oldLen = oldString.length;
+    let editLength = 1;
+    let maxEditLength = newLen + oldLen;
+    let bestPath = [{ newPos: -1, components: [] }];
+
+    // Seed editLength = 0, i.e. the content starts with the same values
+    let oldPos = this.extractCommon(bestPath[0], newString, oldString, 0);
+    if (bestPath[0].newPos + 1 >= newLen && oldPos + 1 >= oldLen) {
+      // Identity per the equality and tokenizer
+      return done([{value: this.join(newString), count: newString.length}]);
+    }
+
+    // Main worker method. checks all permutations of a given edit length for acceptance.
+    function execEditLength() {
+      for (let diagonalPath = -1 * editLength; diagonalPath <= editLength; diagonalPath += 2) {
+        let basePath;
+        let addPath = bestPath[diagonalPath - 1],
+            removePath = bestPath[diagonalPath + 1],
+            oldPos = (removePath ? removePath.newPos : 0) - diagonalPath;
+        if (addPath) {
+          // No one else is going to attempt to use this value, clear it
+          bestPath[diagonalPath - 1] = undefined;
+        }
+
+        let canAdd = addPath && addPath.newPos + 1 < newLen,
+            canRemove = removePath && 0 <= oldPos && oldPos < oldLen;
+        if (!canAdd && !canRemove) {
+          // If this path is a terminal then prune
+          bestPath[diagonalPath] = undefined;
+          continue;
+        }
+
+        // Select the diagonal that we want to branch from. We select the prior
+        // path whose position in the new string is the farthest from the origin
+        // and does not pass the bounds of the diff graph
+        if (!canAdd || (canRemove && addPath.newPos < removePath.newPos)) {
+          basePath = clonePath(removePath);
+          self.pushComponent(basePath.components, undefined, true);
+        } else {
+          basePath = addPath;   // No need to clone, we've pulled it from the list
+          basePath.newPos++;
+          self.pushComponent(basePath.components, true, undefined);
+        }
+
+        oldPos = self.extractCommon(basePath, newString, oldString, diagonalPath);
+
+        // If we have hit the end of both strings, then we are done
+        if (basePath.newPos + 1 >= newLen && oldPos + 1 >= oldLen) {
+          return done(buildValues(self, basePath.components, newString, oldString, self.useLongestToken));
+        } else {
+          // Otherwise track this path as a potential candidate and continue.
+          bestPath[diagonalPath] = basePath;
+        }
+      }
+
+      editLength++;
+    }
+
+    // Performs the length of edit iteration. Is a bit fugly as this has to support the
+    // sync and async mode which is never fun. Loops over execEditLength until a value
+    // is produced.
+    if (callback) {
+      (function exec() {
+        setTimeout(function() {
+          // This should not happen, but we want to be safe.
+          /* istanbul ignore next */
+          if (editLength > maxEditLength) {
+            return callback();
+          }
+
+          if (!execEditLength()) {
+            exec();
+          }
+        }, 0);
+      }());
+    } else {
+      while (editLength <= maxEditLength) {
+        let ret = execEditLength();
+        if (ret) {
+          return ret;
+        }
+      }
+    }
+  },
+
+  pushComponent(components, added, removed) {
+    let last = components[components.length - 1];
+    if (last && last.added === added && last.removed === removed) {
+      // We need to clone here as the component clone operation is just
+      // as shallow array clone
+      components[components.length - 1] = {count: last.count + 1, added: added, removed: removed };
+    } else {
+      components.push({count: 1, added: added, removed: removed });
+    }
+  },
+  extractCommon(basePath, newString, oldString, diagonalPath) {
+    let newLen = newString.length,
+        oldLen = oldString.length,
+        newPos = basePath.newPos,
+        oldPos = newPos - diagonalPath,
+
+        commonCount = 0;
+    while (newPos + 1 < newLen && oldPos + 1 < oldLen && this.equals(newString[newPos + 1], oldString[oldPos + 1])) {
+      newPos++;
+      oldPos++;
+      commonCount++;
+    }
+
+    if (commonCount) {
+      basePath.components.push({count: commonCount});
+    }
+
+    basePath.newPos = newPos;
+    return oldPos;
+  },
+
+  equals(left, right) {
+    if (this.options.comparator) {
+      return this.options.comparator(left, right);
+    } else {
+      return left === right
+        || (this.options.ignoreCase && left.toLowerCase() === right.toLowerCase());
+    }
+  },
+  removeEmpty(array) {
+    let ret = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i]) {
+        ret.push(array[i]);
+      }
+    }
+    return ret;
+  },
+  castInput(value) {
+    return value;
+  },
+  tokenize(value) {
+    return value.split('');
+  },
+  join(chars) {
+    return chars.join('');
+  }
+};
+
+function buildValues(diff, components, newString, oldString, useLongestToken) {
+  let componentPos = 0,
+      componentLen = components.length,
+      newPos = 0,
+      oldPos = 0;
+
+  for (; componentPos < componentLen; componentPos++) {
+    let component = components[componentPos];
+    if (!component.removed) {
+      if (!component.added && useLongestToken) {
+        let value = newString.slice(newPos, newPos + component.count);
+        value = value.map(function(value, i) {
+          let oldValue = oldString[oldPos + i];
+          return oldValue.length > value.length ? oldValue : value;
+        });
+
+        component.value = diff.join(value);
+      } else {
+        component.value = diff.join(newString.slice(newPos, newPos + component.count));
+      }
+      newPos += component.count;
+
+      // Common case
+      if (!component.added) {
+        oldPos += component.count;
+      }
+    } else {
+      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count));
+      oldPos += component.count;
+
+      // Reverse add and remove so removes are output first to match common convention
+      // The diffing algorithm is tied to add then remove output and this is the simplest
+      // route to get the desired output with minimal overhead.
+      if (componentPos && components[componentPos - 1].added) {
+        let tmp = components[componentPos - 1];
+        components[componentPos - 1] = components[componentPos];
+        components[componentPos] = tmp;
+      }
+    }
+  }
+
+  // Special case handle for when one terminal is ignored (i.e. whitespace).
+  // For this case we merge the terminal into the prior string and drop the change.
+  // This is only available for string mode.
+  let lastComponent = components[componentLen - 1];
+  if (componentLen > 1
+      && typeof lastComponent.value === 'string'
+      && (lastComponent.added || lastComponent.removed)
+      && diff.equals('', lastComponent.value)) {
+    components[componentLen - 2].value += lastComponent.value;
+    components.pop();
+  }
+
+  return components;
 }
 
-export function diffString( o, n ) {
-	o = o.replace(/\s+$/, '');
-	n = n.replace(/\s+$/, '');
-
-	var out = diff(o == "" ? [] : o.split(/\s+/), n == "" ? [] : n.split(/\s+/) );
-	var str = "";
-
-	var oSpace = o.match(/\s+/g);
-	if (oSpace == null) {
-		oSpace = ["\n"];
-	} else {
-		oSpace.push("\n");
-	}
-	var nSpace = n.match(/\s+/g);
-	if (nSpace == null) {
-		nSpace = ["\n"];
-	} else {
-		nSpace.push("\n");
-	}
-
-	if (out.n.length == 0) {
-			for (var i = 0; i < out.o.length; i++) {
-				str += '<del>' + escape(out.o[i]) + oSpace[i] + "</del>";
-			}
-	} else {
-		if (out.n[0].text == null) {
-			for (n = 0; n < out.o.length && out.o[n].text == null; n++) {
-				str += '<del>' + escape(out.o[n]) + oSpace[n] + "</del>";
-			}
-		}
-
-		for ( var i = 0; i < out.n.length; i++ ) {
-			if (out.n[i].text == null) {
-				str += '<ins>' + escape(out.n[i]) + nSpace[i] + "</ins>";
-			} else {
-				var pre = "";
-
-				for (n = out.n[i].row + 1; n < out.o.length && out.o[n].text == null; n++ ) {
-					pre += '<del>' + escape(out.o[n]) + oSpace[n] + "</del>";
-				}
-				str += " " + out.n[i].text + nSpace[i] + pre;
-			}
-		}
-	}
-
-	return str;
-}
-
-export function randomColor() {
-	return "rgb(" + (Math.random() * 100) + "%, " + 
-									(Math.random() * 100) + "%, " + 
-									(Math.random() * 100) + "%)";
-}
-
-export function diffString2( o, n ) {
-	o = o.replace(/\s+$/, '');
-	n = n.replace(/\s+$/, '');
-
-	var out = diff(o == "" ? [] : o.split(/\s+/), n == "" ? [] : n.split(/\s+/) );
-
-	var oSpace = o.match(/\s+/g);
-	if (oSpace == null) {
-		oSpace = ["\n"];
-	} else {
-		oSpace.push("\n");
-	}
-	var nSpace = n.match(/\s+/g);
-	if (nSpace == null) {
-		nSpace = ["\n"];
-	} else {
-		nSpace.push("\n");
-	}
-
-	var os = "";
-	var colors = new Array();
-	for (var i = 0; i < out.o.length; i++) {
-			colors[i] = randomColor();
-
-			if (out.o[i].text != null) {
-					os += '<span style="background-color: ' +colors[i]+ '">' + 
-								escape(out.o[i].text) + oSpace[i] + "</span>";
-			} else {
-					os += "<del>" + escape(out.o[i]) + oSpace[i] + "</del>";
-			}
-	}
-
-	var ns = "";
-	for (var i = 0; i < out.n.length; i++) {
-			if (out.n[i].text != null) {
-					ns += '<span style="background-color: ' +colors[out.n[i].row]+ '">' + 
-								escape(out.n[i].text) + nSpace[i] + "</span>";
-			} else {
-					ns += "<ins>" + escape(out.n[i]) + nSpace[i] + "</ins>";
-			}
-	}
-
-	return { o : os , n : ns };
-}
-
-export function diff( o, n ) {
-	var ns = new Object();
-	var os = new Object();
-
-	for ( var i = 0; i < n.length; i++ ) {
-		if ( ns[ n[i] ] == null )
-			ns[ n[i] ] = { rows: new Array(), o: null };
-		ns[ n[i] ].rows.push( i );
-	}
-
-	for ( var i = 0; i < o.length; i++ ) {
-		if ( os[ o[i] ] == null )
-			os[ o[i] ] = { rows: new Array(), n: null };
-		os[ o[i] ].rows.push( i );
-	}
-
-	for ( var i in ns ) {
-		if ( ns[i].rows.length == 1 && typeof(os[i]) != "undefined" && os[i].rows.length == 1 ) {
-			n[ ns[i].rows[0] ] = { text: n[ ns[i].rows[0] ], row: os[i].rows[0] };
-			o[ os[i].rows[0] ] = { text: o[ os[i].rows[0] ], row: ns[i].rows[0] };
-		}
-	}
-
-	for ( var i = 0; i < n.length - 1; i++ ) {
-		if ( n[i].text != null && n[i+1].text == null && n[i].row + 1 < o.length && o[ n[i].row + 1 ].text == null && 
-				n[i+1] == o[ n[i].row + 1 ] ) {
-			n[i+1] = { text: n[i+1], row: n[i].row + 1 };
-			o[n[i].row+1] = { text: o[n[i].row+1], row: i + 1 };
-		}
-	}
-
-	for ( var i = n.length - 1; i > 0; i-- ) {
-		if ( n[i].text != null && n[i-1].text == null && n[i].row > 0 && o[ n[i].row - 1 ].text == null && 
-				n[i-1] == o[ n[i].row - 1 ] ) {
-			n[i-1] = { text: n[i-1], row: n[i].row - 1 };
-			o[n[i].row-1] = { text: o[n[i].row-1], row: i - 1 };
-		}
-	}
-
-	return { o: o, n: n };
+function clonePath(path) {
+  return { newPos: path.newPos, components: path.components.slice(0) };
 }
