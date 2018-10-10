@@ -128,17 +128,18 @@ export class Assert
     
     /**
      * @param value
-     * @param otherValue
+     * @param expectedValue
      * @param {string} [message]
      */
-    static equal(value, otherValue, message = "")
-    {        
-        this.string(message, "Custom error message passed to Assert.false needs to be a valid string.");
-
-        if (value !== otherValue) {
-            throw InvalidValueException.expected("value to equal otherValue", value + ' !== ' + otherValue , message);
+    static equal(value, expectedValue, message = "")
+    {
+        if (typeof value !== 'object') {
+            this.true(value === expectedValue, message ? message : `Expected value ${ValueConverter.toString(value)} to be equals ${ValueConverter.toString(expectedValue)} but it's not.`);
+        } else {
+            this.objectEqual(value, expectedValue, message ? message : `Expected value ${ValueConverter.toString(value)} to be equals ${ValueConverter.toString(expectedValue)} but it's not.`);
         }
     }
+
     
 
     /**
