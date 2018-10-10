@@ -9,7 +9,7 @@
   "esdoc": {
     "source": ".",
     "includes": [
-      "diff.js"
+      "diff.js", "array.js", "character.js", "css.js", "json.js", "line.js"
     ],
     "destination": "./docs",
     "plugins": [
