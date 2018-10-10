@@ -1,0 +1,39 @@
+{
+  "name": "@hiherto-elements/gherkin",
+  "version": "0.0.5",
+  "description": "minimal es6 test gherkin parser",
+  "main": "parse.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@hiherto-elements/assert": "^0.0.4"
+  },
+  "scripts": {
+    "test": "sh test.sh",
+    "docs": "rm -rf ./docs && esdoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiherto-elements/es-next-modules.git"
+  },
+  "esdoc": {
+    "source": ".",
+    "includes": [
+      "parse.js",
+      "gherkin.js"
+    ],
+    "destination": "./docs",
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      }
+    ]
+  },
+  "author": "Sebastian Schürmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hiherto-elements/es-next-modules/issues"
+  },
+  "homepage": "https://github.com/hiherto-elements/es-next-modules#readme"
+}

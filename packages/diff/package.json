@@ -1,0 +1,38 @@
+{
+  "name": "@hiherto-elements/diff",
+  "version": "0.0.3",
+  "description": "es6 version of the diff algo by Resig and Alan",
+  "main": "Url.js",
+  "directories": {
+    "test": "test"
+  },
+  "esdoc": {
+    "source": ".",
+    "includes": [
+      "diff.js", "array.js", "character.js", "css.js", "json.js", "line.js"
+    ],
+    "destination": "./docs",
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      }
+    ]
+  },
+  "dependencies": {
+    "@hiherto-elements/assert": "^0.0.4"
+  },
+  "scripts": {
+    "docs": "rm -rf ./docs && esdoc",
+    "test": "sh test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiherto-elements/es-next-modules.git"
+  },
+  "author": "Sebastian Schürmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hiherto-elements/es-next-modules/issues"
+  },
+  "homepage": "https://github.com/hiherto-elements/es-next-modules#readme"
+}

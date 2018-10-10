@@ -1,0 +1,34 @@
+{
+  "name": "@hiherto-elements/url",
+  "version": "0.0.1",
+  "description": "es6 version of the original node js url module",
+  "main": "Url.js",
+  "directories": {
+    "test": "test"
+  },
+  "esdoc": {
+    "source": ".",
+    "includes": ["Url.js", "utils.js"],
+    "destination": "./docs",
+    "plugins": [{"name": "esdoc-standard-plugin"}]
+  },
+  "dependencies": {
+    "@hiherto-elements/assert": "^0.0.4",
+    "@hiherto-elements/punycode": "^0.0.1",
+    "@hiherto-elements/querystring": "^0.0.1"
+  },
+  "scripts": {
+    "docs": "rm -rf ./docs && esdoc",
+    "test": "sh test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiherto-elements/es-next-modules.git"
+  },
+  "author": "Sebastian Schürmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hiherto-elements/es-next-modules/issues"
+  },
+  "homepage": "https://github.com/hiherto-elements/es-next-modules#readme"
+}
