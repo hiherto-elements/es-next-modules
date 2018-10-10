@@ -1,7 +1,7 @@
 {
   "name": "@hiherto-elements/assert",
-  "version": "0.0.4",
-  "description": "foo",
+  "version": "0.0.5",
+  "description": "A simple assertion libbrary refactred to es6",
   "main": "Assert.js",
   "directories": {
     "test": "test"
