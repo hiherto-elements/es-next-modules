@@ -7,5 +7,8 @@
 		"test": "lerna run test",
 		"pretest": "lerna bootstrap",
 		"setupdeno": "curl -sSf https://raw.githubusercontent.com/denoland/deno_install/master/install.py | python"
+	},
+	"dependencies": {
+		"gh-pages": "^2.0.1"
 	}
 }
