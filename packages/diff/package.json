@@ -1,6 +1,6 @@
 {
   "name": "@hiherto-elements/diff",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "es6 version of the diff algo by Resig and Alan",
   "main": "Url.js",
   "directories": {
