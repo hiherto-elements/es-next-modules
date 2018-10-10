@@ -13,7 +13,7 @@
     "plugins": [{"name": "esdoc-standard-plugin"}]
   },
   "dependencies": {
-    "@hiherto-elements/assert": "^0.0.4",
+    "@hiherto-elements/assert": "^0.0.6",
     "@hiherto-elements/punycode": "^0.0.1",
     "@hiherto-elements/querystring": "^0.0.1"
   },

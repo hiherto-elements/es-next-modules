@@ -12,7 +12,7 @@
     "plugins": [{"name": "esdoc-standard-plugin"}]
   },
   "dependencies": {
-    "@hiherto-elements/assert": "^0.0.4"
+    "@hiherto-elements/assert": "^0.0.6"
   },
   "scripts": {
     "docs": "rm -rf ./docs && esdoc",

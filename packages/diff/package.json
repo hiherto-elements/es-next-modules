@@ -1,6 +1,6 @@
 {
   "name": "@hiherto-elements/diff",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "es6 version of the diff algo by Resig and Alan",
   "main": "Url.js",
   "directories": {
@@ -9,7 +9,12 @@
   "esdoc": {
     "source": ".",
     "includes": [
-      "diff.js", "array.js", "character.js", "css.js", "json.js", "line.js"
+      "diff.js",
+      "array.js",
+      "character.js",
+      "css.js",
+      "json.js",
+      "line.js"
     ],
     "destination": "./docs",
     "plugins": [
@@ -19,7 +24,7 @@
     ]
   },
   "dependencies": {
-    "@hiherto-elements/assert": "^0.0.4"
+    "@hiherto-elements/assert": "^0.0.6"
   },
   "scripts": {
     "docs": "rm -rf ./docs && esdoc",
