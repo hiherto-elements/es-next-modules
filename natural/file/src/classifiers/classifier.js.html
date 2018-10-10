@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/classifiers/classifier.js | @hiherto-elements/natural</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="minimal es6 natural language detection"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@hiherto-elements/natural"><meta property="twitter:description" content="minimal es6 natural language detection"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/hiherto-elements/es-next-modules"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#classifiers">classifiers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Classifier">Classifier</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#tokenizers">tokenizers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tokenizers/case-tokenizer.js~CaseTokenizer.html">CaseTokenizer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tokenizers/regexp-tokenizer.js~RegexpTokenizer.html">RegexpTokenizer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tokenizers/sentence-tokenizer.js~SentenceTokenizer.html">SentenceTokenizer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tokenizers/tokenizer.js~Tokenizer.html">Tokenizer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/tokenizers/treebank-word-tokenizer.js~TreebankWordTokenizer.html">TreebankWordTokenizer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-orthographyMatchers">orthographyMatchers</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#util">util</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util/bag.js~Bag.html">Bag</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/util/topological.js~Topological.html">Topological</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-flip">flip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-merge">merge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-replacer">replacer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stopwords">stopwords</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/classifiers/classifier.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+import PorterStemmer from &apos;../stemmers/porter_stemmer&apos;;
+
+import util from &apos;util&apos;;
+import events from &apos;events&apos;;
+import os from &apos;os&apos;;
+
+try {
+    var Threads = require(&apos;webworker-threads&apos;);
+} catch (e) {
+    // Since webworker-threads are optional, only thow if the module is found
+    if (e.code !== &apos;MODULE_NOT_FOUND&apos;) throw e;
+}
+
+function checkThreadSupport() {
+    if (typeof Threads === &apos;undefined&apos;) {
+        throw new Error(&apos;parallel classification requires the optional dependency webworker-threads&apos;);
+    }
+}
+
+export const Classifier = function(classifier, stemmer) {
+    this.classifier = classifier;
+    this.docs = [];
+    this.features = {};
+    this.stemmer = stemmer || PorterStemmer;
+    this.lastAdded = 0;
+    this.events = new events.EventEmitter();
+};
+
+function addDocument(text, classification) {
+    // Ignore further processing if classification is undefined
+    if(typeof classification === &apos;undefined&apos;) return;
+
+    // If classification is type of string then make sure it&apos;s dosen&apos;t have blank space at both end
+    if(typeof classification === &apos;string&apos;){
+      classification = classification.trim();
+    }
+
+    if(typeof text === &apos;string&apos;)
+	text = this.stemmer.tokenizeAndStem(text, this.keepStops);
+
+    if(text.length === 0) {
+        // ignore empty documents
+        return;
+    }
+
+    this.docs.push({
+	label: classification,
+	text
+    });
+
+    for (const token of text) {
+        this.features[token] = (this.features[token] || 0) + 1;
+    }
+}
+
+function removeDocument(text, classification) {
+    const docs = this.docs;
+    let doc;
+    let pos;
+
+    if (typeof text === &apos;string&apos;) {
+      text = this.stemmer.tokenizeAndStem(text, this.keepStops);
+    }
+
+    for (var i = 0, ii = docs.length; i &lt; ii; i++) {
+      doc = docs[i];
+      if (doc.text.join(&apos; &apos;) == text.join(&apos; &apos;) &amp;&amp;
+          doc.label == classification) {
+        pos = i;
+      }
+    }
+
+    // Remove if there&apos;s a match
+    if (!isNaN(pos)) {
+      this.docs.splice(pos, 1);
+
+      for (var i = 0, ii = text.length; i &lt; ii; i++) {
+        delete this.features[text[i]];
+      }
+    }
+}
+
+function textToFeatures(observation) {
+    const features = [];
+
+    if(typeof observation === &apos;string&apos;)
+	observation = this.stemmer.tokenizeAndStem(observation, this.keepStops);
+
+    for(const feature in this.features) {
+        if(observation.includes(feature))
+            features.push(1);
+        else
+            features.push(0);
+    }
+
+    return features;
+}
+
+function docsToFeatures(docs) {
+    const parsedDocs = [];
+
+    for (let i = 0; i &lt; docs.length; i++) {
+        const features = [];
+
+        for (const feature in FEATURES) {
+            if (docs[i].observation.includes(feature))
+                features.push(1);
+            else
+                features.push(0);
+        }
+
+        parsedDocs.push({
+            index: docs[i].index,
+            features
+        });
+    }
+
+    return JSON.stringify(parsedDocs);
+}
+
+function train() {
+    const totalDocs = this.docs.length;
+    for(let i = this.lastAdded; i &lt; totalDocs; i++) {
+        const features = this.textToFeatures(this.docs[i].text);
+        this.classifier.addExample(features, this.docs[i].label);
+        this.events.emit(&apos;trainedWithDocument&apos;, {index: i, total: totalDocs, doc: this.docs[i]});
+        this.lastAdded++;
+    }
+    this.events.emit(&apos;doneTraining&apos;, true);
+    this.classifier.train();
+}
+
+function trainParallel(numThreads, callback) {
+    checkThreadSupport();
+
+    if (!callback) {
+        callback = numThreads;
+        numThreads = undefined;
+    }
+
+    if (isNaN(numThreads)) {
+        numThreads = os.cpus().length;
+    }
+
+    const totalDocs = this.docs.length;
+    const threadPool = Threads.createPool(numThreads);
+    const docFeatures = {};
+    let finished = 0;
+    const self = this;
+
+    // Init pool; send the features array and the parsing function
+    threadPool.all.eval(`var FEATURES = ${JSON.stringify(this.features)}`);
+    threadPool.all.eval(docsToFeatures);
+
+    // Convert docs to observation objects
+    const obsDocs = [];
+    for (var i = this.lastAdded; i &lt; totalDocs; i++) {
+        let observation = this.docs[i].text;
+        if (typeof observation === &apos;string&apos;)
+            observation = this.stemmer.tokenizeAndStem(observation, this.keepStops);
+        obsDocs.push({
+            index: i,
+            observation
+        });
+    }
+
+    // Called when a batch completes processing
+    const onFeaturesResult = docs =&gt; {
+        setTimeout(() =&gt; {
+            self.events.emit(&apos;processedBatch&apos;, {
+                size: docs.length,
+                docs: totalDocs,
+                batches: numThreads,
+                index: finished
+            });
+        });
+
+        for (let j = 0; j &lt; docs.length; j++) {
+            docFeatures[docs[j].index] = docs[j].features;
+        }
+    };
+
+    // Called when all batches finish processing
+    const onFinished = err =&gt; {
+        if (err) {
+            threadPool.destroy();
+            return callback(err);
+        }
+
+        for (let j = self.lastAdded; j &lt; totalDocs; j++) {
+            self.classifier.addExample(docFeatures[j], self.docs[j].label);
+            self.events.emit(&apos;trainedWithDocument&apos;, {
+                index: j,
+                total: totalDocs,
+                doc: self.docs[j]
+            });
+            self.lastAdded++;
+        }
+
+        self.events.emit(&apos;doneTraining&apos;, true);
+        self.classifier.train();
+
+        threadPool.destroy();
+        callback(null);
+    };
+
+    // Split the docs and start processing
+    const batchSize = Math.ceil(obsDocs.length / numThreads);
+    let lastError;
+
+    for (var i = 0; i &lt; numThreads; i++) {
+        const batchDocs = obsDocs.slice(i * batchSize, (i+1) * batchSize);
+        const batchJson = JSON.stringify(batchDocs);
+
+        threadPool.any.eval(`docsToFeatures(${batchJson})`, (err, docs) =&gt; {
+            lastError = err || lastError;
+            finished++;
+
+            if (docs) {
+                docs = JSON.parse(docs);
+                onFeaturesResult(docs);
+            }
+
+            if (finished &gt;= numThreads) {
+                onFinished(lastError);
+            }
+        });
+    }
+}
+
+function trainParallelBatches(options) {
+    checkThreadSupport();
+
+    let numThreads = options &amp;&amp; options.numThreads;
+    let batchSize = options &amp;&amp; options.batchSize;
+
+    if (isNaN(numThreads)) {
+        numThreads = os.cpus().length;
+    }
+
+    if (isNaN(batchSize)) {
+        batchSize = 2500;
+    }
+
+    const totalDocs = this.docs.length;
+    const threadPool = Threads.createPool(numThreads);
+    const docFeatures = {};
+    let finished = 0;
+    const self = this;
+
+    let abort = false;
+    const onError = err =&gt; {
+        if (!err || abort) return;
+        abort = true;
+        threadPool.destroy(true);
+        self.events.emit(&apos;doneTrainingError&apos;, err);
+    };
+
+    // Init pool; send the features array and the parsing function
+    const str = JSON.stringify(this.features);
+    threadPool.all.eval(`var FEATURES = ${str};`, onError);
+    threadPool.all.eval(docsToFeatures, onError);
+
+    // Convert docs to observation objects
+    let obsDocs = [];
+    for (var i = this.lastAdded; i &lt; totalDocs; i++) {
+        let observation = this.docs[i].text;
+        if (typeof observation === &apos;string&apos;)
+            observation = this.stemmer.tokenizeAndStem(observation, this.keepStops);
+        obsDocs.push({
+            index: i,
+            observation
+        });
+    }
+
+    // Split the docs in batches
+    const obsBatches = [];
+    var i = 0;
+    while (true) {
+        const batch = obsDocs.slice(i * batchSize, (i+1) * batchSize);
+        if (!batch || !batch.length) break;
+        obsBatches.push(batch);
+        i++;
+    }
+    obsDocs = null;
+    self.events.emit(&apos;startedTraining&apos;, {
+        docs: totalDocs,
+        batches: obsBatches.length
+    });
+
+    // Called when a batch completes processing
+    const onFeaturesResult = docs =&gt; {
+        self.events.emit(&apos;processedBatch&apos;, {
+            size: docs.length,
+            docs: totalDocs,
+            batches: obsBatches.length,
+            index: finished
+        });
+
+        for (let j = 0; j &lt; docs.length; j++) {
+            docFeatures[docs[j].index] = docs[j].features;
+        }
+    };
+
+    // Called when all batches finish processing
+    const onFinished = () =&gt; {
+        threadPool.destroy(true);
+        abort = true;
+
+        for (let j = self.lastAdded; j &lt; totalDocs; j++) {
+            self.classifier.addExample(docFeatures[j], self.docs[j].label);
+            self.events.emit(&apos;trainedWithDocument&apos;, {
+                index: j,
+                total: totalDocs,
+                doc: self.docs[j]
+            });
+            self.lastAdded++;
+        }
+
+        self.events.emit(&apos;doneTraining&apos;, true);
+        self.classifier.train();
+    };
+
+    // Called to send the next batch to be processed
+    let batchIndex = 0;
+    const sendNext = () =&gt; {
+        if (abort) return;
+        if (batchIndex &gt;= obsBatches.length) {
+            return;
+        }
+
+        sendBatch(JSON.stringify(obsBatches[batchIndex]));
+        batchIndex++;
+    };
+
+    // Called to send a batch of docs to the threads
+    var sendBatch = batchJson =&gt; {
+        if (abort) return;
+        threadPool.any.eval(`docsToFeatures(${batchJson});`, (err, docs) =&gt; {
+            if (err) {
+                return onError(err);
+            }
+
+            finished++;
+
+            if (docs) {
+                docs = JSON.parse(docs);
+                setTimeout(onFeaturesResult.bind(null, docs));
+            }
+
+            if (finished &gt;= obsBatches.length) {
+                setTimeout(onFinished);
+            }
+
+            setTimeout(sendNext);
+        });
+    };
+
+    // Start processing
+    for (var i = 0; i &lt; numThreads; i++) {
+        sendNext();
+    }
+}
+
+function retrain() {
+  this.classifier = new (this.classifier.constructor)();
+  this.lastAdded = 0;
+  this.train();
+}
+
+function retrainParallel(numThreads, callback) {
+  this.classifier = new (this.classifier.constructor)();
+  this.lastAdded = 0;
+  this.trainParallel(numThreads, callback);
+}
+
+function getClassifications(observation) {
+    return this.classifier.getClassifications(this.textToFeatures(observation));
+}
+
+function classify(observation) {
+    return this.classifier.classify(this.textToFeatures(observation));
+}
+
+function restore(classifier, stemmer) {
+    classifier.stemmer = stemmer || PorterStemmer;
+    classifier.events = new events.EventEmitter();
+    return classifier;
+}
+
+function save(filename, callback) {
+    const data = JSON.stringify(this);
+    const fs = require(&apos;fs&apos;);
+    const classifier = this;
+    fs.writeFile(filename, data, &apos;utf8&apos;, err =&gt; {
+        if(callback) {
+            callback(err, err ? null : classifier);
+        }
+    });
+}
+
+function load(filename, callback) {
+    const fs = require(&apos;fs&apos;);
+
+    fs.readFile(filename, &apos;utf8&apos;, (err, data) =&gt; {
+        let classifier;
+
+        if(!err) {
+            classifier = JSON.parse(data);
+        }
+
+        if(callback)
+            callback(err, classifier);
+    });
+}
+
+function setOptions(options){
+    this.keepStops = (options.keepStops) ? true : false;
+}
+
+Classifier.prototype.addDocument = addDocument;
+Classifier.prototype.removeDocument = removeDocument;
+Classifier.prototype.train = train;
+if (Threads) {
+  Classifier.prototype.trainParallel = trainParallel;
+  Classifier.prototype.trainParallelBatches = trainParallelBatches;
+  Classifier.prototype.retrainParallel = retrainParallel;
+}
+Classifier.prototype.retrain = retrain;
+Classifier.prototype.classify = classify;
+Classifier.prototype.textToFeatures = textToFeatures;
+Classifier.prototype.save = save;
+Classifier.prototype.getClassifications = getClassifications;
+Classifier.prototype.setOptions = setOptions;
+Classifier.restore = restore;
+Classifier.load = load;
+
+export default Classifier;</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

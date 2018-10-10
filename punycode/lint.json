@@ -1,0 +1,219 @@
+[
+  {
+    "name": "map",
+    "filePath": "punycode/punycode.js",
+    "lines": [
+      {
+        "lineNumber": 42,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 43,
+        "line": " * A generic `Array#map` utility function."
+      },
+      {
+        "lineNumber": 44,
+        "line": " * @private"
+      },
+      {
+        "lineNumber": 45,
+        "line": " * @param {Array} array The array to iterate over."
+      },
+      {
+        "lineNumber": 46,
+        "line": " * @param {Function} callback The function that gets called for every array"
+      },
+      {
+        "lineNumber": 47,
+        "line": " * item."
+      },
+      {
+        "lineNumber": 48,
+        "line": " * @returns {Array} A new array of values returned by the callback function."
+      },
+      {
+        "lineNumber": 49,
+        "line": " */"
+      },
+      {
+        "lineNumber": 50,
+        "line": "function map(array, fn) {"
+      }
+    ],
+    "codeParams": [
+      "array",
+      "fn"
+    ],
+    "docParams": [
+      "array",
+      "callback"
+    ]
+  },
+  {
+    "name": "mapDomain",
+    "filePath": "punycode/punycode.js",
+    "lines": [
+      {
+        "lineNumber": 59,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 60,
+        "line": " * A simple `Array#map`-like wrapper to work with domain name strings or email"
+      },
+      {
+        "lineNumber": 61,
+        "line": " * addresses."
+      },
+      {
+        "lineNumber": 62,
+        "line": " * @private"
+      },
+      {
+        "lineNumber": 63,
+        "line": " * @param {String} domain The domain name or email address."
+      },
+      {
+        "lineNumber": 64,
+        "line": " * @param {Function} callback The function that gets called for every"
+      },
+      {
+        "lineNumber": 65,
+        "line": " * character."
+      },
+      {
+        "lineNumber": 66,
+        "line": " * @returns {Array} A new string of characters returned by the callback"
+      },
+      {
+        "lineNumber": 67,
+        "line": " * function."
+      },
+      {
+        "lineNumber": 68,
+        "line": " */"
+      },
+      {
+        "lineNumber": 69,
+        "line": "function mapDomain(string, fn) {"
+      }
+    ],
+    "codeParams": [
+      "string",
+      "fn"
+    ],
+    "docParams": [
+      "domain",
+      "callback"
+    ]
+  },
+  {
+    "name": "ucs2encode",
+    "filePath": "punycode/punycode.js",
+    "lines": [
+      {
+        "lineNumber": 122,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 123,
+        "line": " * Creates a string based on an array of numeric code points."
+      },
+      {
+        "lineNumber": 124,
+        "line": " * @see `punycode.ucs2.decode`"
+      },
+      {
+        "lineNumber": 125,
+        "line": " * @memberOf punycode.ucs2"
+      },
+      {
+        "lineNumber": 126,
+        "line": " * @name encode"
+      },
+      {
+        "lineNumber": 127,
+        "line": " * @param {Array} codePoints The array of numeric code points."
+      },
+      {
+        "lineNumber": 128,
+        "line": " * @returns {String} The new Unicode string (UCS-2)."
+      },
+      {
+        "lineNumber": 129,
+        "line": " */"
+      },
+      {
+        "lineNumber": 130,
+        "line": "const ucs2encode = array => String.fromCodePoint(...array);"
+      }
+    ],
+    "codeParams": [
+      "array"
+    ],
+    "docParams": [
+      "codePoints"
+    ]
+  },
+  {
+    "name": "digitToBasic",
+    "filePath": "punycode/punycode.js",
+    "lines": [
+      {
+        "lineNumber": 154,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 155,
+        "line": " * Converts a digit/integer into a basic code point."
+      },
+      {
+        "lineNumber": 156,
+        "line": " * @see `basicToDigit()`"
+      },
+      {
+        "lineNumber": 157,
+        "line": " * @private"
+      },
+      {
+        "lineNumber": 158,
+        "line": " * @param {Number} digit The numeric value of a basic code point."
+      },
+      {
+        "lineNumber": 159,
+        "line": " * @returns {Number} The basic code point whose value (when used for"
+      },
+      {
+        "lineNumber": 160,
+        "line": " * representing integers) is `digit`, which needs to be in the range"
+      },
+      {
+        "lineNumber": 161,
+        "line": " * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is"
+      },
+      {
+        "lineNumber": 162,
+        "line": " * used; else, the lowercase form is used. The behavior is undefined"
+      },
+      {
+        "lineNumber": 163,
+        "line": " * if `flag` is non-zero and `digit` has no uppercase form."
+      },
+      {
+        "lineNumber": 164,
+        "line": " */"
+      },
+      {
+        "lineNumber": 165,
+        "line": "const digitToBasic = (digit, flag) => //  0..25 map to ASCII a..z or A..Z"
+      }
+    ],
+    "codeParams": [
+      "digit",
+      "flag"
+    ],
+    "docParams": [
+      "digit"
+    ]
+  }
+]

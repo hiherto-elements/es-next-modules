@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">esi/Wallet.js | @hiherto-elements/esi</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A simple es6 module wrapper around the eve online api"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@hiherto-elements/esi"><meta property="twitter:description" content="A simple es6 module wrapper around the eve online api"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances">get_alliances</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id">get_alliances_alliance_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id_corporations">get_alliances_alliance_id_corporations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id_icons">get_alliances_alliance_id_icons</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_assets">get_characters_character_id_assets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_assets">get_corporations_corporation_id_assets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_assets_locations">post_characters_character_id_assets_locations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_assets_names">post_characters_character_id_assets_names</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_corporations_corporation_id_assets_locations">post_corporations_corporation_id_assets_locations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_corporations_corporation_id_assets_names">post_corporations_corporation_id_assets_names</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_bookmarks">get_characters_character_id_bookmarks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_bookmarks_folders">get_characters_character_id_bookmarks_folders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_bookmarks">get_corporations_corporation_id_bookmarks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_bookmarks_folders">get_corporations_corporation_id_bookmarks_folders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_calendar">get_characters_character_id_calendar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_calendar_event_id">get_characters_character_id_calendar_event_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_calendar_event_id_attendees">get_characters_character_id_calendar_event_id_attendees</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_characters_character_id_calendar_event_id">put_characters_character_id_calendar_event_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id">get_characters_character_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_agents_research">get_characters_character_id_agents_research</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_blueprints">get_characters_character_id_blueprints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_corporationhistory">get_characters_character_id_corporationhistory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_fatigue">get_characters_character_id_fatigue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_medals">get_characters_character_id_medals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_notifications">get_characters_character_id_notifications</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_notifications_contacts">get_characters_character_id_notifications_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_portrait">get_characters_character_id_portrait</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_roles">get_characters_character_id_roles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_standings">get_characters_character_id_standings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_stats">get_characters_character_id_stats</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_titles">get_characters_character_id_titles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_affiliation">post_characters_affiliation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_cspa">post_characters_character_id_cspa</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_clones">get_characters_character_id_clones</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_implants">get_characters_character_id_implants</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_characters_character_id_contacts">delete_characters_character_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id_contacts">get_alliances_alliance_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id_contacts_labels">get_alliances_alliance_id_contacts_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contacts">get_characters_character_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contacts_labels">get_characters_character_id_contacts_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contacts">get_corporations_corporation_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contacts_labels">get_corporations_corporation_id_contacts_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_contacts">post_characters_character_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_characters_character_id_contacts">put_characters_character_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contracts">get_characters_character_id_contracts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contracts_contract_id_bids">get_characters_character_id_contracts_contract_id_bids</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contracts_contract_id_items">get_characters_character_id_contracts_contract_id_items</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_contracts_public_bids_contract_id">get_contracts_public_bids_contract_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_contracts_public_items_contract_id">get_contracts_public_items_contract_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_contracts_public_region_id">get_contracts_public_region_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contracts">get_corporations_corporation_id_contracts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contracts_contract_id_bids">get_corporations_corporation_id_contracts_contract_id_bids</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contracts_contract_id_items">get_corporations_corporation_id_contracts_contract_id_items</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id">get_corporations_corporation_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_alliancehistory">get_corporations_corporation_id_alliancehistory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_blueprints">get_corporations_corporation_id_blueprints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_containers_logs">get_corporations_corporation_id_containers_logs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_divisions">get_corporations_corporation_id_divisions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_facilities">get_corporations_corporation_id_facilities</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_icons">get_corporations_corporation_id_icons</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_medals">get_corporations_corporation_id_medals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_medals_issued">get_corporations_corporation_id_medals_issued</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_members">get_corporations_corporation_id_members</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_members_limit">get_corporations_corporation_id_members_limit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_members_titles">get_corporations_corporation_id_members_titles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_membertracking">get_corporations_corporation_id_membertracking</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_roles">get_corporations_corporation_id_roles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_roles_history">get_corporations_corporation_id_roles_history</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_shareholders">get_corporations_corporation_id_shareholders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_standings">get_corporations_corporation_id_standings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_starbases">get_corporations_corporation_id_starbases</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_starbases_starbase_id">get_corporations_corporation_id_starbases_starbase_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_structures">get_corporations_corporation_id_structures</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_titles">get_corporations_corporation_id_titles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_npccorps">get_corporations_npccorps</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_attributes">get_dogma_attributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_attributes_attribute_id">get_dogma_attributes_attribute_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_dynamic_items_type_id_item_id">get_dogma_dynamic_items_type_id_item_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_effects">get_dogma_effects</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_effects_effect_id">get_dogma_effects_effect_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_fw_stats">get_characters_character_id_fw_stats</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_fw_stats">get_corporations_corporation_id_fw_stats</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_leaderboards">get_fw_leaderboards</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_leaderboards_characters">get_fw_leaderboards_characters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_leaderboards_corporations">get_fw_leaderboards_corporations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_stats">get_fw_stats</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_systems">get_fw_systems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_wars">get_fw_wars</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_characters_character_id_fittings_fitting_id">delete_characters_character_id_fittings_fitting_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_fittings">get_characters_character_id_fittings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_fittings">post_characters_character_id_fittings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_fleets_fleet_id_members_member_id">delete_fleets_fleet_id_members_member_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_fleets_fleet_id_squads_squad_id">delete_fleets_fleet_id_squads_squad_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_fleets_fleet_id_wings_wing_id">delete_fleets_fleet_id_wings_wing_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_fleet">get_characters_character_id_fleet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fleets_fleet_id">get_fleets_fleet_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fleets_fleet_id_members">get_fleets_fleet_id_members</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fleets_fleet_id_wings">get_fleets_fleet_id_wings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_fleets_fleet_id_members">post_fleets_fleet_id_members</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_fleets_fleet_id_wings">post_fleets_fleet_id_wings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_fleets_fleet_id_wings_wing_id_squads">post_fleets_fleet_id_wings_wing_id_squads</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_fleets_fleet_id">put_fleets_fleet_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_fleets_fleet_id_members_member_id">put_fleets_fleet_id_members_member_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_fleets_fleet_id_squads_squad_id">put_fleets_fleet_id_squads_squad_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_fleets_fleet_id_wings_wing_id">put_fleets_fleet_id_wings_wing_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_industry_jobs">get_characters_character_id_industry_jobs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mining">get_characters_character_id_mining</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporation_corporation_id_mining_extractions">get_corporation_corporation_id_mining_extractions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporation_corporation_id_mining_observers">get_corporation_corporation_id_mining_observers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporation_corporation_id_mining_observers_observer_id">get_corporation_corporation_id_mining_observers_observer_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_industry_jobs">get_corporations_corporation_id_industry_jobs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_industry_facilities">get_industry_facilities</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_industry_systems">get_industry_systems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_insurance_prices">get_insurance_prices</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_location">get_characters_character_id_location</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_online">get_characters_character_id_online</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_ship">get_characters_character_id_ship</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_loyalty_points">get_characters_character_id_loyalty_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_loyalty_stores_corporation_id_offers">get_loyalty_stores_corporation_id_offers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_characters_character_id_mail_labels_label_id">delete_characters_character_id_mail_labels_label_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_characters_character_id_mail_mail_id">delete_characters_character_id_mail_mail_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mail">get_characters_character_id_mail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mail_labels">get_characters_character_id_mail_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mail_lists">get_characters_character_id_mail_lists</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mail_mail_id">get_characters_character_id_mail_mail_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_mail">post_characters_character_id_mail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_mail_labels">post_characters_character_id_mail_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_characters_character_id_mail_mail_id">put_characters_character_id_mail_mail_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_orders">get_characters_character_id_orders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_orders_history">get_characters_character_id_orders_history</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_orders">get_corporations_corporation_id_orders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_orders_history">get_corporations_corporation_id_orders_history</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_groups">get_markets_groups</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_groups_market_group_id">get_markets_groups_market_group_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_prices">get_markets_prices</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_region_id_history">get_markets_region_id_history</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_region_id_orders">get_markets_region_id_orders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_region_id_types">get_markets_region_id_types</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_structures_structure_id">get_markets_structures_structure_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_opportunities">get_characters_character_id_opportunities</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_opportunities_groups">get_opportunities_groups</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_opportunities_groups_group_id">get_opportunities_groups_group_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_opportunities_tasks">get_opportunities_tasks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_opportunities_tasks_task_id">get_opportunities_tasks_task_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_planets">get_characters_character_id_planets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_planets_planet_id">get_characters_character_id_planets_planet_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_customs_offices">get_corporations_corporation_id_customs_offices</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_schematics_schematic_id">get_universe_schematics_schematic_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_route_origin_destination">get_route_origin_destination</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_search">get_characters_character_id_search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_search">get_search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_attributes">get_characters_character_id_attributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_skillqueue">get_characters_character_id_skillqueue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_skills">get_characters_character_id_skills</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_status">get_status</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_ancestries">get_universe_ancestries</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_asteroid_belts_asteroid_belt_id">get_universe_asteroid_belts_asteroid_belt_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_bloodlines">get_universe_bloodlines</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_categories">get_universe_categories</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_categories_category_id">get_universe_categories_category_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_constellations">get_universe_constellations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_constellations_constellation_id">get_universe_constellations_constellation_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_factions">get_universe_factions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_graphics">get_universe_graphics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_graphics_graphic_id">get_universe_graphics_graphic_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_groups">get_universe_groups</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_groups_group_id">get_universe_groups_group_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_moons_moon_id">get_universe_moons_moon_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_planets_planet_id">get_universe_planets_planet_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_races">get_universe_races</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_regions">get_universe_regions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_regions_region_id">get_universe_regions_region_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_stargates_stargate_id">get_universe_stargates_stargate_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_stars_star_id">get_universe_stars_star_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_stations_station_id">get_universe_stations_station_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_structures">get_universe_structures</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_structures_structure_id">get_universe_structures_structure_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_system_jumps">get_universe_system_jumps</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_system_kills">get_universe_system_kills</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_systems">get_universe_systems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_systems_system_id">get_universe_systems_system_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_types">get_universe_types</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_types_type_id">get_universe_types_type_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_universe_ids">post_universe_ids</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_universe_names">post_universe_names</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_autopilot_waypoint">post_ui_autopilot_waypoint</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_openwindow_contract">post_ui_openwindow_contract</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_openwindow_information">post_ui_openwindow_information</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_openwindow_marketdetails">post_ui_openwindow_marketdetails</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_openwindow_newmail">post_ui_openwindow_newmail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_wallet">get_characters_character_id_wallet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_wallet_journal">get_characters_character_id_wallet_journal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_wallet_transactions">get_characters_character_id_wallet_transactions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_wallets">get_corporations_corporation_id_wallets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_wallets_division_journal">get_corporations_corporation_id_wallets_division_journal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_wallets_division_transactions">get_corporations_corporation_id_wallets_division_transactions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_wars">get_wars</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_wars_war_id">get_wars_war_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_wars_war_id_killmails">get_wars_war_id_killmails</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">esi/Wallet.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/** @module Wallet */
+// Auto-generated, edits will be overwritten
+import * as gateway from &apos;./gateway&apos;
+
+/**
+ * Returns a character&apos;s wallet balance
+ * 
+ * ---
+ * Alternate route: `/dev/characters/{character_id}/wallet/`
+ * 
+ * Alternate route: `/legacy/characters/{character_id}/wallet/`
+ * 
+ * Alternate route: `/v1/characters/{character_id}/wallet/`
+ * 
+ * ---
+ * This route is cached for up to 120 seconds
+ * 
+ * @param {number} characterId An EVE character ID
+ * @param {object} options Optional options
+ * @param {string} [options.datasource] The server name you would like data from
+ * @param {string} [options.IfNoneMatch] ETag from a previous request. A 304 will be returned if this matches the current ETag
+ * @param {string} [options.token] Access token to use if unable to set a header
+ * @return {Promise&lt;object&gt;} Wallet balance
+ */
+export function get_characters_character_id_wallet(characterId, options) {
+  if (!options) options = {}
+  const parameters = {
+    path: {
+      character_id: characterId
+    },
+    query: {
+      datasource: options.datasource,
+      token: options.token
+    },
+    header: {
+      &apos;If-None-Match&apos;: options.IfNoneMatch
+    }
+  }
+  return gateway.request(get_characters_character_id_walletOperation, parameters)
+}
+
+/**
+ * Retrieve the given character&apos;s wallet journal going 30 days back
+ * 
+ * ---
+ * Alternate route: `/dev/characters/{character_id}/wallet/journal/`
+ * 
+ * Alternate route: `/legacy/characters/{character_id}/wallet/journal/`
+ * 
+ * Alternate route: `/v4/characters/{character_id}/wallet/journal/`
+ * 
+ * ---
+ * This route is cached for up to 3600 seconds
+ * 
+ * @param {number} characterId An EVE character ID
+ * @param {object} options Optional options
+ * @param {string} [options.datasource] The server name you would like data from
+ * @param {string} [options.IfNoneMatch] ETag from a previous request. A 304 will be returned if this matches the current ETag
+ * @param {number} [options.page] Which page of results to return
+ * @param {string} [options.token] Access token to use if unable to set a header
+ * @return {Promise&lt;object&gt;} Journal entries
+ */
+export function get_characters_character_id_wallet_journal(characterId, options) {
+  if (!options) options = {}
+  const parameters = {
+    path: {
+      character_id: characterId
+    },
+    query: {
+      datasource: options.datasource,
+      page: options.page,
+      token: options.token
+    },
+    header: {
+      &apos;If-None-Match&apos;: options.IfNoneMatch
+    }
+  }
+  return gateway.request(get_characters_character_id_wallet_journalOperation, parameters)
+}
+
+/**
+ * Get wallet transactions of a character
+ * 
+ * ---
+ * Alternate route: `/dev/characters/{character_id}/wallet/transactions/`
+ * 
+ * Alternate route: `/legacy/characters/{character_id}/wallet/transactions/`
+ * 
+ * Alternate route: `/v1/characters/{character_id}/wallet/transactions/`
+ * 
+ * ---
+ * This route is cached for up to 3600 seconds
+ * 
+ * @param {number} characterId An EVE character ID
+ * @param {object} options Optional options
+ * @param {string} [options.datasource] The server name you would like data from
+ * @param {number} [options.fromId] Only show transactions happened before the one referenced by this id
+ * @param {string} [options.IfNoneMatch] ETag from a previous request. A 304 will be returned if this matches the current ETag
+ * @param {string} [options.token] Access token to use if unable to set a header
+ * @return {Promise&lt;object&gt;} Wallet transactions
+ */
+export function get_characters_character_id_wallet_transactions(characterId, options) {
+  if (!options) options = {}
+  const parameters = {
+    path: {
+      character_id: characterId
+    },
+    query: {
+      datasource: options.datasource,
+      from_id: options.fromId,
+      token: options.token
+    },
+    header: {
+      &apos;If-None-Match&apos;: options.IfNoneMatch
+    }
+  }
+  return gateway.request(get_characters_character_id_wallet_transactionsOperation, parameters)
+}
+
+/**
+ * Get a corporation&apos;s wallets
+ * 
+ * ---
+ * Alternate route: `/dev/corporations/{corporation_id}/wallets/`
+ * 
+ * Alternate route: `/legacy/corporations/{corporation_id}/wallets/`
+ * 
+ * Alternate route: `/v1/corporations/{corporation_id}/wallets/`
+ * 
+ * ---
+ * This route is cached for up to 300 seconds
+ * 
+ * ---
+ * Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+ * 
+ * @param {number} corporationId An EVE corporation ID
+ * @param {object} options Optional options
+ * @param {string} [options.datasource] The server name you would like data from
+ * @param {string} [options.IfNoneMatch] ETag from a previous request. A 304 will be returned if this matches the current ETag
+ * @param {string} [options.token] Access token to use if unable to set a header
+ * @return {Promise&lt;object&gt;} List of corporation wallets
+ */
+export function get_corporations_corporation_id_wallets(corporationId, options) {
+  if (!options) options = {}
+  const parameters = {
+    path: {
+      corporation_id: corporationId
+    },
+    query: {
+      datasource: options.datasource,
+      token: options.token
+    },
+    header: {
+      &apos;If-None-Match&apos;: options.IfNoneMatch
+    }
+  }
+  return gateway.request(get_corporations_corporation_id_walletsOperation, parameters)
+}
+
+/**
+ * Retrieve the given corporation&apos;s wallet journal for the given division going 30 days back
+ * 
+ * ---
+ * Alternate route: `/dev/corporations/{corporation_id}/wallets/{division}/journal/`
+ * 
+ * Alternate route: `/legacy/corporations/{corporation_id}/wallets/{division}/journal/`
+ * 
+ * Alternate route: `/v3/corporations/{corporation_id}/wallets/{division}/journal/`
+ * 
+ * ---
+ * This route is cached for up to 3600 seconds
+ * 
+ * ---
+ * Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+ * 
+ * @param {number} corporationId An EVE corporation ID
+ * @param {number} division Wallet key of the division to fetch journals from
+ * @param {object} options Optional options
+ * @param {string} [options.datasource] The server name you would like data from
+ * @param {string} [options.IfNoneMatch] ETag from a previous request. A 304 will be returned if this matches the current ETag
+ * @param {number} [options.page] Which page of results to return
+ * @param {string} [options.token] Access token to use if unable to set a header
+ * @return {Promise&lt;object&gt;} Journal entries
+ */
+export function get_corporations_corporation_id_wallets_division_journal(corporationId, division, options) {
+  if (!options) options = {}
+  const parameters = {
+    path: {
+      corporation_id: corporationId,
+      division
+    },
+    query: {
+      datasource: options.datasource,
+      page: options.page,
+      token: options.token
+    },
+    header: {
+      &apos;If-None-Match&apos;: options.IfNoneMatch
+    }
+  }
+  return gateway.request(get_corporations_corporation_id_wallets_division_journalOperation, parameters)
+}
+
+/**
+ * Get wallet transactions of a corporation
+ * 
+ * ---
+ * Alternate route: `/dev/corporations/{corporation_id}/wallets/{division}/transactions/`
+ * 
+ * Alternate route: `/legacy/corporations/{corporation_id}/wallets/{division}/transactions/`
+ * 
+ * Alternate route: `/v1/corporations/{corporation_id}/wallets/{division}/transactions/`
+ * 
+ * ---
+ * This route is cached for up to 3600 seconds
+ * 
+ * ---
+ * Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+ * 
+ * @param {number} corporationId An EVE corporation ID
+ * @param {number} division Wallet key of the division to fetch journals from
+ * @param {object} options Optional options
+ * @param {string} [options.datasource] The server name you would like data from
+ * @param {number} [options.fromId] Only show journal entries happened before the transaction referenced by this id
+ * @param {string} [options.IfNoneMatch] ETag from a previous request. A 304 will be returned if this matches the current ETag
+ * @param {string} [options.token] Access token to use if unable to set a header
+ * @return {Promise&lt;object&gt;} Wallet transactions
+ */
+export function get_corporations_corporation_id_wallets_division_transactions(corporationId, division, options) {
+  if (!options) options = {}
+  const parameters = {
+    path: {
+      corporation_id: corporationId,
+      division
+    },
+    query: {
+      datasource: options.datasource,
+      from_id: options.fromId,
+      token: options.token
+    },
+    header: {
+      &apos;If-None-Match&apos;: options.IfNoneMatch
+    }
+  }
+  return gateway.request(get_corporations_corporation_id_wallets_division_transactionsOperation, parameters)
+}
+
+const get_characters_character_id_walletOperation = {
+  path: &apos;/characters/{character_id}/wallet/&apos;,
+  method: &apos;get&apos;,
+  security: [
+    {
+      id: &apos;evesso&apos;,
+      scopes: [&apos;esi-wallet.read_character_wallet.v1&apos;]
+    }
+  ]
+}
+
+const get_characters_character_id_wallet_journalOperation = {
+  path: &apos;/characters/{character_id}/wallet/journal/&apos;,
+  method: &apos;get&apos;,
+  security: [
+    {
+      id: &apos;evesso&apos;,
+      scopes: [&apos;esi-wallet.read_character_wallet.v1&apos;]
+    }
+  ]
+}
+
+const get_characters_character_id_wallet_transactionsOperation = {
+  path: &apos;/characters/{character_id}/wallet/transactions/&apos;,
+  method: &apos;get&apos;,
+  security: [
+    {
+      id: &apos;evesso&apos;,
+      scopes: [&apos;esi-wallet.read_character_wallet.v1&apos;]
+    }
+  ]
+}
+
+const get_corporations_corporation_id_walletsOperation = {
+  path: &apos;/corporations/{corporation_id}/wallets/&apos;,
+  method: &apos;get&apos;,
+  security: [
+    {
+      id: &apos;evesso&apos;,
+      scopes: [&apos;esi-wallet.read_corporation_wallets.v1&apos;]
+    }
+  ]
+}
+
+const get_corporations_corporation_id_wallets_division_journalOperation = {
+  path: &apos;/corporations/{corporation_id}/wallets/{division}/journal/&apos;,
+  method: &apos;get&apos;,
+  security: [
+    {
+      id: &apos;evesso&apos;,
+      scopes: [&apos;esi-wallet.read_corporation_wallets.v1&apos;]
+    }
+  ]
+}
+
+const get_corporations_corporation_id_wallets_division_transactionsOperation = {
+  path: &apos;/corporations/{corporation_id}/wallets/{division}/transactions/&apos;,
+  method: &apos;get&apos;,
+  security: [
+    {
+      id: &apos;evesso&apos;,
+      scopes: [&apos;esi-wallet.read_corporation_wallets.v1&apos;]
+    }
+  ]
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

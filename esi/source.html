@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="">
+  <title data-ice="title">Source | @hiherto-elements/esi</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A simple es6 module wrapper around the eve online api"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@hiherto-elements/esi"><meta property="twitter:description" content="A simple es6 module wrapper around the eve online api"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances">get_alliances</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id">get_alliances_alliance_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id_corporations">get_alliances_alliance_id_corporations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id_icons">get_alliances_alliance_id_icons</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_assets">get_characters_character_id_assets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_assets">get_corporations_corporation_id_assets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_assets_locations">post_characters_character_id_assets_locations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_assets_names">post_characters_character_id_assets_names</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_corporations_corporation_id_assets_locations">post_corporations_corporation_id_assets_locations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_corporations_corporation_id_assets_names">post_corporations_corporation_id_assets_names</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_bookmarks">get_characters_character_id_bookmarks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_bookmarks_folders">get_characters_character_id_bookmarks_folders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_bookmarks">get_corporations_corporation_id_bookmarks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_bookmarks_folders">get_corporations_corporation_id_bookmarks_folders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_calendar">get_characters_character_id_calendar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_calendar_event_id">get_characters_character_id_calendar_event_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_calendar_event_id_attendees">get_characters_character_id_calendar_event_id_attendees</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_characters_character_id_calendar_event_id">put_characters_character_id_calendar_event_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id">get_characters_character_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_agents_research">get_characters_character_id_agents_research</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_blueprints">get_characters_character_id_blueprints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_corporationhistory">get_characters_character_id_corporationhistory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_fatigue">get_characters_character_id_fatigue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_medals">get_characters_character_id_medals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_notifications">get_characters_character_id_notifications</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_notifications_contacts">get_characters_character_id_notifications_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_portrait">get_characters_character_id_portrait</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_roles">get_characters_character_id_roles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_standings">get_characters_character_id_standings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_stats">get_characters_character_id_stats</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_titles">get_characters_character_id_titles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_affiliation">post_characters_affiliation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_cspa">post_characters_character_id_cspa</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_clones">get_characters_character_id_clones</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_implants">get_characters_character_id_implants</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_characters_character_id_contacts">delete_characters_character_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id_contacts">get_alliances_alliance_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_alliances_alliance_id_contacts_labels">get_alliances_alliance_id_contacts_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contacts">get_characters_character_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contacts_labels">get_characters_character_id_contacts_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contacts">get_corporations_corporation_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contacts_labels">get_corporations_corporation_id_contacts_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_contacts">post_characters_character_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_characters_character_id_contacts">put_characters_character_id_contacts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contracts">get_characters_character_id_contracts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contracts_contract_id_bids">get_characters_character_id_contracts_contract_id_bids</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_contracts_contract_id_items">get_characters_character_id_contracts_contract_id_items</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_contracts_public_bids_contract_id">get_contracts_public_bids_contract_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_contracts_public_items_contract_id">get_contracts_public_items_contract_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_contracts_public_region_id">get_contracts_public_region_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contracts">get_corporations_corporation_id_contracts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contracts_contract_id_bids">get_corporations_corporation_id_contracts_contract_id_bids</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_contracts_contract_id_items">get_corporations_corporation_id_contracts_contract_id_items</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id">get_corporations_corporation_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_alliancehistory">get_corporations_corporation_id_alliancehistory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_blueprints">get_corporations_corporation_id_blueprints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_containers_logs">get_corporations_corporation_id_containers_logs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_divisions">get_corporations_corporation_id_divisions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_facilities">get_corporations_corporation_id_facilities</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_icons">get_corporations_corporation_id_icons</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_medals">get_corporations_corporation_id_medals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_medals_issued">get_corporations_corporation_id_medals_issued</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_members">get_corporations_corporation_id_members</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_members_limit">get_corporations_corporation_id_members_limit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_members_titles">get_corporations_corporation_id_members_titles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_membertracking">get_corporations_corporation_id_membertracking</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_roles">get_corporations_corporation_id_roles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_roles_history">get_corporations_corporation_id_roles_history</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_shareholders">get_corporations_corporation_id_shareholders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_standings">get_corporations_corporation_id_standings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_starbases">get_corporations_corporation_id_starbases</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_starbases_starbase_id">get_corporations_corporation_id_starbases_starbase_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_structures">get_corporations_corporation_id_structures</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_titles">get_corporations_corporation_id_titles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_npccorps">get_corporations_npccorps</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_attributes">get_dogma_attributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_attributes_attribute_id">get_dogma_attributes_attribute_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_dynamic_items_type_id_item_id">get_dogma_dynamic_items_type_id_item_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_effects">get_dogma_effects</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_dogma_effects_effect_id">get_dogma_effects_effect_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_fw_stats">get_characters_character_id_fw_stats</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_fw_stats">get_corporations_corporation_id_fw_stats</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_leaderboards">get_fw_leaderboards</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_leaderboards_characters">get_fw_leaderboards_characters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_leaderboards_corporations">get_fw_leaderboards_corporations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_stats">get_fw_stats</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_systems">get_fw_systems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fw_wars">get_fw_wars</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_characters_character_id_fittings_fitting_id">delete_characters_character_id_fittings_fitting_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_fittings">get_characters_character_id_fittings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_fittings">post_characters_character_id_fittings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_fleets_fleet_id_members_member_id">delete_fleets_fleet_id_members_member_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_fleets_fleet_id_squads_squad_id">delete_fleets_fleet_id_squads_squad_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_fleets_fleet_id_wings_wing_id">delete_fleets_fleet_id_wings_wing_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_fleet">get_characters_character_id_fleet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fleets_fleet_id">get_fleets_fleet_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fleets_fleet_id_members">get_fleets_fleet_id_members</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_fleets_fleet_id_wings">get_fleets_fleet_id_wings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_fleets_fleet_id_members">post_fleets_fleet_id_members</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_fleets_fleet_id_wings">post_fleets_fleet_id_wings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_fleets_fleet_id_wings_wing_id_squads">post_fleets_fleet_id_wings_wing_id_squads</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_fleets_fleet_id">put_fleets_fleet_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_fleets_fleet_id_members_member_id">put_fleets_fleet_id_members_member_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_fleets_fleet_id_squads_squad_id">put_fleets_fleet_id_squads_squad_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_fleets_fleet_id_wings_wing_id">put_fleets_fleet_id_wings_wing_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_industry_jobs">get_characters_character_id_industry_jobs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mining">get_characters_character_id_mining</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporation_corporation_id_mining_extractions">get_corporation_corporation_id_mining_extractions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporation_corporation_id_mining_observers">get_corporation_corporation_id_mining_observers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporation_corporation_id_mining_observers_observer_id">get_corporation_corporation_id_mining_observers_observer_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_industry_jobs">get_corporations_corporation_id_industry_jobs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_industry_facilities">get_industry_facilities</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_industry_systems">get_industry_systems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_insurance_prices">get_insurance_prices</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_location">get_characters_character_id_location</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_online">get_characters_character_id_online</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_ship">get_characters_character_id_ship</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_loyalty_points">get_characters_character_id_loyalty_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_loyalty_stores_corporation_id_offers">get_loyalty_stores_corporation_id_offers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_characters_character_id_mail_labels_label_id">delete_characters_character_id_mail_labels_label_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_characters_character_id_mail_mail_id">delete_characters_character_id_mail_mail_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mail">get_characters_character_id_mail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mail_labels">get_characters_character_id_mail_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mail_lists">get_characters_character_id_mail_lists</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_mail_mail_id">get_characters_character_id_mail_mail_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_mail">post_characters_character_id_mail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_characters_character_id_mail_labels">post_characters_character_id_mail_labels</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put_characters_character_id_mail_mail_id">put_characters_character_id_mail_mail_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_orders">get_characters_character_id_orders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_orders_history">get_characters_character_id_orders_history</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_orders">get_corporations_corporation_id_orders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_orders_history">get_corporations_corporation_id_orders_history</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_groups">get_markets_groups</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_groups_market_group_id">get_markets_groups_market_group_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_prices">get_markets_prices</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_region_id_history">get_markets_region_id_history</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_region_id_orders">get_markets_region_id_orders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_region_id_types">get_markets_region_id_types</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_markets_structures_structure_id">get_markets_structures_structure_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_opportunities">get_characters_character_id_opportunities</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_opportunities_groups">get_opportunities_groups</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_opportunities_groups_group_id">get_opportunities_groups_group_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_opportunities_tasks">get_opportunities_tasks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_opportunities_tasks_task_id">get_opportunities_tasks_task_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_planets">get_characters_character_id_planets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_planets_planet_id">get_characters_character_id_planets_planet_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_customs_offices">get_corporations_corporation_id_customs_offices</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_schematics_schematic_id">get_universe_schematics_schematic_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_route_origin_destination">get_route_origin_destination</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_search">get_characters_character_id_search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_search">get_search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_attributes">get_characters_character_id_attributes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_skillqueue">get_characters_character_id_skillqueue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_skills">get_characters_character_id_skills</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_status">get_status</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_ancestries">get_universe_ancestries</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_asteroid_belts_asteroid_belt_id">get_universe_asteroid_belts_asteroid_belt_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_bloodlines">get_universe_bloodlines</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_categories">get_universe_categories</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_categories_category_id">get_universe_categories_category_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_constellations">get_universe_constellations</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_constellations_constellation_id">get_universe_constellations_constellation_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_factions">get_universe_factions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_graphics">get_universe_graphics</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_graphics_graphic_id">get_universe_graphics_graphic_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_groups">get_universe_groups</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_groups_group_id">get_universe_groups_group_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_moons_moon_id">get_universe_moons_moon_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_planets_planet_id">get_universe_planets_planet_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_races">get_universe_races</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_regions">get_universe_regions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_regions_region_id">get_universe_regions_region_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_stargates_stargate_id">get_universe_stargates_stargate_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_stars_star_id">get_universe_stars_star_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_stations_station_id">get_universe_stations_station_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_structures">get_universe_structures</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_structures_structure_id">get_universe_structures_structure_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_system_jumps">get_universe_system_jumps</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_system_kills">get_universe_system_kills</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_systems">get_universe_systems</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_systems_system_id">get_universe_systems_system_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_types">get_universe_types</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_universe_types_type_id">get_universe_types_type_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_universe_ids">post_universe_ids</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_universe_names">post_universe_names</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_autopilot_waypoint">post_ui_autopilot_waypoint</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_openwindow_contract">post_ui_openwindow_contract</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_openwindow_information">post_ui_openwindow_information</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_openwindow_marketdetails">post_ui_openwindow_marketdetails</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post_ui_openwindow_newmail">post_ui_openwindow_newmail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_wallet">get_characters_character_id_wallet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_wallet_journal">get_characters_character_id_wallet_journal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_characters_character_id_wallet_transactions">get_characters_character_id_wallet_transactions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_wallets">get_corporations_corporation_id_wallets</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_wallets_division_journal">get_corporations_corporation_id_wallets_division_journal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_corporations_corporation_id_wallets_division_transactions">get_corporations_corporation_id_wallets_division_transactions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_wars">get_wars</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_wars_war_id">get_wars_war_id</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_wars_war_id_killmails">get_wars_war_id_killmails</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">199/398</span></h1>
+
+<table class="files-summary" data-ice="files" data-use-coverage="true">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Identifier</td>
+      <td class="coverage">Document</td>
+      <td style="display: none;">Size</td>
+      <td style="display: none;">Lines</td>
+      <td style="display: none;">Updated</td>
+    </tr>
+  </thead>
+  <tbody>
+    
+  <tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Alliance.js.html#errorLines=139,144,149,154">esi/Alliance.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_alliances">get_alliances</a></span>
+<span><a href="function/index.html#static-function-get_alliances_alliance_id">get_alliances_alliance_id</a></span>
+<span><a href="function/index.html#static-function-get_alliances_alliance_id_corporations">get_alliances_alliance_id_corporations</a></span>
+<span><a href="function/index.html#static-function-get_alliances_alliance_id_icons">get_alliances_alliance_id_icons</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">4/8</span></td>
+      <td style="display: none;" data-ice="size">4443 byte</td>
+      <td style="display: none;" data-ice="lines">157</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Assets.js.html#errorLines=206,217,228,239,250,261">esi/Assets.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_assets">get_characters_character_id_assets</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_assets">get_corporations_corporation_id_assets</a></span>
+<span><a href="function/index.html#static-function-post_characters_character_id_assets_locations">post_characters_character_id_assets_locations</a></span>
+<span><a href="function/index.html#static-function-post_characters_character_id_assets_names">post_characters_character_id_assets_names</a></span>
+<span><a href="function/index.html#static-function-post_corporations_corporation_id_assets_locations">post_corporations_corporation_id_assets_locations</a></span>
+<span><a href="function/index.html#static-function-post_corporations_corporation_id_assets_names">post_corporations_corporation_id_assets_names</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">6/12</span></td>
+      <td style="display: none;" data-ice="size">8387 byte</td>
+      <td style="display: none;" data-ice="lines">270</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Bookmarks.js.html#errorLines=157,168,179,190">esi/Bookmarks.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_bookmarks">get_characters_character_id_bookmarks</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_bookmarks_folders">get_characters_character_id_bookmarks_folders</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_bookmarks">get_corporations_corporation_id_bookmarks</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_bookmarks_folders">get_corporations_corporation_id_bookmarks_folders</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">4/8</span></td>
+      <td style="display: none;" data-ice="size">6249 byte</td>
+      <td style="display: none;" data-ice="lines">199</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Calendar.js.html#errorLines=150,161,172,183">esi/Calendar.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_calendar">get_characters_character_id_calendar</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_calendar_event_id">get_characters_character_id_calendar_event_id</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_calendar_event_id_attendees">get_characters_character_id_calendar_event_id_attendees</a></span>
+<span><a href="function/index.html#static-function-put_characters_character_id_calendar_event_id">put_characters_character_id_calendar_event_id</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">4/8</span></td>
+      <td style="display: none;" data-ice="size">6220 byte</td>
+      <td style="display: none;" data-ice="lines">192</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Character.js.html#errorLines=529,534,539,550,561,566,577,588,599,610,621,626,637,648,659">esi/Character.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id">get_characters_character_id</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_agents_research">get_characters_character_id_agents_research</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_blueprints">get_characters_character_id_blueprints</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_corporationhistory">get_characters_character_id_corporationhistory</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_fatigue">get_characters_character_id_fatigue</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_medals">get_characters_character_id_medals</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_notifications">get_characters_character_id_notifications</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_notifications_contacts">get_characters_character_id_notifications_contacts</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_portrait">get_characters_character_id_portrait</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_roles">get_characters_character_id_roles</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_standings">get_characters_character_id_standings</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_stats">get_characters_character_id_stats</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_titles">get_characters_character_id_titles</a></span>
+<span><a href="function/index.html#static-function-post_characters_affiliation">post_characters_affiliation</a></span>
+<span><a href="function/index.html#static-function-post_characters_character_id_cspa">post_characters_character_id_cspa</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">15/30</span></td>
+      <td style="display: none;" data-ice="size">20094 byte</td>
+      <td style="display: none;" data-ice="lines">668</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Clones.js.html#errorLines=77,88">esi/Clones.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_clones">get_characters_character_id_clones</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_implants">get_characters_character_id_implants</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">2/4</span></td>
+      <td style="display: none;" data-ice="size">2841 byte</td>
+      <td style="display: none;" data-ice="lines">97</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Contacts.js.html#errorLines=325,336,347,358,369,380,391,402,413">esi/Contacts.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-delete_characters_character_id_contacts">delete_characters_character_id_contacts</a></span>
+<span><a href="function/index.html#static-function-get_alliances_alliance_id_contacts">get_alliances_alliance_id_contacts</a></span>
+<span><a href="function/index.html#static-function-get_alliances_alliance_id_contacts_labels">get_alliances_alliance_id_contacts_labels</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_contacts">get_characters_character_id_contacts</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_contacts_labels">get_characters_character_id_contacts_labels</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_contacts">get_corporations_corporation_id_contacts</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_contacts_labels">get_corporations_corporation_id_contacts_labels</a></span>
+<span><a href="function/index.html#static-function-post_characters_character_id_contacts">post_characters_character_id_contacts</a></span>
+<span><a href="function/index.html#static-function-put_characters_character_id_contacts">put_characters_character_id_contacts</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">9/18</span></td>
+      <td style="display: none;" data-ice="size">12820 byte</td>
+      <td style="display: none;" data-ice="lines">422</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Contracts.js.html#errorLines=352,363,374,385,390,395,400,411,422">esi/Contracts.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_contracts">get_characters_character_id_contracts</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_contracts_contract_id_bids">get_characters_character_id_contracts_contract_id_bids</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_contracts_contract_id_items">get_characters_character_id_contracts_contract_id_items</a></span>
+<span><a href="function/index.html#static-function-get_contracts_public_bids_contract_id">get_contracts_public_bids_contract_id</a></span>
+<span><a href="function/index.html#static-function-get_contracts_public_items_contract_id">get_contracts_public_items_contract_id</a></span>
+<span><a href="function/index.html#static-function-get_contracts_public_region_id">get_contracts_public_region_id</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_contracts">get_corporations_corporation_id_contracts</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_contracts_contract_id_bids">get_corporations_corporation_id_contracts_contract_id_bids</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_contracts_contract_id_items">get_corporations_corporation_id_contracts_contract_id_items</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">9/18</span></td>
+      <td style="display: none;" data-ice="size">14002 byte</td>
+      <td style="display: none;" data-ice="lines">431</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Corporation.js.html#errorLines=1004,1015,1026,1037,1048,1059,1070,863,868,873,878,889,900,911,922,927,938,949,960,971,982,993">esi/Corporation.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_corporations_corporation_id">get_corporations_corporation_id</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_alliancehistory">get_corporations_corporation_id_alliancehistory</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_blueprints">get_corporations_corporation_id_blueprints</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_containers_logs">get_corporations_corporation_id_containers_logs</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_divisions">get_corporations_corporation_id_divisions</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_facilities">get_corporations_corporation_id_facilities</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_icons">get_corporations_corporation_id_icons</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_medals">get_corporations_corporation_id_medals</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_medals_issued">get_corporations_corporation_id_medals_issued</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_members">get_corporations_corporation_id_members</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_members_limit">get_corporations_corporation_id_members_limit</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_members_titles">get_corporations_corporation_id_members_titles</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_membertracking">get_corporations_corporation_id_membertracking</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_roles">get_corporations_corporation_id_roles</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_roles_history">get_corporations_corporation_id_roles_history</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_shareholders">get_corporations_corporation_id_shareholders</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_standings">get_corporations_corporation_id_standings</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_starbases">get_corporations_corporation_id_starbases</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_starbases_starbase_id">get_corporations_corporation_id_starbases_starbase_id</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_structures">get_corporations_corporation_id_structures</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_titles">get_corporations_corporation_id_titles</a></span>
+<span><a href="function/index.html#static-function-get_corporations_npccorps">get_corporations_npccorps</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">22/44</span></td>
+      <td style="display: none;" data-ice="size">33882 byte</td>
+      <td style="display: none;" data-ice="lines">1079</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Dogma.js.html#errorLines=172,177,182,187,192">esi/Dogma.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_dogma_attributes">get_dogma_attributes</a></span>
+<span><a href="function/index.html#static-function-get_dogma_attributes_attribute_id">get_dogma_attributes_attribute_id</a></span>
+<span><a href="function/index.html#static-function-get_dogma_dynamic_items_type_id_item_id">get_dogma_dynamic_items_type_id_item_id</a></span>
+<span><a href="function/index.html#static-function-get_dogma_effects">get_dogma_effects</a></span>
+<span><a href="function/index.html#static-function-get_dogma_effects_effect_id">get_dogma_effects_effect_id</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">5/10</span></td>
+      <td style="display: none;" data-ice="size">5496 byte</td>
+      <td style="display: none;" data-ice="lines">195</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/FactionWarfare.js.html#errorLines=263,274,285,290,295,300,305,310">esi/FactionWarfare.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_fw_stats">get_characters_character_id_fw_stats</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_fw_stats">get_corporations_corporation_id_fw_stats</a></span>
+<span><a href="function/index.html#static-function-get_fw_leaderboards">get_fw_leaderboards</a></span>
+<span><a href="function/index.html#static-function-get_fw_leaderboards_characters">get_fw_leaderboards_characters</a></span>
+<span><a href="function/index.html#static-function-get_fw_leaderboards_corporations">get_fw_leaderboards_corporations</a></span>
+<span><a href="function/index.html#static-function-get_fw_stats">get_fw_stats</a></span>
+<span><a href="function/index.html#static-function-get_fw_systems">get_fw_systems</a></span>
+<span><a href="function/index.html#static-function-get_fw_wars">get_fw_wars</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">8/16</span></td>
+      <td style="display: none;" data-ice="size">9113 byte</td>
+      <td style="display: none;" data-ice="lines">313</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Fittings.js.html#errorLines=104,115,126">esi/Fittings.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-delete_characters_character_id_fittings_fitting_id">delete_characters_character_id_fittings_fitting_id</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_fittings">get_characters_character_id_fittings</a></span>
+<span><a href="function/index.html#static-function-post_characters_character_id_fittings">post_characters_character_id_fittings</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">3/6</span></td>
+      <td style="display: none;" data-ice="size">3979 byte</td>
+      <td style="display: none;" data-ice="lines">135</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Fleets.js.html#errorLines=475,486,497,508,519,530,541,552,563,574,585,596,607,618">esi/Fleets.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-delete_fleets_fleet_id_members_member_id">delete_fleets_fleet_id_members_member_id</a></span>
+<span><a href="function/index.html#static-function-delete_fleets_fleet_id_squads_squad_id">delete_fleets_fleet_id_squads_squad_id</a></span>
+<span><a href="function/index.html#static-function-delete_fleets_fleet_id_wings_wing_id">delete_fleets_fleet_id_wings_wing_id</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_fleet">get_characters_character_id_fleet</a></span>
+<span><a href="function/index.html#static-function-get_fleets_fleet_id">get_fleets_fleet_id</a></span>
+<span><a href="function/index.html#static-function-get_fleets_fleet_id_members">get_fleets_fleet_id_members</a></span>
+<span><a href="function/index.html#static-function-get_fleets_fleet_id_wings">get_fleets_fleet_id_wings</a></span>
+<span><a href="function/index.html#static-function-post_fleets_fleet_id_members">post_fleets_fleet_id_members</a></span>
+<span><a href="function/index.html#static-function-post_fleets_fleet_id_wings">post_fleets_fleet_id_wings</a></span>
+<span><a href="function/index.html#static-function-post_fleets_fleet_id_wings_wing_id_squads">post_fleets_fleet_id_wings_wing_id_squads</a></span>
+<span><a href="function/index.html#static-function-put_fleets_fleet_id">put_fleets_fleet_id</a></span>
+<span><a href="function/index.html#static-function-put_fleets_fleet_id_members_member_id">put_fleets_fleet_id_members_member_id</a></span>
+<span><a href="function/index.html#static-function-put_fleets_fleet_id_squads_squad_id">put_fleets_fleet_id_squads_squad_id</a></span>
+<span><a href="function/index.html#static-function-put_fleets_fleet_id_wings_wing_id">put_fleets_fleet_id_wings_wing_id</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">14/28</span></td>
+      <td style="display: none;" data-ice="size">17588 byte</td>
+      <td style="display: none;" data-ice="lines">627</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Industry.js.html#errorLines=321,332,343,354,365,376,387,392">esi/Industry.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_industry_jobs">get_characters_character_id_industry_jobs</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_mining">get_characters_character_id_mining</a></span>
+<span><a href="function/index.html#static-function-get_corporation_corporation_id_mining_extractions">get_corporation_corporation_id_mining_extractions</a></span>
+<span><a href="function/index.html#static-function-get_corporation_corporation_id_mining_observers">get_corporation_corporation_id_mining_observers</a></span>
+<span><a href="function/index.html#static-function-get_corporation_corporation_id_mining_observers_observer_id">get_corporation_corporation_id_mining_observers_observer_id</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_industry_jobs">get_corporations_corporation_id_industry_jobs</a></span>
+<span><a href="function/index.html#static-function-get_industry_facilities">get_industry_facilities</a></span>
+<span><a href="function/index.html#static-function-get_industry_systems">get_industry_systems</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">8/16</span></td>
+      <td style="display: none;" data-ice="size">12432 byte</td>
+      <td style="display: none;" data-ice="lines">395</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Insurance.js.html#errorLines=40">esi/Insurance.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_insurance_prices">get_insurance_prices</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">1/2</span></td>
+      <td style="display: none;" data-ice="size">1368 byte</td>
+      <td style="display: none;" data-ice="lines">43</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Location.js.html#errorLines=114,125,136">esi/Location.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_location">get_characters_character_id_location</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_online">get_characters_character_id_online</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_ship">get_characters_character_id_ship</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">3/6</span></td>
+      <td style="display: none;" data-ice="size">4462 byte</td>
+      <td style="display: none;" data-ice="lines">145</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Loyalty.js.html#errorLines=77,88">esi/Loyalty.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_loyalty_points">get_characters_character_id_loyalty_points</a></span>
+<span><a href="function/index.html#static-function-get_loyalty_stores_corporation_id_offers">get_loyalty_stores_corporation_id_offers</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">2/4</span></td>
+      <td style="display: none;" data-ice="size">2834 byte</td>
+      <td style="display: none;" data-ice="lines">91</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Mail.js.html#errorLines=313,324,335,346,357,368,379,390,401">esi/Mail.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-delete_characters_character_id_mail_labels_label_id">delete_characters_character_id_mail_labels_label_id</a></span>
+<span><a href="function/index.html#static-function-delete_characters_character_id_mail_mail_id">delete_characters_character_id_mail_mail_id</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_mail">get_characters_character_id_mail</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_mail_labels">get_characters_character_id_mail_labels</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_mail_lists">get_characters_character_id_mail_lists</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_mail_mail_id">get_characters_character_id_mail_mail_id</a></span>
+<span><a href="function/index.html#static-function-post_characters_character_id_mail">post_characters_character_id_mail</a></span>
+<span><a href="function/index.html#static-function-post_characters_character_id_mail_labels">post_characters_character_id_mail_labels</a></span>
+<span><a href="function/index.html#static-function-put_characters_character_id_mail_mail_id">put_characters_character_id_mail_mail_id</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">9/18</span></td>
+      <td style="display: none;" data-ice="size">12191 byte</td>
+      <td style="display: none;" data-ice="lines">410</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Market.js.html#errorLines=414,425,436,447,458,463,468,473,484,489,494">esi/Market.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_orders">get_characters_character_id_orders</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_orders_history">get_characters_character_id_orders_history</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_orders">get_corporations_corporation_id_orders</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_orders_history">get_corporations_corporation_id_orders_history</a></span>
+<span><a href="function/index.html#static-function-get_markets_groups">get_markets_groups</a></span>
+<span><a href="function/index.html#static-function-get_markets_groups_market_group_id">get_markets_groups_market_group_id</a></span>
+<span><a href="function/index.html#static-function-get_markets_prices">get_markets_prices</a></span>
+<span><a href="function/index.html#static-function-get_markets_region_id_history">get_markets_region_id_history</a></span>
+<span><a href="function/index.html#static-function-get_markets_region_id_orders">get_markets_region_id_orders</a></span>
+<span><a href="function/index.html#static-function-get_markets_region_id_types">get_markets_region_id_types</a></span>
+<span><a href="function/index.html#static-function-get_markets_structures_structure_id">get_markets_structures_structure_id</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">11/22</span></td>
+      <td style="display: none;" data-ice="size">15180 byte</td>
+      <td style="display: none;" data-ice="lines">497</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Opportunities.js.html#errorLines=178,189,194,199,204">esi/Opportunities.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_opportunities">get_characters_character_id_opportunities</a></span>
+<span><a href="function/index.html#static-function-get_opportunities_groups">get_opportunities_groups</a></span>
+<span><a href="function/index.html#static-function-get_opportunities_groups_group_id">get_opportunities_groups_group_id</a></span>
+<span><a href="function/index.html#static-function-get_opportunities_tasks">get_opportunities_tasks</a></span>
+<span><a href="function/index.html#static-function-get_opportunities_tasks_task_id">get_opportunities_tasks_task_id</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">5/10</span></td>
+      <td style="display: none;" data-ice="size">6116 byte</td>
+      <td style="display: none;" data-ice="lines">207</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/PlanetaryInteraction.js.html#errorLines=156,167,178,189">esi/PlanetaryInteraction.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_planets">get_characters_character_id_planets</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_planets_planet_id">get_characters_character_id_planets_planet_id</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_customs_offices">get_corporations_corporation_id_customs_offices</a></span>
+<span><a href="function/index.html#static-function-get_universe_schematics_schematic_id">get_universe_schematics_schematic_id</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">4/8</span></td>
+      <td style="display: none;" data-ice="size">6108 byte</td>
+      <td style="display: none;" data-ice="lines">192</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Routes.js.html#errorLines=48">esi/Routes.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_route_origin_destination">get_route_origin_destination</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">1/2</span></td>
+      <td style="display: none;" data-ice="size">1638 byte</td>
+      <td style="display: none;" data-ice="lines">51</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Search.js.html#errorLines=100,89">esi/Search.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_search">get_characters_character_id_search</a></span>
+<span><a href="function/index.html#static-function-get_search">get_search</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">2/4</span></td>
+      <td style="display: none;" data-ice="size">3383 byte</td>
+      <td style="display: none;" data-ice="lines">103</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Skills.js.html#errorLines=114,125,136">esi/Skills.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_attributes">get_characters_character_id_attributes</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_skillqueue">get_characters_character_id_skillqueue</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_skills">get_characters_character_id_skills</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">3/6</span></td>
+      <td style="display: none;" data-ice="size">4305 byte</td>
+      <td style="display: none;" data-ice="lines">145</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Status.js.html#errorLines=36">esi/Status.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_status">get_status</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">1/2</span></td>
+      <td style="display: none;" data-ice="size">958 byte</td>
+      <td style="display: none;" data-ice="lines">39</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Universe.js.html#errorLines=1015,1020,1025,1030,1035,1040,1045,1050,1055,1060,1065,1070,1075,1080,1085,1090,1095,1100,1105,1110,1115,1120,1125,1130,1141,1146,1151,1156,1161,1166">esi/Universe.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_universe_ancestries">get_universe_ancestries</a></span>
+<span><a href="function/index.html#static-function-get_universe_asteroid_belts_asteroid_belt_id">get_universe_asteroid_belts_asteroid_belt_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_bloodlines">get_universe_bloodlines</a></span>
+<span><a href="function/index.html#static-function-get_universe_categories">get_universe_categories</a></span>
+<span><a href="function/index.html#static-function-get_universe_categories_category_id">get_universe_categories_category_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_constellations">get_universe_constellations</a></span>
+<span><a href="function/index.html#static-function-get_universe_constellations_constellation_id">get_universe_constellations_constellation_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_factions">get_universe_factions</a></span>
+<span><a href="function/index.html#static-function-get_universe_graphics">get_universe_graphics</a></span>
+<span><a href="function/index.html#static-function-get_universe_graphics_graphic_id">get_universe_graphics_graphic_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_groups">get_universe_groups</a></span>
+<span><a href="function/index.html#static-function-get_universe_groups_group_id">get_universe_groups_group_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_moons_moon_id">get_universe_moons_moon_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_planets_planet_id">get_universe_planets_planet_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_races">get_universe_races</a></span>
+<span><a href="function/index.html#static-function-get_universe_regions">get_universe_regions</a></span>
+<span><a href="function/index.html#static-function-get_universe_regions_region_id">get_universe_regions_region_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_stargates_stargate_id">get_universe_stargates_stargate_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_stars_star_id">get_universe_stars_star_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_stations_station_id">get_universe_stations_station_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_structures">get_universe_structures</a></span>
+<span><a href="function/index.html#static-function-get_universe_structures_structure_id">get_universe_structures_structure_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_system_jumps">get_universe_system_jumps</a></span>
+<span><a href="function/index.html#static-function-get_universe_system_kills">get_universe_system_kills</a></span>
+<span><a href="function/index.html#static-function-get_universe_systems">get_universe_systems</a></span>
+<span><a href="function/index.html#static-function-get_universe_systems_system_id">get_universe_systems_system_id</a></span>
+<span><a href="function/index.html#static-function-get_universe_types">get_universe_types</a></span>
+<span><a href="function/index.html#static-function-get_universe_types_type_id">get_universe_types_type_id</a></span>
+<span><a href="function/index.html#static-function-post_universe_ids">post_universe_ids</a></span>
+<span><a href="function/index.html#static-function-post_universe_names">post_universe_names</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">30/60</span></td>
+      <td style="display: none;" data-ice="size">34767 byte</td>
+      <td style="display: none;" data-ice="lines">1169</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/UserInterface.js.html#errorLines=145,156,167,178,189">esi/UserInterface.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-post_ui_autopilot_waypoint">post_ui_autopilot_waypoint</a></span>
+<span><a href="function/index.html#static-function-post_ui_openwindow_contract">post_ui_openwindow_contract</a></span>
+<span><a href="function/index.html#static-function-post_ui_openwindow_information">post_ui_openwindow_information</a></span>
+<span><a href="function/index.html#static-function-post_ui_openwindow_marketdetails">post_ui_openwindow_marketdetails</a></span>
+<span><a href="function/index.html#static-function-post_ui_openwindow_newmail">post_ui_openwindow_newmail</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">5/10</span></td>
+      <td style="display: none;" data-ice="size">5789 byte</td>
+      <td style="display: none;" data-ice="lines">198</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Wallet.js.html#errorLines=248,259,270,281,292,303">esi/Wallet.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_characters_character_id_wallet">get_characters_character_id_wallet</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_wallet_journal">get_characters_character_id_wallet_journal</a></span>
+<span><a href="function/index.html#static-function-get_characters_character_id_wallet_transactions">get_characters_character_id_wallet_transactions</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_wallets">get_corporations_corporation_id_wallets</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_wallets_division_journal">get_corporations_corporation_id_wallets_division_journal</a></span>
+<span><a href="function/index.html#static-function-get_corporations_corporation_id_wallets_division_transactions">get_corporations_corporation_id_wallets_division_transactions</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">6/12</span></td>
+      <td style="display: none;" data-ice="size">10043 byte</td>
+      <td style="display: none;" data-ice="lines">312</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/Wars.js.html#errorLines=110,115,120">esi/Wars.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-get_wars">get_wars</a></span>
+<span><a href="function/index.html#static-function-get_wars_war_id">get_wars_war_id</a></span>
+<span><a href="function/index.html#static-function-get_wars_war_id_killmails">get_wars_war_id_killmails</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">3/6</span></td>
+      <td style="display: none;" data-ice="size">3287 byte</td>
+      <td style="display: none;" data-ice="lines">123</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/esi/types.js.html">esi/types.js</a></span></td>
+      <td data-ice="identifier" class="identifiers">-</td>
+      <td class="coverage"><span data-ice="coverage">-</span></td>
+      <td style="display: none;" data-ice="size">66 byte</td>
+      <td style="display: none;" data-ice="lines">2</td>
+      <td style="display: none;" data-ice="updated">2018-09-05 12:56:09 (UTC)</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

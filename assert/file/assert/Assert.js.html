@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">assert/Assert.js | @hiherto-elements/assert</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A simple assertion libbrary refactred to es6"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@hiherto-elements/assert"><meta property="twitter:description" content="A simple assertion libbrary refactred to es6"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/hiherto-elements/es-next-modules"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/assert/Assert.js~Assert.html">Assert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/assert/InvalidValueException.js~InvalidValueException.html">InvalidValueException</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/assert/MessageFactory.js~MessageFactory.html">MessageFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/assert/ValueConverter.js~ValueConverter.html">ValueConverter</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">assert/Assert.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">	
+import InvalidValueException from &apos;./InvalidValueException.js&apos;;
+import ValueConverter from &apos;./ValueConverter.js&apos;;
+
+export class Assert
+{
+    /**
+     * @param {object} objectValue
+     * @param {function} expectedInstance
+     * @param {string} [message]
+     */
+    static instanceOf(objectValue, expectedInstance, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.instanceOf needs to be a valid string.&quot;);
+
+        if (typeof objectValue !== &apos;object&apos;) {
+            throw InvalidValueException.expected(&quot;object&quot;, objectValue, message);
+        }
+
+        if (!(objectValue instanceof expectedInstance)) {
+            throw InvalidValueException.expected(
+                expectedInstance.name,
+                objectValue,
+                message.length ? message : &quot;Expected instance of \&quot;${expected}\&quot; but got \&quot;${received}\&quot;.&quot;
+            );
+        }
+    }
+
+    static instanceOneOf(objectValue, expectedInstances, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.instanceOf needs to be a valid string.&quot;);
+        this.array(expectedInstances);
+
+        let instance = expectedInstances.find((expectedInstance) =&gt; {
+            return (objectValue instanceof expectedInstance)
+        });
+
+        if (instance === undefined) {
+            throw InvalidValueException.expected(
+                expectedInstances.map((instance) =&gt; {return ValueConverter.toString(instance); }).join(&apos;, &apos;),
+                objectValue,
+                message.length ? message : &quot;Expected instance of \&quot;${expected}\&quot; but got \&quot;${received}\&quot;.&quot;
+            );
+        }
+    }
+
+    /**
+     * @param {int} integerValue
+     * @param {string} [message]
+     */
+    static integer(integerValue, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.integer needs to be a valid string.&quot;);
+
+        if (!Number.isInteger(integerValue)) {
+            throw InvalidValueException.expected(&quot;integer&quot;, integerValue, message);
+        }
+    }
+
+    /**
+     * @param {number} numberValue
+     * @param {string} [message]
+     */
+    static number(numberValue, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.number needs to be a valid string.&quot;);
+
+        if (typeof numberValue !== &apos;number&apos;) {
+            throw InvalidValueException.expected(&quot;number&quot;, numberValue);
+        }
+    }
+
+    /**
+     * @param {string} stringValue
+     * @param {string} [message]
+     */
+    static string(stringValue, message = &quot;&quot;)
+    {
+        if (typeof message !== &quot;string&quot;) {
+            throw &quot;Custom error message passed to Assert.string needs to be a valid string.&quot;;
+        }
+
+        if (typeof stringValue !== &quot;string&quot;) {
+            throw InvalidValueException.expected(&quot;string&quot;, stringValue, message);
+        }
+    }
+
+    /**
+     * @param {boolean} booleanValue
+     * @param {string} [message]
+     */
+    static boolean(booleanValue, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.boolean needs to be a valid string.&quot;);
+
+        if (typeof booleanValue !== &apos;boolean&apos;) {
+            throw InvalidValueException.expected(&quot;boolean&quot;, booleanValue, message);
+        }
+    }
+
+    /**
+     * @param {boolean} value
+     * @param {string} [message]
+     */
+    static true(value, message = &quot;&quot;)
+    {
+        this.boolean(value);
+        this.string(message, &quot;Custom error message passed to Assert.true needs to be a valid string.&quot;);
+
+        if (value !== true) {
+            throw InvalidValueException.expected(&quot;true&quot;, value, message);
+        }
+    }
+
+    /**
+     * @param {boolean} value
+     * @param {string} [message]
+     */
+    static false(value, message = &quot;&quot;)
+    {
+        this.boolean(value);
+        this.string(message, &quot;Custom error message passed to Assert.false needs to be a valid string.&quot;);
+
+        if (value !== false) {
+            throw InvalidValueException.expected(&quot;false&quot;, value, message);
+        }
+    }
+    
+    /**
+     * @param value
+     * @param expectedValue
+     * @param {string} [message]
+     */
+    static equal(value, expectedValue, message = &quot;&quot;)
+    {
+        if (typeof value !== &apos;object&apos;) {
+            this.true(value === expectedValue, message ? message : `Expected value ${ValueConverter.toString(value)} to be equals ${ValueConverter.toString(expectedValue)} but it&apos;s not.`);
+        } else {
+            this.objectEqual(value, expectedValue, message ? message : `Expected value ${ValueConverter.toString(value)} to be equals ${ValueConverter.toString(expectedValue)} but it&apos;s not.`);
+        }
+    }
+
+    
+
+    /**
+     * @param value
+     * @param otherValue
+     * @param {string} [message]
+     */
+    static deepEqual(value, otherValue, message = &quot;&quot;)
+    {        
+        this.string(message, &quot;Custom error message passed to Assert.false needs to be a valid string.&quot;);
+        
+        let valueJson = JSON.stringify(value);
+        let otherValueJson = JSON.stringify(otherValue);
+        
+        if (valueJson !== otherValueJson) {
+            throw InvalidValueException.expected(&quot;value to deeply equal otherValue&quot;, JSON.stringify(value) + &apos; !== &apos; + JSON.stringify(otherValue) , message);
+        }
+    }
+
+    /**
+     * @param value
+     * @param otherValue
+     * @param {string} [message]
+     */
+    static strictEqual(value, otherValue, message = &quot;&quot;)
+    {        
+        this.string(message, &quot;Custom error message passed to Assert.false needs to be a valid string.&quot;);
+
+        if (value !== otherValue) {
+            throw InvalidValueException.expected(&quot;value to strictly equal otherValue&quot;, value + &apos; !== &apos; + otherValue , message);
+        }
+    }
+
+    /**
+     * @param value
+     * @param otherValue
+     * @param {string} [message]
+     */
+    static equal(value, otherValue, message = &quot;&quot;)
+    {        
+        this.string(message, &quot;Custom error message passed to Assert.false needs to be a valid string.&quot;);
+
+        if (value != otherValue) {
+            throw InvalidValueException.expected(&quot;value to equal otherValue&quot;, value + &apos; != &apos; + otherValue , message);
+        }
+    }
+
+    /**
+     * @param {boolean} value
+     * @param {string} [message]
+     */
+    static ok(value, message = &quot;&quot;)
+    {        
+        this.string(message, &quot;Custom error message passed to Assert.false needs to be a valid string.&quot;);
+
+        if (!value) {
+            throw InvalidValueException.expected(&quot;truthy&quot;, typeof value + &apos; &apos; + value , message);
+        }
+    }
+
+
+    /**
+     * @param {object} objectValue
+     * @param {string} [message]
+     */
+    static object(objectValue, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.object needs to be a valid string.&quot;);
+
+        if (typeof objectValue !== &apos;object&apos;) {
+            throw InvalidValueException.expected(&quot;object&quot;, objectValue, message);
+        }
+    }
+
+    /**
+     * @param {string} expectedFunctionName
+     * @param {object} objectValue
+     * @param {string} [message]
+     */
+    static hasFunction(expectedFunctionName, objectValue, message = &quot;&quot;)
+    {
+        this.string(expectedFunctionName);
+        this.object(objectValue);
+        this.string(message, &quot;Custom error message passed to Assert.hasFunction needs to be a valid string.&quot;);
+
+        if (typeof objectValue[expectedFunctionName] !== &apos;function&apos;) {
+            throw InvalidValueException.expected(`object to has function &quot;${expectedFunctionName}&quot;`, objectValue, message);
+        }
+    }
+
+    /**
+     * @param {string} expectedPropertyName
+     * @param {object} objectValue
+     * @param {string} [message]
+     */
+    static hasProperty(expectedPropertyName, objectValue, message = &quot;&quot;)
+    {
+        this.string(expectedPropertyName);
+        this.object(objectValue);
+        this.string(message, &quot;Custom error message passed to Assert.hasProperty needs to be a valid string.&quot;);
+
+        if (typeof objectValue[expectedPropertyName] === &apos;undefined&apos;) {
+            throw InvalidValueException.expected(`object to has property &quot;${expectedPropertyName}&quot;`, objectValue, message);
+        }
+    }
+
+    /**
+     * @param {array} expectedProperties
+     * @param {object} objectValue
+     * @param {string} [message]
+     */
+    static hasProperties(expectedProperties, objectValue, message = &quot;&quot;)
+    {
+        this.object(objectValue);
+        this.containsOnlyString(expectedProperties);
+        this.string(message, &quot;Custom error message passed to Assert.hasProperties needs to be a valid string.&quot;);
+
+        expectedProperties.map((expectedProperty) =&gt; {
+            if (typeof objectValue[expectedProperty] === &apos;undefined&apos;) {
+                throw InvalidValueException.expected(`object to has properties &quot;${expectedProperties.join(&apos;, &apos;)}&quot;`, objectValue, message);
+            }
+        });
+    }
+
+    /**
+     * @param {array} arrayValue
+     * @param {string} [message]
+     */
+    static array(arrayValue, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.array needs to be a valid string.&quot;);
+
+        if (!Array.isArray(arrayValue)) {
+            throw InvalidValueException.expected(&quot;array&quot;, arrayValue, message);
+        }
+    }
+
+    /**
+     * @param {*} value
+     * @param {array} expectedElements
+     * @param {string} [message]
+     */
+    static oneOf(value, expectedElements, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.array needs to be a valid string.&quot;);
+        this.array(expectedElements);
+
+        let foundValue = expectedElements.find((expectedInstance) =&gt; {
+            return value === expectedInstance;
+        });
+
+        if (foundValue === undefined) {
+            throw InvalidValueException.expected(
+                expectedElements.map((elemenet) =&gt; {return ValueConverter.toString(elemenet); }).join(&apos;, &apos;),
+                value,
+                message.length ? message : &quot;Expected one of \&quot;${expected}\&quot; but got \&quot;${received}\&quot;.&quot;
+            );
+        }
+    }
+
+    /**
+     * @param {function} functionValue
+     * @param {string} [message]
+     */
+    static isFunction(functionValue, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.isFunction needs to be a valid string.&quot;);
+
+        if (typeof functionValue !== &apos;function&apos;) {
+            throw InvalidValueException.expected(&quot;function&quot;, functionValue, message);
+        }
+    }
+
+    /**
+     * @param {int} expected
+     * @param {int} integerValue
+     * @param {string} [message]
+     */
+    static greaterThan(expected, integerValue, message = &quot;&quot;)
+    {
+        this.number(expected);
+        this.number(integerValue);
+        this.string(message, &quot;Custom error message passed to Assert.greaterThan needs to be a valid string.&quot;);
+
+        if (integerValue &lt;= expected) {
+            throw message.length &gt; 0 ? message : `Expected value ${integerValue} to be greater than ${expected}`;
+        }
+    }
+
+    /**
+     * @param {int} expected
+     * @param {int} integerValue
+     * @param {string} [message]
+     */
+    static greaterThanOrEqual(expected, integerValue, message = &quot;&quot;)
+    {
+        this.number(expected);
+        this.number(integerValue);
+        this.string(message, &quot;Custom error message passed to Assert.greaterThanOrEqual needs to be a valid string.&quot;);
+
+        if (integerValue &lt; expected) {
+            throw message.length &gt; 0 ? message : `Expected value ${integerValue} to be greater than ${expected} or equal`;
+        }
+    }
+
+    /**
+     * @param {int} expected
+     * @param {int} integerValue
+     * @param {string} [message]
+     */
+    static lessThan(expected, integerValue, message = &quot;&quot;)
+    {
+        this.number(expected);
+        this.number(integerValue);
+        this.string(message, &quot;Custom error message passed to Assert.lessThan needs to be a valid string.&quot;);
+
+        if (integerValue &gt;= expected) {
+            throw message.length &gt; 0 ? message : `Expected value ${integerValue} to be less than ${expected}`;
+        }
+    }
+
+    /**
+     * @param {int} expected
+     * @param {int} integerValue
+     * @param {string} [message]
+     */
+    static lessThanOrEqual(expected, integerValue, message = &quot;&quot;)
+    {
+        this.number(expected);
+        this.number(integerValue);
+        this.string(message, &quot;Custom error message passed to Assert.lessThanOrEqual needs to be a valid string.&quot;);
+
+        if (integerValue &gt; expected) {
+            throw message.length &gt; 0 ? message : `Expected value ${integerValue} to be less than ${expected} or equal`;
+        }
+    }
+
+    /**
+     * @param {array} arrayValue
+     * @param {function} expectedInstance
+     * @param {string} [message]
+     */
+    static containsOnly(arrayValue, expectedInstance, message = &quot;&quot;)
+    {
+        this.array(arrayValue, &quot;Assert.containsOnly require valid array, got \&quot;${received}\&quot;.&quot;);
+        this.string(message, &quot;Custom error message passed to Assert.containsOnly needs to be a valid string.&quot;);
+
+        for (let element of arrayValue) {
+            try {
+                this.instanceOf(element, expectedInstance, message);
+            } catch (error) {
+                throw InvalidValueException.expected(
+                    expectedInstance.name,
+                    element,
+                    message.length ? message : &quot;Expected instance of \&quot;${expected}\&quot; but got \&quot;${received}\&quot;.&quot;
+                );
+            }
+        }
+    }
+
+    /**
+     * @param {array} arrayValue
+     * @param {string} [message]
+     */
+    static containsOnlyString(arrayValue, message = &quot;&quot;)
+    {
+        this.array(arrayValue, &quot;Assert.containsOnlyString require valid array, got \&quot;${received}\&quot;.&quot;);
+        this.string(message, &quot;Custom error message passed to Assert.containsOnly needs to be a valid string.&quot;);
+
+        for (let element of arrayValue) {
+            try {
+                this.string(element, message);
+            } catch (error) {
+                throw InvalidValueException.expected(
+                    &apos;string&apos;,
+                    arrayValue.map((value) =&gt; { return ValueConverter.toString(value); }).join(&apos;, &apos;),
+                    message.length ? message : &quot;Expected array of \&quot;${expected}\&quot; but got \&quot;${received}\&quot;.&quot;
+                );
+            }
+        }
+    }
+
+    /**
+     * @param {array} arrayValue
+     * @param {string} [message]
+     */
+    static containsOnlyInteger(arrayValue, message = &quot;&quot;)
+    {
+        this.array(arrayValue, &quot;Assert.containsOnlyInteger require valid array, got \&quot;${received}\&quot;.&quot;);
+        this.string(message, &quot;Custom error message passed to Assert.containsOnly needs to be a valid string.&quot;);
+
+        for (let element of arrayValue) {
+            try {
+                this.integer(element, message);
+            } catch (error) {
+                throw InvalidValueException.expected(
+                    &apos;integer&apos;,
+                    arrayValue.map((value) =&gt; { return ValueConverter.toString(value); }).join(&apos;, &apos;),
+                    message.length ? message : &quot;Expected array of \&quot;${expected}\&quot; but got \&quot;${received}\&quot;.&quot;
+                );
+            }
+        }
+    }
+
+    /**
+     * @param {array} arrayValue
+     * @param {string} [message]
+     */
+    static containsOnlyNumber(arrayValue, message = &quot;&quot;)
+    {
+        this.array(arrayValue, &quot;Assert.containsOnlyNumber require valid array, got \&quot;${received}\&quot;.&quot;);
+        this.string(message, &quot;Custom error message passed to Assert.containsOnly needs to be a valid string.&quot;);
+
+        for (let element of arrayValue) {
+            try {
+                this.number(element, message);
+            } catch (error) {
+                throw InvalidValueException.expected(
+                    &apos;number&apos;,
+                    arrayValue.map((value) =&gt; { return ValueConverter.toString(value); }).join(&apos;, &apos;),
+                    message.length ? message : &quot;Expected array of \&quot;${expected}\&quot; but got \&quot;${received}\&quot;.&quot;
+                );
+            }
+        }
+    }
+
+    /**
+     * @param {int} expectedCount
+     * @param {array} arrayValue
+     * @param {string} [message]
+     */
+    static count(expectedCount, arrayValue, message = &quot;&quot;)
+    {
+        this.integer(expectedCount);
+        this.array(arrayValue);
+        this.string(message, &quot;Custom error message passed to Assert.count needs to be a valid string.&quot;);
+
+        if (arrayValue.length !== expectedCount) {
+            throw message.length ? message : `Expected count ${expectedCount}, got ${arrayValue.length}`;
+        }
+    }
+
+    /**
+     * @param {*} value
+     * @param {string} [message]
+     */
+    static notEmpty(value, message = &quot;&quot;)
+    {
+        this.string(message, &quot;Custom error message passed to Assert.empty needs to be a valid string.&quot;);
+
+        if (value.length === 0) {
+            throw InvalidValueException.expected(&quot;not empty value&quot;, value, message);
+        }
+    }
+
+
+    /**
+     * @param {int} integerValue
+     * @param {string} [message]
+     */
+    static oddNumber(integerValue, message = &quot;&quot;)
+    {
+        this.integer(integerValue);
+        this.string(message, &quot;Custom error message passed to Assert.oddNumber needs to be a valid string.&quot;);
+
+        if ((integerValue % 2) !== 1) {
+            throw InvalidValueException.expected(&quot;odd number&quot;, integerValue, message);
+        }
+    }
+
+    /**
+     * @param {int} integerValue
+     * @param {string} [message]
+     */
+    static evenNumber(integerValue, message = &quot;&quot;)
+    {
+        this.integer(integerValue);
+        this.string(message, &quot;Custom error message passed to Assert.evenNumber needs to be a valid string.&quot;);
+
+        if ((integerValue % 2) !== 0) {
+            throw InvalidValueException.expected(&quot;even number&quot;, integerValue, message);
+        }
+    }
+
+    /**
+     * @param {string} stringValue
+     * @param {string} [message]
+     */
+    static jsonString(stringValue, message = &quot;&quot;)
+    {
+        this.string(stringValue);
+        this.string(message, &quot;Custom error message passed to Assert.jsonString needs to be a valid string.&quot;);
+
+        try {
+            JSON.parse(stringValue);
+        } catch (e) {
+            throw InvalidValueException.expected(&quot;json string&quot;, stringValue, message);
+        }
+    }
+
+    /**
+     * @param {string} emailValue
+     * @param {string} [message]
+     */
+    static email(emailValue, message = &quot;&quot;)
+    {
+        this.string(emailValue);
+        this.string(message, &quot;Custom error message passed to Assert.email needs to be a valid string.&quot;);
+
+        let regexp = /^[-a-z0-9~!$%^&amp;*_=+}{\&apos;?]+(\.[-a-z0-9~!$%^&amp;*_=+}{\&apos;?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+
+        if (!regexp.test(emailValue)) {
+            throw InvalidValueException.expected(&quot;valid email address&quot;, emailValue, message);
+        }
+    }
+
+    /**
+     * @param {string} urlValue
+     * @param {string} [message]
+     */
+    static url(urlValue, message = &quot;&quot;)
+    {
+        this.string(urlValue);
+        this.string(message, &quot;Custom error message passed to Assert.url needs to be a valid string.&quot;);
+
+        let regexp = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&amp;=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&amp;=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&amp;;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
+
+        if (!regexp.test(urlValue)) {
+            throw InvalidValueException.expected(&quot;valid url&quot;, urlValue, message);
+        }
+    }
+
+    /**
+     * @param {string} uuidValue
+     * @param {string} [message]
+     */
+    static uuid(uuidValue, message = &quot;&quot;)
+    {
+        this.string(uuidValue);
+        this.string(message, &quot;Custom error message passed to Assert.uuid needs to be a valid string.&quot;);
+
+        let regexp = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+        if (!regexp.test(uuidValue)) {
+            throw InvalidValueException.expected(&quot;valid uuid&quot;, uuidValue, message);
+        }
+    }
+
+    /**
+     * @param {string} selector
+     * @param {HTMLElement|HTMLDocument} htmlElement
+     * @param {string} [message]
+     */
+    static hasElement(selector, htmlElement, message = &quot;&quot;)
+    {
+        this.string(selector);
+        this.instanceOneOf(htmlElement, [HTMLElement, HTMLDocument]);
+        this.string(message, &quot;Custom error message passed to Assert.hasProperty needs to be a valid string.&quot;);
+
+        if (null === htmlElement.querySelector(selector)) {
+            throw InvalidValueException.expected(`html element to has element under selector &quot;${selector}&quot;`, htmlElement.outerHTML, message);
+        }
+    }
+
+    /**
+     * @param {string} attributeName
+     * @param {HTMLElement} htmlElement
+     * @param {string} [message]
+     */
+    static hasAttribute(attributeName, htmlElement, message = &quot;&quot;)
+    {
+        this.string(attributeName);
+        this.instanceOf(htmlElement, HTMLElement);
+        this.string(message, &quot;Custom error message passed to Assert.hasAttribute needs to be a valid string.&quot;);
+
+        let attribute = htmlElement.getAttribute(attributeName);
+
+        if (null ===  attribute) {
+            throw InvalidValueException.expected(`html element with attribute &quot;${attributeName}&quot;`, htmlElement.outerHTML, message);
+        }
+    }
+
+    /**
+     * @param {array} attributes
+     * @param {HTMLElement} htmlElement
+     * @param {string} [message]
+     */
+    static hasAttributes(attributes, htmlElement, message = &quot;&quot;)
+    {
+        this.containsOnlyString(attributes);
+        this.instanceOf(htmlElement, HTMLElement);
+        this.string(message, &quot;Custom error message passed to Assert.hasAttributes needs to be a valid string.&quot;);
+
+        attributes.map((attribute) =&gt; {
+            try {
+                this.hasAttribute(attribute, htmlElement)
+            } catch (e) {
+                throw InvalidValueException.expected(`html element with attributes &quot;${attributes.join(&apos;, &apos;)}&quot;`, htmlElement.outerHTML, message);
+            }
+        })
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

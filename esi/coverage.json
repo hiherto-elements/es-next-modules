@@ -1,0 +1,380 @@
+{
+  "coverage": "50%",
+  "expectCount": 398,
+  "actualCount": 199,
+  "files": {
+    "esi/Alliance.js": {
+      "expectCount": 8,
+      "actualCount": 4,
+      "undocumentLines": [
+        139,
+        144,
+        149,
+        154
+      ]
+    },
+    "esi/Assets.js": {
+      "expectCount": 12,
+      "actualCount": 6,
+      "undocumentLines": [
+        206,
+        217,
+        228,
+        239,
+        250,
+        261
+      ]
+    },
+    "esi/Bookmarks.js": {
+      "expectCount": 8,
+      "actualCount": 4,
+      "undocumentLines": [
+        157,
+        168,
+        179,
+        190
+      ]
+    },
+    "esi/Calendar.js": {
+      "expectCount": 8,
+      "actualCount": 4,
+      "undocumentLines": [
+        150,
+        161,
+        172,
+        183
+      ]
+    },
+    "esi/Character.js": {
+      "expectCount": 30,
+      "actualCount": 15,
+      "undocumentLines": [
+        529,
+        534,
+        539,
+        550,
+        561,
+        566,
+        577,
+        588,
+        599,
+        610,
+        621,
+        626,
+        637,
+        648,
+        659
+      ]
+    },
+    "esi/Clones.js": {
+      "expectCount": 4,
+      "actualCount": 2,
+      "undocumentLines": [
+        77,
+        88
+      ]
+    },
+    "esi/Contacts.js": {
+      "expectCount": 18,
+      "actualCount": 9,
+      "undocumentLines": [
+        325,
+        336,
+        347,
+        358,
+        369,
+        380,
+        391,
+        402,
+        413
+      ]
+    },
+    "esi/Contracts.js": {
+      "expectCount": 18,
+      "actualCount": 9,
+      "undocumentLines": [
+        352,
+        363,
+        374,
+        385,
+        390,
+        395,
+        400,
+        411,
+        422
+      ]
+    },
+    "esi/Corporation.js": {
+      "expectCount": 44,
+      "actualCount": 22,
+      "undocumentLines": [
+        863,
+        868,
+        873,
+        878,
+        889,
+        900,
+        911,
+        922,
+        927,
+        938,
+        949,
+        960,
+        971,
+        982,
+        993,
+        1004,
+        1015,
+        1026,
+        1037,
+        1048,
+        1059,
+        1070
+      ]
+    },
+    "esi/Dogma.js": {
+      "expectCount": 10,
+      "actualCount": 5,
+      "undocumentLines": [
+        172,
+        177,
+        182,
+        187,
+        192
+      ]
+    },
+    "esi/FactionWarfare.js": {
+      "expectCount": 16,
+      "actualCount": 8,
+      "undocumentLines": [
+        263,
+        274,
+        285,
+        290,
+        295,
+        300,
+        305,
+        310
+      ]
+    },
+    "esi/Fittings.js": {
+      "expectCount": 6,
+      "actualCount": 3,
+      "undocumentLines": [
+        104,
+        115,
+        126
+      ]
+    },
+    "esi/Fleets.js": {
+      "expectCount": 28,
+      "actualCount": 14,
+      "undocumentLines": [
+        475,
+        486,
+        497,
+        508,
+        519,
+        530,
+        541,
+        552,
+        563,
+        574,
+        585,
+        596,
+        607,
+        618
+      ]
+    },
+    "esi/Industry.js": {
+      "expectCount": 16,
+      "actualCount": 8,
+      "undocumentLines": [
+        321,
+        332,
+        343,
+        354,
+        365,
+        376,
+        387,
+        392
+      ]
+    },
+    "esi/Insurance.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "esi/Location.js": {
+      "expectCount": 6,
+      "actualCount": 3,
+      "undocumentLines": [
+        114,
+        125,
+        136
+      ]
+    },
+    "esi/Loyalty.js": {
+      "expectCount": 4,
+      "actualCount": 2,
+      "undocumentLines": [
+        77,
+        88
+      ]
+    },
+    "esi/Mail.js": {
+      "expectCount": 18,
+      "actualCount": 9,
+      "undocumentLines": [
+        313,
+        324,
+        335,
+        346,
+        357,
+        368,
+        379,
+        390,
+        401
+      ]
+    },
+    "esi/Market.js": {
+      "expectCount": 22,
+      "actualCount": 11,
+      "undocumentLines": [
+        414,
+        425,
+        436,
+        447,
+        458,
+        463,
+        468,
+        473,
+        484,
+        489,
+        494
+      ]
+    },
+    "esi/Opportunities.js": {
+      "expectCount": 10,
+      "actualCount": 5,
+      "undocumentLines": [
+        178,
+        189,
+        194,
+        199,
+        204
+      ]
+    },
+    "esi/PlanetaryInteraction.js": {
+      "expectCount": 8,
+      "actualCount": 4,
+      "undocumentLines": [
+        156,
+        167,
+        178,
+        189
+      ]
+    },
+    "esi/Routes.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        48
+      ]
+    },
+    "esi/Search.js": {
+      "expectCount": 4,
+      "actualCount": 2,
+      "undocumentLines": [
+        89,
+        100
+      ]
+    },
+    "esi/Skills.js": {
+      "expectCount": 6,
+      "actualCount": 3,
+      "undocumentLines": [
+        114,
+        125,
+        136
+      ]
+    },
+    "esi/Status.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        36
+      ]
+    },
+    "esi/Universe.js": {
+      "expectCount": 60,
+      "actualCount": 30,
+      "undocumentLines": [
+        1015,
+        1020,
+        1025,
+        1030,
+        1035,
+        1040,
+        1045,
+        1050,
+        1055,
+        1060,
+        1065,
+        1070,
+        1075,
+        1080,
+        1085,
+        1090,
+        1095,
+        1100,
+        1105,
+        1110,
+        1115,
+        1120,
+        1125,
+        1130,
+        1141,
+        1146,
+        1151,
+        1156,
+        1161,
+        1166
+      ]
+    },
+    "esi/UserInterface.js": {
+      "expectCount": 10,
+      "actualCount": 5,
+      "undocumentLines": [
+        145,
+        156,
+        167,
+        178,
+        189
+      ]
+    },
+    "esi/Wallet.js": {
+      "expectCount": 12,
+      "actualCount": 6,
+      "undocumentLines": [
+        248,
+        259,
+        270,
+        281,
+        292,
+        303
+      ]
+    },
+    "esi/Wars.js": {
+      "expectCount": 6,
+      "actualCount": 3,
+      "undocumentLines": [
+        110,
+        115,
+        120
+      ]
+    }
+  }
+}

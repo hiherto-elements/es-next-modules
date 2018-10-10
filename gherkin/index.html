@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | @hiherto-elements/gherkin</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="minimal es6 test gherkin parser"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@hiherto-elements/gherkin"><meta property="twitter:description" content="minimal es6 test gherkin parser"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/hiherto-elements/es-next-modules"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-gherkin">gherkin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-parse">parse</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-hiherto-elements-gherkin">@hiherto-elements/gherkin</h1><p>A simple Gherkin Parser that is based on <a href="https://github.com/bakerface/gherk">gherk</a> - &apos;A minimalistic parser for the Gherkin syntax&apos;</p>
+<ul>
+<li>code 100% es6 avoiding non standard code by relying on the import keyword instead medthod based, userland loaders</li>
+<li>This is intended to run in your browser. </li>
+<li>with a little help from other modules, this can be easily used in node</li>
+</ul>
+<h1 id="parser-text-">parser(text)</h1><p>Given a feature file named <strong>drink.feature</strong> with the contents:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">let feature = `
+Feature: Can drink beer when thirsty
+  As a drinker
+  I want to take beer off the wall
+  In order to satisfy my thirst
+
+  Scenario: Can take a single beer
+    Given 100 bottles of beer on the wall
+    When a bottle is taken down
+    Then there are 99 bottles of beer on the wall
+
+  Scenario: Can take multiple beers
+    Given 100 bottles of beer on the wall
+    When 5 bottles are taken down
+    Then there are 95 bottles of beer on the wall
+
+  Scenario: Ghosts can drink
+    Given 100 bottles of beer on the wall
+    And there is nobody in the room
+    When 5 bottles are taken down
+    And they are floating in the air
+    Then there are 95 bottles of beer on the wall
+    And there are ghosts in the room
+        `</code>
+</code></pre>
+<p>When calling the <code>parse</code> function:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">
+console.log(parse(feature));</code>
+</code></pre>
+<p>Then the following JSON object is returned:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">[
+  {
+    feature: &apos;Can drink beer when thirsty&apos;,
+    perspective: &apos;drinker&apos;,
+    desire: &apos;to take beer off the wall&apos;,
+    reason: &apos;to satisfy my thirst&apos;,
+    scenarios: [
+      {
+        scenario: &apos;Can take a single beer&apos;,
+        given: [
+          &apos;100 bottles of beer on the wall&apos;
+        ],
+        when: [
+          &apos;a bottle is taken down&apos;
+        ],
+        then: [
+          &apos;there are 99 bottles of beer on the wall&apos;
+        ]
+      },
+      {
+        scenario: &apos;Can take multiple beers&apos;,
+        given: [
+          &apos;100 bottles of beer on the wall&apos;
+        ],
+        when: [
+          &apos;5 bottles are taken down&apos;
+        ],
+        then: [
+          &apos;there are 95 bottles of beer on the wall&apos;
+        ]
+      },
+      {
+        scenario: &apos;Ghosts can drink&apos;,
+        given: [
+          &apos;100 bottles of beer on the wall&apos;,
+          &apos;there is nobody in the room&apos;
+        ],
+        when: [
+          &apos;5 bottles are taken down&apos;,
+          &apos;they are floating in the air&apos;
+        ],
+        then: [
+          &apos;there are 95 bottles of beer on the wall&apos;,
+          &apos;there are ghosts in the room&apos;
+        ]
+      }
+    ]
+  }
+]</code>
+</code></pre>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

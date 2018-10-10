@@ -1,0 +1,34 @@
+{
+  "coverage": "6.25%",
+  "expectCount": 16,
+  "actualCount": 1,
+  "files": {
+    "gherkin/gherkin.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "gherkin/parse.js": {
+      "expectCount": 15,
+      "actualCount": 1,
+      "undocumentLines": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        39,
+        43
+      ]
+    }
+  }
+}

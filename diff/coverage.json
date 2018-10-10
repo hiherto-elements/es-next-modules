@@ -1,0 +1,101 @@
+{
+  "coverage": "0%",
+  "expectCount": 34,
+  "actualCount": 0,
+  "files": {
+    "diff/array.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        5,
+        12
+      ]
+    },
+    "diff/character.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        5
+      ]
+    },
+    "diff/css.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        8
+      ]
+    },
+    "diff/diff.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        174,
+        230
+      ]
+    },
+    "diff/json.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        7,
+        13,
+        18,
+        22,
+        26
+      ]
+    },
+    "diff/line.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        5,
+        31,
+        32
+      ]
+    },
+    "diff/test/array.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        5,
+        7
+      ]
+    },
+    "diff/test/character.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        5,
+        6
+      ]
+    },
+    "diff/test/css.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "diff/test/diff.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        7,
+        8,
+        9,
+        18,
+        19
+      ]
+    }
+  }
+}

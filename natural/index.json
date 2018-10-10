@@ -1,0 +1,2089 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/classifiers/classifier.js",
+    "content": "\nimport PorterStemmer from '../stemmers/porter_stemmer';\n\nimport util from 'util';\nimport events from 'events';\nimport os from 'os';\n\ntry {\n    var Threads = require('webworker-threads');\n} catch (e) {\n    // Since webworker-threads are optional, only thow if the module is found\n    if (e.code !== 'MODULE_NOT_FOUND') throw e;\n}\n\nfunction checkThreadSupport() {\n    if (typeof Threads === 'undefined') {\n        throw new Error('parallel classification requires the optional dependency webworker-threads');\n    }\n}\n\nexport const Classifier = function(classifier, stemmer) {\n    this.classifier = classifier;\n    this.docs = [];\n    this.features = {};\n    this.stemmer = stemmer || PorterStemmer;\n    this.lastAdded = 0;\n    this.events = new events.EventEmitter();\n};\n\nfunction addDocument(text, classification) {\n    // Ignore further processing if classification is undefined\n    if(typeof classification === 'undefined') return;\n\n    // If classification is type of string then make sure it's dosen't have blank space at both end\n    if(typeof classification === 'string'){\n      classification = classification.trim();\n    }\n\n    if(typeof text === 'string')\n\ttext = this.stemmer.tokenizeAndStem(text, this.keepStops);\n\n    if(text.length === 0) {\n        // ignore empty documents\n        return;\n    }\n\n    this.docs.push({\n\tlabel: classification,\n\ttext\n    });\n\n    for (const token of text) {\n        this.features[token] = (this.features[token] || 0) + 1;\n    }\n}\n\nfunction removeDocument(text, classification) {\n    const docs = this.docs;\n    let doc;\n    let pos;\n\n    if (typeof text === 'string') {\n      text = this.stemmer.tokenizeAndStem(text, this.keepStops);\n    }\n\n    for (var i = 0, ii = docs.length; i < ii; i++) {\n      doc = docs[i];\n      if (doc.text.join(' ') == text.join(' ') &&\n          doc.label == classification) {\n        pos = i;\n      }\n    }\n\n    // Remove if there's a match\n    if (!isNaN(pos)) {\n      this.docs.splice(pos, 1);\n\n      for (var i = 0, ii = text.length; i < ii; i++) {\n        delete this.features[text[i]];\n      }\n    }\n}\n\nfunction textToFeatures(observation) {\n    const features = [];\n\n    if(typeof observation === 'string')\n\tobservation = this.stemmer.tokenizeAndStem(observation, this.keepStops);\n\n    for(const feature in this.features) {\n        if(observation.includes(feature))\n            features.push(1);\n        else\n            features.push(0);\n    }\n\n    return features;\n}\n\nfunction docsToFeatures(docs) {\n    const parsedDocs = [];\n\n    for (let i = 0; i < docs.length; i++) {\n        const features = [];\n\n        for (const feature in FEATURES) {\n            if (docs[i].observation.includes(feature))\n                features.push(1);\n            else\n                features.push(0);\n        }\n\n        parsedDocs.push({\n            index: docs[i].index,\n            features\n        });\n    }\n\n    return JSON.stringify(parsedDocs);\n}\n\nfunction train() {\n    const totalDocs = this.docs.length;\n    for(let i = this.lastAdded; i < totalDocs; i++) {\n        const features = this.textToFeatures(this.docs[i].text);\n        this.classifier.addExample(features, this.docs[i].label);\n        this.events.emit('trainedWithDocument', {index: i, total: totalDocs, doc: this.docs[i]});\n        this.lastAdded++;\n    }\n    this.events.emit('doneTraining', true);\n    this.classifier.train();\n}\n\nfunction trainParallel(numThreads, callback) {\n    checkThreadSupport();\n\n    if (!callback) {\n        callback = numThreads;\n        numThreads = undefined;\n    }\n\n    if (isNaN(numThreads)) {\n        numThreads = os.cpus().length;\n    }\n\n    const totalDocs = this.docs.length;\n    const threadPool = Threads.createPool(numThreads);\n    const docFeatures = {};\n    let finished = 0;\n    const self = this;\n\n    // Init pool; send the features array and the parsing function\n    threadPool.all.eval(`var FEATURES = ${JSON.stringify(this.features)}`);\n    threadPool.all.eval(docsToFeatures);\n\n    // Convert docs to observation objects\n    const obsDocs = [];\n    for (var i = this.lastAdded; i < totalDocs; i++) {\n        let observation = this.docs[i].text;\n        if (typeof observation === 'string')\n            observation = this.stemmer.tokenizeAndStem(observation, this.keepStops);\n        obsDocs.push({\n            index: i,\n            observation\n        });\n    }\n\n    // Called when a batch completes processing\n    const onFeaturesResult = docs => {\n        setTimeout(() => {\n            self.events.emit('processedBatch', {\n                size: docs.length,\n                docs: totalDocs,\n                batches: numThreads,\n                index: finished\n            });\n        });\n\n        for (let j = 0; j < docs.length; j++) {\n            docFeatures[docs[j].index] = docs[j].features;\n        }\n    };\n\n    // Called when all batches finish processing\n    const onFinished = err => {\n        if (err) {\n            threadPool.destroy();\n            return callback(err);\n        }\n\n        for (let j = self.lastAdded; j < totalDocs; j++) {\n            self.classifier.addExample(docFeatures[j], self.docs[j].label);\n            self.events.emit('trainedWithDocument', {\n                index: j,\n                total: totalDocs,\n                doc: self.docs[j]\n            });\n            self.lastAdded++;\n        }\n\n        self.events.emit('doneTraining', true);\n        self.classifier.train();\n\n        threadPool.destroy();\n        callback(null);\n    };\n\n    // Split the docs and start processing\n    const batchSize = Math.ceil(obsDocs.length / numThreads);\n    let lastError;\n\n    for (var i = 0; i < numThreads; i++) {\n        const batchDocs = obsDocs.slice(i * batchSize, (i+1) * batchSize);\n        const batchJson = JSON.stringify(batchDocs);\n\n        threadPool.any.eval(`docsToFeatures(${batchJson})`, (err, docs) => {\n            lastError = err || lastError;\n            finished++;\n\n            if (docs) {\n                docs = JSON.parse(docs);\n                onFeaturesResult(docs);\n            }\n\n            if (finished >= numThreads) {\n                onFinished(lastError);\n            }\n        });\n    }\n}\n\nfunction trainParallelBatches(options) {\n    checkThreadSupport();\n\n    let numThreads = options && options.numThreads;\n    let batchSize = options && options.batchSize;\n\n    if (isNaN(numThreads)) {\n        numThreads = os.cpus().length;\n    }\n\n    if (isNaN(batchSize)) {\n        batchSize = 2500;\n    }\n\n    const totalDocs = this.docs.length;\n    const threadPool = Threads.createPool(numThreads);\n    const docFeatures = {};\n    let finished = 0;\n    const self = this;\n\n    let abort = false;\n    const onError = err => {\n        if (!err || abort) return;\n        abort = true;\n        threadPool.destroy(true);\n        self.events.emit('doneTrainingError', err);\n    };\n\n    // Init pool; send the features array and the parsing function\n    const str = JSON.stringify(this.features);\n    threadPool.all.eval(`var FEATURES = ${str};`, onError);\n    threadPool.all.eval(docsToFeatures, onError);\n\n    // Convert docs to observation objects\n    let obsDocs = [];\n    for (var i = this.lastAdded; i < totalDocs; i++) {\n        let observation = this.docs[i].text;\n        if (typeof observation === 'string')\n            observation = this.stemmer.tokenizeAndStem(observation, this.keepStops);\n        obsDocs.push({\n            index: i,\n            observation\n        });\n    }\n\n    // Split the docs in batches\n    const obsBatches = [];\n    var i = 0;\n    while (true) {\n        const batch = obsDocs.slice(i * batchSize, (i+1) * batchSize);\n        if (!batch || !batch.length) break;\n        obsBatches.push(batch);\n        i++;\n    }\n    obsDocs = null;\n    self.events.emit('startedTraining', {\n        docs: totalDocs,\n        batches: obsBatches.length\n    });\n\n    // Called when a batch completes processing\n    const onFeaturesResult = docs => {\n        self.events.emit('processedBatch', {\n            size: docs.length,\n            docs: totalDocs,\n            batches: obsBatches.length,\n            index: finished\n        });\n\n        for (let j = 0; j < docs.length; j++) {\n            docFeatures[docs[j].index] = docs[j].features;\n        }\n    };\n\n    // Called when all batches finish processing\n    const onFinished = () => {\n        threadPool.destroy(true);\n        abort = true;\n\n        for (let j = self.lastAdded; j < totalDocs; j++) {\n            self.classifier.addExample(docFeatures[j], self.docs[j].label);\n            self.events.emit('trainedWithDocument', {\n                index: j,\n                total: totalDocs,\n                doc: self.docs[j]\n            });\n            self.lastAdded++;\n        }\n\n        self.events.emit('doneTraining', true);\n        self.classifier.train();\n    };\n\n    // Called to send the next batch to be processed\n    let batchIndex = 0;\n    const sendNext = () => {\n        if (abort) return;\n        if (batchIndex >= obsBatches.length) {\n            return;\n        }\n\n        sendBatch(JSON.stringify(obsBatches[batchIndex]));\n        batchIndex++;\n    };\n\n    // Called to send a batch of docs to the threads\n    var sendBatch = batchJson => {\n        if (abort) return;\n        threadPool.any.eval(`docsToFeatures(${batchJson});`, (err, docs) => {\n            if (err) {\n                return onError(err);\n            }\n\n            finished++;\n\n            if (docs) {\n                docs = JSON.parse(docs);\n                setTimeout(onFeaturesResult.bind(null, docs));\n            }\n\n            if (finished >= obsBatches.length) {\n                setTimeout(onFinished);\n            }\n\n            setTimeout(sendNext);\n        });\n    };\n\n    // Start processing\n    for (var i = 0; i < numThreads; i++) {\n        sendNext();\n    }\n}\n\nfunction retrain() {\n  this.classifier = new (this.classifier.constructor)();\n  this.lastAdded = 0;\n  this.train();\n}\n\nfunction retrainParallel(numThreads, callback) {\n  this.classifier = new (this.classifier.constructor)();\n  this.lastAdded = 0;\n  this.trainParallel(numThreads, callback);\n}\n\nfunction getClassifications(observation) {\n    return this.classifier.getClassifications(this.textToFeatures(observation));\n}\n\nfunction classify(observation) {\n    return this.classifier.classify(this.textToFeatures(observation));\n}\n\nfunction restore(classifier, stemmer) {\n    classifier.stemmer = stemmer || PorterStemmer;\n    classifier.events = new events.EventEmitter();\n    return classifier;\n}\n\nfunction save(filename, callback) {\n    const data = JSON.stringify(this);\n    const fs = require('fs');\n    const classifier = this;\n    fs.writeFile(filename, data, 'utf8', err => {\n        if(callback) {\n            callback(err, err ? null : classifier);\n        }\n    });\n}\n\nfunction load(filename, callback) {\n    const fs = require('fs');\n\n    fs.readFile(filename, 'utf8', (err, data) => {\n        let classifier;\n\n        if(!err) {\n            classifier = JSON.parse(data);\n        }\n\n        if(callback)\n            callback(err, classifier);\n    });\n}\n\nfunction setOptions(options){\n    this.keepStops = (options.keepStops) ? true : false;\n}\n\nClassifier.prototype.addDocument = addDocument;\nClassifier.prototype.removeDocument = removeDocument;\nClassifier.prototype.train = train;\nif (Threads) {\n  Classifier.prototype.trainParallel = trainParallel;\n  Classifier.prototype.trainParallelBatches = trainParallelBatches;\n  Classifier.prototype.retrainParallel = retrainParallel;\n}\nClassifier.prototype.retrain = retrain;\nClassifier.prototype.classify = classify;\nClassifier.prototype.textToFeatures = textToFeatures;\nClassifier.prototype.save = save;\nClassifier.prototype.getClassifications = getClassifications;\nClassifier.prototype.setOptions = setOptions;\nClassifier.restore = restore;\nClassifier.load = load;\n\nexport default Classifier;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/classifiers/classifier.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "checkThreadSupport",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~checkThreadSupport",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "function",
+    "name": "Classifier",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~Classifier",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": "{Classifier}",
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "params": [
+      {
+        "name": "classifier",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "stemmer",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "name": "addDocument",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~addDocument",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "params": [
+      {
+        "name": "text",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "classification",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "removeDocument",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~removeDocument",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 57,
+    "undocument": true,
+    "params": [
+      {
+        "name": "text",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "classification",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "function",
+    "name": "textToFeatures",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~textToFeatures",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 84,
+    "undocument": true,
+    "params": [
+      {
+        "name": "observation",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "name": "docsToFeatures",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~docsToFeatures",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 100,
+    "undocument": true,
+    "params": [
+      {
+        "name": "docs",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "function",
+    "name": "train",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~train",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 122,
+    "undocument": true,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "function",
+    "name": "trainParallel",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~trainParallel",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 134,
+    "undocument": true,
+    "params": [
+      {
+        "name": "numThreads",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "function",
+    "name": "trainParallelBatches",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~trainParallelBatches",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 232,
+    "undocument": true,
+    "params": [
+      {
+        "name": "options",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "function",
+    "name": "retrain",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~retrain",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 366,
+    "undocument": true,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "function",
+    "name": "retrainParallel",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~retrainParallel",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 372,
+    "undocument": true,
+    "params": [
+      {
+        "name": "numThreads",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "function",
+    "name": "getClassifications",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~getClassifications",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 378,
+    "undocument": true,
+    "params": [
+      {
+        "name": "observation",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "function",
+    "name": "classify",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~classify",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 382,
+    "undocument": true,
+    "params": [
+      {
+        "name": "observation",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "name": "restore",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~restore",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 386,
+    "undocument": true,
+    "params": [
+      {
+        "name": "classifier",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "stemmer",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "name": "save",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~save",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 392,
+    "undocument": true,
+    "params": [
+      {
+        "name": "filename",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "function",
+    "name": "load",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~load",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 403,
+    "undocument": true,
+    "params": [
+      {
+        "name": "filename",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "function",
+    "name": "setOptions",
+    "memberof": "src/classifiers/classifier.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/classifiers/classifier.js~setOptions",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/classifiers/classifier.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 418,
+    "undocument": true,
+    "params": [
+      {
+        "name": "options",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "file",
+    "name": "src/tokenizers/case-tokenizer.js",
+    "content": "import Tokenizer from './tokenizer';\n\nexport class CaseTokenizer extends Tokenizer {\n  constructor() {\n    super();\n  }\n\n  attach() {\n    const self = this;\n\n    String.prototype.tokenize = function(preserveApostrophe) {\n      return self.tokenize(this, preserveApostrophe);\n    }\n  }\n\n  // Idea from Seagull: http://stackoverflow.com/a/26482650\n  tokenize(text, preserveApostrophe) {\n    const whitelist = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];\n    const lower = text.toLowerCase();\n    const upper = text.toUpperCase();\n    let result = '';\n    let i;\n\n    for (i = 0; i < lower.length; ++i) {\n      if (lower[i] !== upper[i] || whitelist.includes(lower[i]) || (text[i] === '\\'' && preserveApostrophe)) {\n        result += text[i];\n      } else {\n        result += ' ';\n      }\n    }\n\n    return this.trim(result.replace(/\\s+/g, ' ').split(' '));\n  }\n}\n\nexport default CaseTokenizer;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/tokenizers/case-tokenizer.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 67,
+    "kind": "class",
+    "name": "CaseTokenizer",
+    "memberof": "src/tokenizers/case-tokenizer.js",
+    "static": true,
+    "longname": "src/tokenizers/case-tokenizer.js~CaseTokenizer",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/tokenizers/case-tokenizer.js",
+    "importStyle": "{CaseTokenizer}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "src/tokenizers/tokenizer.js~Tokenizer"
+    ]
+  },
+  {
+    "__docId__": 68,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/tokenizers/case-tokenizer.js~CaseTokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/case-tokenizer.js~CaseTokenizer#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "attach",
+    "memberof": "src/tokenizers/case-tokenizer.js~CaseTokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/case-tokenizer.js~CaseTokenizer#attach",
+    "access": "public",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "tokenize",
+    "memberof": "src/tokenizers/case-tokenizer.js~CaseTokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/case-tokenizer.js~CaseTokenizer#tokenize",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "params": [
+      {
+        "name": "text",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "preserveApostrophe",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "file",
+    "name": "src/tokenizers/orthography_matchers.js",
+    "content": "const orthographyMatchers = {\n  fi: /[^A-Za-zÅåÄäÖö]/\n};\n\nexport default orthographyMatchers;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/tokenizers/orthography_matchers.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 72,
+    "kind": "variable",
+    "name": "orthographyMatchers",
+    "memberof": "src/tokenizers/orthography_matchers.js",
+    "static": true,
+    "longname": "src/tokenizers/orthography_matchers.js~orthographyMatchers",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/tokenizers/orthography_matchers.js",
+    "importStyle": "orthographyMatchers",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"fi\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "file",
+    "name": "src/tokenizers/regexp-tokenizer.js",
+    "content": "import Tokenizer from './tokenizer';\n\nimport {_} from 'underscore';\n\n// Base Class for RegExp Matching\nexport class RegexpTokenizer extends Tokenizer {\n    constructor(options) {\n\t\t\t\tsuper();\n        var options = options || {};\n        this._pattern = options.pattern || this._pattern;\n        this.discardEmpty = options.discardEmpty || true;\n\n        // Match and split on GAPS not the actual WORDS\n        this._gaps = options.gaps;\n\n        if (this._gaps === undefined) {\n            this._gaps = true;\n        }\n    }\n\n    tokenize(s) {\n        let results;\n\n        if (this._gaps) {\n            results = s.split(this._pattern);\n            return (this.discardEmpty) ? _.without(results,'',' ') : results;\n        } else {\n            return s.match(this._pattern);\n        }\n    }\n}\n",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/tokenizers/regexp-tokenizer.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 74,
+    "kind": "class",
+    "name": "RegexpTokenizer",
+    "memberof": "src/tokenizers/regexp-tokenizer.js",
+    "static": true,
+    "longname": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/tokenizers/regexp-tokenizer.js",
+    "importStyle": "{RegexpTokenizer}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "src/tokenizers/tokenizer.js~Tokenizer"
+    ]
+  },
+  {
+    "__docId__": 75,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "member",
+    "name": "_pattern",
+    "memberof": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer",
+    "static": false,
+    "longname": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer#_pattern",
+    "access": "private",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "member",
+    "name": "discardEmpty",
+    "memberof": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer",
+    "static": false,
+    "longname": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer#discardEmpty",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "member",
+    "name": "_gaps",
+    "memberof": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer",
+    "static": false,
+    "longname": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer#_gaps",
+    "access": "private",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "method",
+    "name": "tokenize",
+    "memberof": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/regexp-tokenizer.js~RegexpTokenizer#tokenize",
+    "access": "public",
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "params": [
+      {
+        "name": "s",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "file",
+    "name": "src/tokenizers/sentence-tokenizer.js",
+    "content": "import Tokenizer from './tokenizer';\n\nexport class SentenceTokenizer extends Tokenizer{\n    tokenize(text) {\n        // break string up in to sentences based on punctation and quotation marks\n        let tokens = text.match(/([\\\"\\'\\‘\\“\\'\\\"\\[\\(\\{\\⟨][^\\.\\?\\!]+[\\.\\?\\!][\\\"\\'\\’\\”\\'\\\"\\]\\)\\}\\⟩]|[^\\.\\?\\!]+[\\.\\?\\!\\s]+)\\s?/g);\n\n        // remove unecessary white space\n        tokens = tokens.map(Function.prototype.call, String.prototype.trim);\n\n        return this.trim(tokens);\n    }\n}\n\nexport default SentenceTokenizer;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/tokenizers/sentence-tokenizer.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 82,
+    "kind": "class",
+    "name": "SentenceTokenizer",
+    "memberof": "src/tokenizers/sentence-tokenizer.js",
+    "static": true,
+    "longname": "src/tokenizers/sentence-tokenizer.js~SentenceTokenizer",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/tokenizers/sentence-tokenizer.js",
+    "importStyle": "{SentenceTokenizer}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "src/tokenizers/tokenizer.js~Tokenizer"
+    ]
+  },
+  {
+    "__docId__": 83,
+    "kind": "method",
+    "name": "tokenize",
+    "memberof": "src/tokenizers/sentence-tokenizer.js~SentenceTokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/sentence-tokenizer.js~SentenceTokenizer#tokenize",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "params": [
+      {
+        "name": "text",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "file",
+    "name": "src/tokenizers/tokenizer.js",
+    "content": "\nexport class Tokenizer {\n  trim(array) {\n    while (array[array.length - 1] == '')\n      array.pop();\n\n    while (array[0] == '')\n      array.shift();\n\n    return array;\n  }\n\n  // Expose an attach function that will patch String with new methods.\n  attach() {\n    const self = this;\n\n    String.prototype.tokenize = function() {\n      return self.tokenize(this);\n    }\n  }\n\n  tokenize() {}\n}\n\nexport default Tokenizer;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/tokenizers/tokenizer.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 85,
+    "kind": "class",
+    "name": "Tokenizer",
+    "memberof": "src/tokenizers/tokenizer.js",
+    "static": true,
+    "longname": "src/tokenizers/tokenizer.js~Tokenizer",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/tokenizers/tokenizer.js",
+    "importStyle": "{Tokenizer}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 86,
+    "kind": "method",
+    "name": "trim",
+    "memberof": "src/tokenizers/tokenizer.js~Tokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/tokenizer.js~Tokenizer#trim",
+    "access": "public",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "array",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "method",
+    "name": "attach",
+    "memberof": "src/tokenizers/tokenizer.js~Tokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/tokenizer.js~Tokenizer#attach",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 88,
+    "kind": "method",
+    "name": "tokenize",
+    "memberof": "src/tokenizers/tokenizer.js~Tokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/tokenizer.js~Tokenizer#tokenize",
+    "access": "public",
+    "description": null,
+    "lineNumber": 22,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 89,
+    "kind": "file",
+    "name": "src/tokenizers/treebank-word-tokenizer.js",
+    "content": "\n/*\nCopyright (c) 2011, Rob Ellis, Chris Umbel\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n*/\n\nimport Tokenizer from './tokenizer';\n\nimport {_} from 'underscore';\n\nconst contractions2 = [\n    /(.)('ll|'re|'ve|n't|'s|'m|'d)\\b/ig,\n    /\\b(can)(not)\\b/ig,\n    /\\b(D)('ye)\\b/ig,\n    /\\b(Gim)(me)\\b/ig,\n    /\\b(Gon)(na)\\b/ig,\n    /\\b(Got)(ta)\\b/ig,\n    /\\b(Lem)(me)\\b/ig,\n    /\\b(Mor)('n)\\b/ig,\n    /\\b(T)(is)\\b/ig,\n    /\\b(T)(was)\\b/ig,\n    /\\b(Wan)(na)\\b/ig];\n\nconst contractions3 = [\n    /\\b(Whad)(dd)(ya)\\b/ig,\n    /\\b(Wha)(t)(cha)\\b/ig\n];\n\nexport class TreebankWordTokenizer extends Tokenizer {\n    tokenize(text) {\n        contractions2.forEach(regexp => {\n        text = text.replace(regexp,\"$1 $2\");\n        });\n        \n        contractions3.forEach(regexp => {\n        text = text.replace(regexp,\"$1 $2 $3\");\n        });\n\n        // most punctuation\n        text = text.replace(/([^\\w\\.\\'\\-\\/\\+\\<\\>,&])/g, \" $1 \");\n\n        // commas if followed by space\n        text = text.replace(/(,\\s)/g, \" $1\");\n\n        // single quotes if followed by a space\n        text = text.replace(/('\\s)/g, \" $1\");\n\n        // periods before newline or end of string\n        text = text.replace(/\\. *(\\n|$)/g, \" . \");\n        \n        return  _.without(text.split(/\\s+/), '');\t\n    }\n}\n\n\n\nexport default TreebankWordTokenizer;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/tokenizers/treebank-word-tokenizer.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 90,
+    "kind": "variable",
+    "name": "contractions2",
+    "memberof": "src/tokenizers/treebank-word-tokenizer.js",
+    "static": true,
+    "longname": "src/tokenizers/treebank-word-tokenizer.js~contractions2",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/tokenizers/treebank-word-tokenizer.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined[]"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "variable",
+    "name": "contractions3",
+    "memberof": "src/tokenizers/treebank-word-tokenizer.js",
+    "static": true,
+    "longname": "src/tokenizers/treebank-word-tokenizer.js~contractions3",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/tokenizers/treebank-word-tokenizer.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 38,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined[]"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "class",
+    "name": "TreebankWordTokenizer",
+    "memberof": "src/tokenizers/treebank-word-tokenizer.js",
+    "static": true,
+    "longname": "src/tokenizers/treebank-word-tokenizer.js~TreebankWordTokenizer",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/tokenizers/treebank-word-tokenizer.js",
+    "importStyle": "{TreebankWordTokenizer}",
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "src/tokenizers/tokenizer.js~Tokenizer"
+    ]
+  },
+  {
+    "__docId__": 93,
+    "kind": "method",
+    "name": "tokenize",
+    "memberof": "src/tokenizers/treebank-word-tokenizer.js~TreebankWordTokenizer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/tokenizers/treebank-word-tokenizer.js~TreebankWordTokenizer#tokenize",
+    "access": "public",
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "params": [
+      {
+        "name": "text",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "file",
+    "name": "src/util/bag.js",
+    "content": "export class Bag {\n\tconstructor() {\n\t\t\tthis.dictionary = [];\n\t\t\tthis.nElement = 0;\n\t}\n\n\tadd(element) {\n\t\t\tthis.dictionary.push(element);\n\t\t\tthis.nElement++;\n\t\t\treturn this;\n\t}\n\n\tisEmpty() {\n\t\t\treturn this.nElement > 0;\n\t}\n\n\tcontains(item) {\n\t\t\treturn this.dictionary.includes(item);\n\t}\n\n\t/**\n\t * unpack the bag , and get all items\n\t */\n\tunpack() {\n\t\t\t// return a copy is better than original\n\t\t\treturn this.dictionary.slice();\n\t}\n}",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/util/bag.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 95,
+    "kind": "class",
+    "name": "Bag",
+    "memberof": "src/util/bag.js",
+    "static": true,
+    "longname": "src/util/bag.js~Bag",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/util/bag.js",
+    "importStyle": "{Bag}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 96,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/util/bag.js~Bag",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/util/bag.js~Bag#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "member",
+    "name": "dictionary",
+    "memberof": "src/util/bag.js~Bag",
+    "static": false,
+    "longname": "src/util/bag.js~Bag#dictionary",
+    "access": "public",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "member",
+    "name": "nElement",
+    "memberof": "src/util/bag.js~Bag",
+    "static": false,
+    "longname": "src/util/bag.js~Bag#nElement",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 99,
+    "kind": "method",
+    "name": "add",
+    "memberof": "src/util/bag.js~Bag",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/util/bag.js~Bag#add",
+    "access": "public",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "params": [
+      {
+        "name": "element",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "method",
+    "name": "isEmpty",
+    "memberof": "src/util/bag.js~Bag",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/util/bag.js~Bag#isEmpty",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 101,
+    "kind": "method",
+    "name": "contains",
+    "memberof": "src/util/bag.js~Bag",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/util/bag.js~Bag#contains",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 102,
+    "kind": "method",
+    "name": "unpack",
+    "memberof": "src/util/bag.js~Bag",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/util/bag.js~Bag#unpack",
+    "access": "public",
+    "description": "unpack the bag , and get all items",
+    "lineNumber": 24,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 103,
+    "kind": "file",
+    "name": "src/util/stopwords.js",
+    "content": "const stopwords = [\n\t'about', 'above', 'after', 'again', 'all', 'also', 'am', 'an', 'and', 'another',\n\t'any', 'are', 'as', 'at', 'be', 'because', 'been', 'before', 'being', 'below',\n\t'between', 'both', 'but', 'by', 'came', 'can', 'cannot', 'come', 'could', 'did',\n\t'do', 'does', 'doing', 'during', 'each', 'few', 'for', 'from', 'further', 'get',\n\t'got', 'has', 'had', 'he', 'have', 'her', 'here', 'him', 'himself', 'his', 'how',\n\t'if', 'in', 'into', 'is', 'it', 'its', 'itself', 'like', 'make', 'many', 'me',\n\t'might', 'more', 'most', 'much', 'must', 'my', 'myself', 'never', 'now', 'of', 'on',\n\t'only', 'or', 'other', 'our', 'ours', 'ourselves', 'out', 'over', 'own',\n\t'said', 'same', 'see', 'should', 'since', 'so', 'some', 'still', 'such', 'take', 'than',\n\t'that', 'the', 'their', 'theirs', 'them', 'themselves', 'then', 'there', 'these', 'they',\n\t'this', 'those', 'through', 'to', 'too', 'under', 'until', 'up', 'very', 'was',\n\t'way', 'we', 'well', 'were', 'what', 'where', 'when', 'which', 'while', 'who',\n\t'whom', 'with', 'would', 'why', 'you', 'your', 'yours', 'yourself',\n\t'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',\n\t'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '$', '1',\n\t'2', '3', '4', '5', '6', '7', '8', '9', '0', '_'];\n\n// tell the world about the noise words.\nexport {stopwords};",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/util/stopwords.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 104,
+    "kind": "variable",
+    "name": "stopwords",
+    "memberof": "src/util/stopwords.js",
+    "static": true,
+    "longname": "src/util/stopwords.js~stopwords",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/util/stopwords.js",
+    "importStyle": "{stopwords}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "file",
+    "name": "src/util/topological.js",
+    "content": "\nexport class Topological {\n\n\tconstructor(g) {\n\t\t\tthis.isDag = true;\n\t\t\tthis.sorted = topoSort(uniqueVertexs(g.edges()), g.edges());\n\t}\n\n\tisDAG() {\n\t\t\treturn this.isDag;\n\t}\n\n\t/**\n\t * get ordered vertexs of digraph\n\t */\n\torder() {\n\t\t\treturn this.sorted.slice();\n\t}\n}\n\nfunction topoSort(vertexs, edges) {\n\tconst sorted = [];\n\tlet cursor = vertexs.length;\n\tconst visited = {};\n\tlet i = cursor;\n\twhile (i--) {\n\t\t\tif (!visited[i]) visit(vertexs[i], i, []);\n\t}\n\n\treturn sorted.reverse();\n\n\tfunction visit(vertex, i, predecessors) {\n\t\t\tif(predecessors.includes(vertex)) {\n\t\t\t\t\tthrow new Error(`Cyclic dependency:${JSON.stringify(vertex)}`);\n\t\t\t}\n\n\t\t\tif(visited[i]) return;\n\t\t\tvisited[i] = true;\n\n\t\t\tconst outgoing = edges.filter(edge => edge.to() === vertex);\n\n\t\t\tlet preds = [];\n\t\t\tif(outgoing.length > 0) {\n\t\t\t\t\tpreds = predecessors.concat(vertex);\n\t\t\t}\n\t\t\tlet from;\n\t\t\toutgoing.forEach(edge => {\n\t\t\t\t\tfrom = edge.from();\n\t\t\t\t\tvisit(from, vertexs.indexOf(from), preds);\n\t\t\t});\n\n\t\t\tsorted[--cursor] = vertex;\n\t}\n}\n\n\nfunction uniqueVertexs(edges) {\n\tconst vertexs = [];\n\tlet from;\n\tlet to;\n\tedges.forEach(edge => {\n\t\t\tfrom = edge.from();\n\t\t\tto = edge.to();\n\t\t\tif (!vertexs.includes(from)) vertexs.push(from);\n\t\t\tif (!vertexs.includes(to)) vertexs.push(to);\n\t});\n\treturn vertexs;\n}\nexport default Topological;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/util/topological.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 106,
+    "kind": "class",
+    "name": "Topological",
+    "memberof": "src/util/topological.js",
+    "static": true,
+    "longname": "src/util/topological.js~Topological",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/util/topological.js",
+    "importStyle": "{Topological}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 107,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/util/topological.js~Topological",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/util/topological.js~Topological#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "member",
+    "name": "isDag",
+    "memberof": "src/util/topological.js~Topological",
+    "static": false,
+    "longname": "src/util/topological.js~Topological#isDag",
+    "access": "public",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 109,
+    "kind": "member",
+    "name": "sorted",
+    "memberof": "src/util/topological.js~Topological",
+    "static": false,
+    "longname": "src/util/topological.js~Topological#sorted",
+    "access": "public",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "method",
+    "name": "isDAG",
+    "memberof": "src/util/topological.js~Topological",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/util/topological.js~Topological#isDAG",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 111,
+    "kind": "method",
+    "name": "order",
+    "memberof": "src/util/topological.js~Topological",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/util/topological.js~Topological#order",
+    "access": "public",
+    "description": "get ordered vertexs of digraph",
+    "lineNumber": 16,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "function",
+    "name": "topoSort",
+    "memberof": "src/util/topological.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/util/topological.js~topoSort",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/util/topological.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "params": [
+      {
+        "name": "vertexs",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "edges",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "function",
+    "name": "uniqueVertexs",
+    "memberof": "src/util/topological.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/util/topological.js~uniqueVertexs",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/natural/src/util/topological.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 57,
+    "undocument": true,
+    "params": [
+      {
+        "name": "edges",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "file",
+    "name": "src/util/utils.js",
+    "content": "\n/**\n * Generate a replacing function given a table of patterns. Inspired by:\n * http://code.google.com/p/jslibs/wiki/JavascriptTips#String_converter\n * The order of elements is significant. Longer elements should be listed first.\n * @see Speed test http://jsperf.com/build-a-regexp-table\n *\n * @param {Object.<string, string>} translationTable The translation table of key value.\n * @return {function} A translating function.\n */\nfunction replacer(translationTable) {\n  /**\n   * An array of translationTable keys.\n   * @type {Array.<string>}\n   */\n  const pattern = [];\n\n  /**\n   * The regular expression doing the replacement job.\n   * @type {RegExp}\n   */\n  let regExp;\n\n  /**\n   * Used to iterate over translationTable.\n   * @type {string}\n   */\n  let key;\n\n  for (key in translationTable) {\n    // Escaping regexp special chars.\n    // @see Speed test for type casting to string http://jsperf.com/string-type-casting/2\n    // @see http://closure-library.googlecode.com/svn/docs/closure_goog_string_string.js.source.html#line956\n    key = (`${key}`).replace(/([-()\\[\\]{}+?*.$\\^|,:#<!\\\\\\/])/g, '\\\\$1').\n      replace(/\\x08/g, '\\\\x08');\n\n    pattern.push(key);\n  }\n\n  regExp = new RegExp(pattern.join('|'), 'g');\n\n  /**\n   * @param {string} str Input string.\n   * @return {string} The string replaced.\n   */\n  return str => str.replace(regExp, str => translationTable[str]);\n}\n\n\n/**\n * Exchanges all keys with their associated values in an object.\n *\n * @param {Object.<string, string>} obj An object of strings.\n * @return {Object.<string, string>} An object of strings.\n */\nfunction flip(obj) {\n  const newObj = Object.create(null);\n  let key;\n\n  for (key in obj) {\n    newObj[obj[key]] = key;\n  }\n\n  return newObj;\n}\n\n\n/**\n * Merge several objects. Properties from earlier objects are overwritten by\n * laters's in case of conflict.\n *\n * @param {...Object.<string, string>} var_args One or more objects of strings.\n * @return {!Object.<string, string>} An object of strings.\n */\nfunction merge(var_args) {\n  const args = [].slice.call(arguments);\n  const newObj = Object.create(null);\n  let id = 0;\n  let key;\n\n  while (args[id]) {\n    for (key in args[id]) {\n      newObj[key] = args[id][key];\n    }\n\n    id++;\n  }\n\n  return newObj;\n}\n\nexport {replacer};\nexport {flip};\nexport {merge};",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/src/util/utils.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 115,
+    "kind": "function",
+    "name": "replacer",
+    "memberof": "src/util/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/util/utils.js~replacer",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/util/utils.js",
+    "importStyle": "{replacer}",
+    "description": "Generate a replacing function given a table of patterns. Inspired by:\nhttp://code.google.com/p/jslibs/wiki/JavascriptTips#String_converter\nThe order of elements is significant. Longer elements should be listed first.",
+    "see": [
+      "Speed test http://jsperf.com/build-a-regexp-table"
+    ],
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object.<string, string>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "translationTable",
+        "description": "The translation table of key value."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": "A translating function."
+    }
+  },
+  {
+    "__docId__": 116,
+    "kind": "function",
+    "name": "flip",
+    "memberof": "src/util/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/util/utils.js~flip",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/util/utils.js",
+    "importStyle": "{flip}",
+    "description": "Exchanges all keys with their associated values in an object.",
+    "lineNumber": 56,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object.<string, string>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "obj",
+        "description": "An object of strings."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object.<string, string>"
+      ],
+      "spread": false,
+      "description": "An object of strings."
+    }
+  },
+  {
+    "__docId__": 117,
+    "kind": "function",
+    "name": "merge",
+    "memberof": "src/util/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/util/utils.js~merge",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/natural/src/util/utils.js",
+    "importStyle": "{merge}",
+    "description": "Merge several objects. Properties from earlier objects are overwritten by\nlaters's in case of conflict.",
+    "lineNumber": 75,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "...Object.<string, string>"
+        ],
+        "spread": true,
+        "optional": false,
+        "name": "var_args",
+        "description": "One or more objects of strings."
+      }
+    ],
+    "return": {
+      "nullable": false,
+      "types": [
+        "Object.<string, string>"
+      ],
+      "spread": false,
+      "description": "An object of strings."
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# @hiherto-elements/natural\n\nA es6 module version of [natual js](https://github.com/NaturalNode/natural);\n\n",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"@hiherto-elements/natural\",\n  \"version\": \"0.0.1\",\n  \"description\": \"minimal es6 natural language detection\",\n  \"main\": \"Assert.js\",\n  \"directories\": {\n    \"test\": \"test\"\n  },\n  \"esdoc\": {\n    \"source\": \"./src\",\n    \"destination\": \"./docs\",\n    \"plugins\": [{\"name\": \"esdoc-standard-plugin\"}]\n  },\n  \"dependencies\": {\n    \"@hiherto-elements/assert\": \"^0.0.4\"\n  },\n  \"scripts\": {\n    \"docs\": \"rm -rf ./docs && esdoc\",\n    \"test\": \"sh test.sh\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/hiherto-elements/es-next-modules.git\"\n  },\n  \"author\": \"Sebastian Schürmann\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/sebs/deno-assert-js/issues\"\n  },\n  \"homepage\": \"https://github.com/sebs/deno-assert-js#readme\"\n}\n",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/natural/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

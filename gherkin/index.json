@@ -1,0 +1,396 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "gherkin/gherkin.js",
+    "content": "export const gherkin = function() {};\n\n",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/gherkin/gherkin.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "function",
+    "name": "gherkin",
+    "memberof": "gherkin/gherkin.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "gherkin/gherkin.js~gherkin",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/gherkin/gherkin/gherkin.js",
+    "importStyle": "{gherkin}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 2,
+    "kind": "file",
+    "name": "gherkin/parse.js",
+    "content": "/**\n * Copyright (c) 2015 Christopher M. Baker\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy\n * of this software and associated documentation files (the \"Software\"), to deal\n * in the Software without restriction, including without limitation the rights\n * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n * copies of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included in all\n * copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n *\n */\n\nconst R_NEWLINE = /\\r?\\n/g;\nconst R_FEATURE = /^\\s*Feature:(.*)$/;\nconst R_AS = /^\\s*As (.*)$/;\nconst R_I_WANT = /^\\s*I want (.*)$/;\nconst R_SO_THAT = /^\\s*So that (.*)$/;\nconst R_IN_ORDER = /^\\s*In order (.*)$/;\nconst R_SCENARIO = /^\\s*Scenario:(.*)$/;\nconst R_GIVEN = /^\\s*Given (.*)$/;\nconst R_WHEN = /^\\s*When(.*)$/;\nconst R_THEN = /^\\s*Then (.*)$/;\nconst R_AND = /^\\s*And (.*)$/;\nconst R_BUT = /^\\s*But (.*)$/;\nconst R_TAG = /^\\s*\\@(.*)$/;\n\n\nfunction extract(line, regex, index) {\n  return line.match(regex)[index].trim();\n}\n\nexport const parse = (text) => {\n  let feature;\n  let scenario;\n  let previous;\n  const features = [];\n  const lines = (text || '').toString().split(R_NEWLINE);\n  const tags = [\n\n  ];\n\n  lines.forEach((line, lineCount) => {\n    if (R_FEATURE.test(line)) {\n      feature = {\n        feature: extract(line, R_FEATURE, 1),\n        scenarios: []\n      };\n\n      features.push(feature);\n    }\n    else if (R_AS.test(line)) {\n      feature.perspective = extract(line, R_AS, 1);\n    }\n    else if (R_I_WANT.test(line)) {\n      feature.desire = extract(line, R_I_WANT, 1);\n    }\n    else if (R_SO_THAT.test(line)) {\n      feature.reason = extract(line, R_SO_THAT, 1);\n    }\n    else if (R_IN_ORDER.test(line)) {\n      feature.reason = extract(line, R_IN_ORDER, 1);\n    }\n    else if (R_SCENARIO.test(line)) {\n      scenario = {\n        scenario: extract(line, R_SCENARIO, 1),\n        given: [],\n        when: [],\n        then: []\n      };\n\n      feature.scenarios.push(scenario);\n    }\n    else if (R_TAG.test(line)) {\n      const extracted = extract(line, R_TAG, 1);     \n      tags.push({extracted, line: lineCount });\n    }\n    else if (R_GIVEN.test(line)) {\n      previous = scenario.given;\n      scenario.given.push(extract(line, R_GIVEN, 1));\n    }\n    else if (R_WHEN.test(line)) {\n      previous = scenario.when;\n      scenario.when.push(extract(line, R_WHEN, 1));\n    }\n    else if (R_THEN.test(line)) {\n      previous = scenario.then;\n      scenario.then.push(extract(line, R_THEN, 1));\n    }\n    else if (R_AND.test(line)) {\n      previous.push(extract(line, R_AND, 1));\n    }\n    else if (R_BUT.test(line)) {\n      previous.push(extract(line, R_BUT, 1));\n    }    \n    else if (line.trim().length > 0) {\n      throw new SyntaxError(line.trim());\n    }\n  });\n\n  return features;\n};\n",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/gherkin/parse.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 3,
+    "kind": "variable",
+    "name": "R_NEWLINE",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_NEWLINE",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": "Copyright (c) 2015 Christopher M. Baker\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.",
+    "lineNumber": 24,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "variable",
+    "name": "R_FEATURE",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_FEATURE",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "variable",
+    "name": "R_AS",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_AS",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "variable",
+    "name": "R_I_WANT",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_I_WANT",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 27,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "variable",
+    "name": "R_SO_THAT",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_SO_THAT",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "variable",
+    "name": "R_IN_ORDER",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_IN_ORDER",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "variable",
+    "name": "R_SCENARIO",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_SCENARIO",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "variable",
+    "name": "R_GIVEN",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_GIVEN",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "variable",
+    "name": "R_WHEN",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_WHEN",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "variable",
+    "name": "R_THEN",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_THEN",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 33,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "variable",
+    "name": "R_AND",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_AND",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "variable",
+    "name": "R_BUT",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_BUT",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 35,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "variable",
+    "name": "R_TAG",
+    "memberof": "gherkin/parse.js",
+    "static": true,
+    "longname": "gherkin/parse.js~R_TAG",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 36,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "function",
+    "name": "extract",
+    "memberof": "gherkin/parse.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "gherkin/parse.js~extract",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 39,
+    "undocument": true,
+    "params": [
+      {
+        "name": "line",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "regex",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "index",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "function",
+    "name": "parse",
+    "memberof": "gherkin/parse.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "gherkin/parse.js~parse",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/gherkin/gherkin/parse.js",
+    "importStyle": "{parse}",
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "params": [
+      {
+        "name": "text",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# @hiherto-elements/gherkin\n\nA simple Gherkin Parser that is based on [gherk](https://github.com/bakerface/gherk) - 'A minimalistic parser for the Gherkin syntax'\n\n* code 100% es6 avoiding non standard code by relying on the import keyword instead medthod based, userland loaders\n* This is intended to run in your browser. \n* with a little help from other modules, this can be easily used in node\n\n# parser(text)\n\nGiven a feature file named **drink.feature** with the contents:\n\n```javascript\nlet feature = `\nFeature: Can drink beer when thirsty\n  As a drinker\n  I want to take beer off the wall\n  In order to satisfy my thirst\n\n  Scenario: Can take a single beer\n    Given 100 bottles of beer on the wall\n    When a bottle is taken down\n    Then there are 99 bottles of beer on the wall\n\n  Scenario: Can take multiple beers\n    Given 100 bottles of beer on the wall\n    When 5 bottles are taken down\n    Then there are 95 bottles of beer on the wall\n\n  Scenario: Ghosts can drink\n    Given 100 bottles of beer on the wall\n    And there is nobody in the room\n    When 5 bottles are taken down\n    And they are floating in the air\n    Then there are 95 bottles of beer on the wall\n    And there are ghosts in the room\n\t\t`\n```\n\nWhen calling the `parse` function:\n\n``` javascript\n\nconsole.log(parse(feature));\n```\n\nThen the following JSON object is returned:\n\n``` javascript\n[\n  {\n    feature: 'Can drink beer when thirsty',\n    perspective: 'drinker',\n    desire: 'to take beer off the wall',\n    reason: 'to satisfy my thirst',\n    scenarios: [\n      {\n        scenario: 'Can take a single beer',\n        given: [\n          '100 bottles of beer on the wall'\n        ],\n        when: [\n          'a bottle is taken down'\n        ],\n        then: [\n          'there are 99 bottles of beer on the wall'\n        ]\n      },\n      {\n        scenario: 'Can take multiple beers',\n        given: [\n          '100 bottles of beer on the wall'\n        ],\n        when: [\n          '5 bottles are taken down'\n        ],\n        then: [\n          'there are 95 bottles of beer on the wall'\n        ]\n      },\n      {\n        scenario: 'Ghosts can drink',\n        given: [\n          '100 bottles of beer on the wall',\n          'there is nobody in the room'\n        ],\n        when: [\n          '5 bottles are taken down',\n          'they are floating in the air'\n        ],\n        then: [\n          'there are 95 bottles of beer on the wall',\n          'there are ghosts in the room'\n        ]\n      }\n    ]\n  }\n]\n```\n",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/gherkin/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  }
+]

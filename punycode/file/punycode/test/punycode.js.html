@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">punycode/test/punycode.js | @hiherto-elements/punycode</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="minimal es6 punycode de- and encoder, forked from the &apos;original&apos; "><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@hiherto-elements/punycode"><meta property="twitter:description" content="minimal es6 punycode de- and encoder, forked from the &apos;original&apos; "></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/hiherto-elements/es-next-modules"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-punycode">punycode</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">punycode/test/punycode.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+import { Assert as assert } from &apos;../node_modules/@hiherto-elements/assert/Assert.js&apos;;
+import { punycode } from &apos;../punycode.js&apos;;
+assert.object(punycode); 
+
+const testData = {
+	&apos;strings&apos;: [
+		{
+			&apos;description&apos;: &apos;a single basic code point&apos;,
+			&apos;decoded&apos;: &apos;Bach&apos;,
+			&apos;encoded&apos;: &apos;Bach-&apos;
+		},
+		{
+			&apos;description&apos;: &apos;a single non-ASCII character&apos;,
+			&apos;decoded&apos;: &apos;\xFC&apos;,
+			&apos;encoded&apos;: &apos;tda&apos;
+		},
+		{
+			&apos;description&apos;: &apos;multiple non-ASCII characters&apos;,
+			&apos;decoded&apos;: &apos;\xFC\xEB\xE4\xF6\u2665&apos;,
+			&apos;encoded&apos;: &apos;4can8av2009b&apos;
+		},
+		{
+			&apos;description&apos;: &apos;mix of ASCII and non-ASCII characters&apos;,
+			&apos;decoded&apos;: &apos;b\xFCcher&apos;,
+			&apos;encoded&apos;: &apos;bcher-kva&apos;
+		},
+		{
+			&apos;description&apos;: &apos;long string with both ASCII and non-ASCII characters&apos;,
+			&apos;decoded&apos;: &apos;Willst du die Bl\xFCthe des fr\xFChen, die Fr\xFCchte des sp\xE4teren Jahres&apos;,
+			&apos;encoded&apos;: &apos;Willst du die Blthe des frhen, die Frchte des spteren Jahres-x9e96lkal&apos;
+		},
+		// https://tools.ietf.org/html/rfc3492#section-7.1
+		{
+			&apos;description&apos;: &apos;Arabic (Egyptian)&apos;,
+			&apos;decoded&apos;: &apos;\u0644\u064A\u0647\u0645\u0627\u0628\u062A\u0643\u0644\u0645\u0648\u0634\u0639\u0631\u0628\u064A\u061F&apos;,
+			&apos;encoded&apos;: &apos;egbpdaj6bu4bxfgehfvwxn&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Chinese (simplified)&apos;,
+			&apos;decoded&apos;: &apos;\u4ED6\u4EEC\u4E3A\u4EC0\u4E48\u4E0D\u8BF4\u4E2d\u6587&apos;,
+			&apos;encoded&apos;: &apos;ihqwcrb4cv8a8dqg056pqjye&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Chinese (traditional)&apos;,
+			&apos;decoded&apos;: &apos;\u4ED6\u5011\u7232\u4EC0\u9EBD\u4E0D\u8AAA\u4E2D\u6587&apos;,
+			&apos;encoded&apos;: &apos;ihqwctvzc91f659drss3x8bo0yb&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Czech&apos;,
+			&apos;decoded&apos;: &apos;Pro\u010Dprost\u011Bnemluv\xED\u010Desky&apos;,
+			&apos;encoded&apos;: &apos;Proprostnemluvesky-uyb24dma41a&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Hebrew&apos;,
+			&apos;decoded&apos;: &apos;\u05DC\u05DE\u05D4\u05D4\u05DD\u05E4\u05E9\u05D5\u05D8\u05DC\u05D0\u05DE\u05D3\u05D1\u05E8\u05D9\u05DD\u05E2\u05D1\u05E8\u05D9\u05EA&apos;,
+			&apos;encoded&apos;: &apos;4dbcagdahymbxekheh6e0a7fei0b&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Hindi (Devanagari)&apos;,
+			&apos;decoded&apos;: &apos;\u092F\u0939\u0932\u094B\u0917\u0939\u093F\u0928\u094D\u0926\u0940\u0915\u094D\u092F\u094B\u0902\u0928\u0939\u0940\u0902\u092C\u094B\u0932\u0938\u0915\u0924\u0947\u0939\u0948\u0902&apos;,
+			&apos;encoded&apos;: &apos;i1baa7eci9glrd9b2ae1bj0hfcgg6iyaf8o0a1dig0cd&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Japanese (kanji and hiragana)&apos;,
+			&apos;decoded&apos;: &apos;\u306A\u305C\u307F\u3093\u306A\u65E5\u672C\u8A9E\u3092\u8A71\u3057\u3066\u304F\u308C\u306A\u3044\u306E\u304B&apos;,
+			&apos;encoded&apos;: &apos;n8jok5ay5dzabd5bym9f0cm5685rrjetr6pdxa&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Korean (Hangul syllables)&apos;,
+			&apos;decoded&apos;: &apos;\uC138\uACC4\uC758\uBAA8\uB4E0\uC0AC\uB78C\uB4E4\uC774\uD55C\uAD6D\uC5B4\uB97C\uC774\uD574\uD55C\uB2E4\uBA74\uC5BC\uB9C8\uB098\uC88B\uC744\uAE4C&apos;,
+			&apos;encoded&apos;: &apos;989aomsvi5e83db1d2a355cv1e0vak1dwrv93d5xbh15a0dt30a5jpsd879ccm6fea98c&apos;
+		},
+		/**
+		 * As there&apos;s no way to do it in JavaScript, Punycode.js doesn&apos;t support
+		 * mixed-case annotation (which is entirely optional as per the RFC).
+		 * So, while the RFC sample string encodes to:
+		 * `b1abfaaepdrnnbgefbaDotcwatmq2g4l`
+		 * Without mixed-case annotation it has to encode to:
+		 * `b1abfaaepdrnnbgefbadotcwatmq2g4l`
+		 * https://github.com/bestiejs/punycode.js/issues/3
+		 */
+		{
+			&apos;description&apos;: &apos;Russian (Cyrillic)&apos;,
+			&apos;decoded&apos;: &apos;\u043F\u043E\u0447\u0435\u043C\u0443\u0436\u0435\u043E\u043D\u0438\u043D\u0435\u0433\u043E\u0432\u043E\u0440\u044F\u0442\u043F\u043E\u0440\u0443\u0441\u0441\u043A\u0438&apos;,
+			&apos;encoded&apos;: &apos;b1abfaaepdrnnbgefbadotcwatmq2g4l&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Spanish&apos;,
+			&apos;decoded&apos;: &apos;Porqu\xE9nopuedensimplementehablarenEspa\xF1ol&apos;,
+			&apos;encoded&apos;: &apos;PorqunopuedensimplementehablarenEspaol-fmd56a&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Vietnamese&apos;,
+			&apos;decoded&apos;: &apos;T\u1EA1isaoh\u1ECDkh\xF4ngth\u1EC3ch\u1EC9n\xF3iti\u1EBFngVi\u1EC7t&apos;,
+			&apos;encoded&apos;: &apos;TisaohkhngthchnitingVit-kjcr8268qyxafd2f1b9g&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;3\u5E74B\u7D44\u91D1\u516B\u5148\u751F&apos;,
+			&apos;encoded&apos;: &apos;3B-ww4c5e180e575a65lsy2b&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;\u5B89\u5BA4\u5948\u7F8E\u6075-with-SUPER-MONKEYS&apos;,
+			&apos;encoded&apos;: &apos;-with-SUPER-MONKEYS-pc58ag80a8qai00g7n9n&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;Hello-Another-Way-\u305D\u308C\u305E\u308C\u306E\u5834\u6240&apos;,
+			&apos;encoded&apos;: &apos;Hello-Another-Way--fc4qua05auwb3674vfr0b&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;\u3072\u3068\u3064\u5C4B\u6839\u306E\u4E0B2&apos;,
+			&apos;encoded&apos;: &apos;2-u9tlzr9756bt3uc0v&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;Maji\u3067Koi\u3059\u308B5\u79D2\u524D&apos;,
+			&apos;encoded&apos;: &apos;MajiKoi5-783gue6qz075azm5e&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;\u30D1\u30D5\u30A3\u30FCde\u30EB\u30F3\u30D0&apos;,
+			&apos;encoded&apos;: &apos;de-jg4avhby1noc0d&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;\u305D\u306E\u30B9\u30D4\u30FC\u30C9\u3067&apos;,
+			&apos;encoded&apos;: &apos;d9juau41awczczp&apos;
+		},
+		/**
+		 * This example is an ASCII string that breaks the existing rules for host
+		 * name labels. (It&apos;s not a realistic example for IDNA, because IDNA never
+		 * encodes pure ASCII labels.)
+		 */
+		{
+			&apos;description&apos;: &apos;ASCII string that breaks the existing rules for host-name labels&apos;,
+			&apos;decoded&apos;: &apos;-&gt; $1.00 &lt;-&apos;,
+			&apos;encoded&apos;: &apos;-&gt; $1.00 &lt;--&apos;
+		}
+	],
+	&apos;ucs2&apos;: [
+		// Every Unicode symbol is tested separately. These are just the extra
+		// tests for symbol combinations:
+		{
+			&apos;description&apos;: &apos;Consecutive astral symbols&apos;,
+			&apos;decoded&apos;: [127829, 119808, 119558, 119638],
+			&apos;encoded&apos;: &apos;\uD83C\uDF55\uD835\uDC00\uD834\uDF06\uD834\uDF56&apos;
+		},
+		{
+			&apos;description&apos;: &apos;U+D800 (high surrogate) followed by non-surrogates&apos;,
+			&apos;decoded&apos;: [55296, 97, 98],
+			&apos;encoded&apos;: &apos;\uD800ab&apos;
+		},
+		{
+			&apos;description&apos;: &apos;U+DC00 (low surrogate) followed by non-surrogates&apos;,
+			&apos;decoded&apos;: [56320, 97, 98],
+			&apos;encoded&apos;: &apos;\uDC00ab&apos;
+		},
+		{
+			&apos;description&apos;: &apos;High surrogate followed by another high surrogate&apos;,
+			&apos;decoded&apos;: [0xD800, 0xD800],
+			&apos;encoded&apos;: &apos;\uD800\uD800&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Unmatched high surrogate, followed by a surrogate pair, followed by an unmatched high surrogate&apos;,
+			&apos;decoded&apos;: [0xD800, 0x1D306, 0xD800],
+			&apos;encoded&apos;: &apos;\uD800\uD834\uDF06\uD800&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Low surrogate followed by another low surrogate&apos;,
+			&apos;decoded&apos;: [0xDC00, 0xDC00],
+			&apos;encoded&apos;: &apos;\uDC00\uDC00&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Unmatched low surrogate, followed by a surrogate pair, followed by an unmatched low surrogate&apos;,
+			&apos;decoded&apos;: [0xDC00, 0x1D306, 0xDC00],
+			&apos;encoded&apos;: &apos;\uDC00\uD834\uDF06\uDC00&apos;
+		}
+	],
+	&apos;domains&apos;: [
+		{
+			&apos;decoded&apos;: &apos;ma\xF1ana.com&apos;,
+			&apos;encoded&apos;: &apos;xn--maana-pta.com&apos;
+		},
+		{ // https://github.com/bestiejs/punycode.js/issues/17
+			&apos;decoded&apos;: &apos;example.com.&apos;,
+			&apos;encoded&apos;: &apos;example.com.&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;b\xFCcher.com&apos;,
+			&apos;encoded&apos;: &apos;xn--bcher-kva.com&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;caf\xE9.com&apos;,
+			&apos;encoded&apos;: &apos;xn--caf-dma.com&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;\u2603-\u2318.com&apos;,
+			&apos;encoded&apos;: &apos;xn----dqo34k.com&apos;
+		},
+		{
+			&apos;decoded&apos;: &apos;\uD400\u2603-\u2318.com&apos;,
+			&apos;encoded&apos;: &apos;xn----dqo34kn65z.com&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Emoji&apos;,
+			&apos;decoded&apos;: &apos;\uD83D\uDCA9.la&apos;,
+			&apos;encoded&apos;: &apos;xn--ls8h.la&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Non-printable ASCII&apos;,
+			&apos;decoded&apos;: &apos;\0\x01\x02foo.bar&apos;,
+			&apos;encoded&apos;: &apos;\0\x01\x02foo.bar&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Email address&apos;,
+			&apos;decoded&apos;: &apos;\u0434\u0436\u0443\u043C\u043B\u0430@\u0434\u0436p\u0443\u043C\u043B\u0430\u0442\u0435\u0441\u0442.b\u0440\u0444a&apos;,
+			&apos;encoded&apos;: &apos;\u0434\u0436\u0443\u043C\u043B\u0430@xn--p-8sbkgc5ag7bhce.xn--ba-lmcq&apos;
+		}
+	],
+	&apos;separators&apos;: [
+		{
+			&apos;description&apos;: &apos;Using U+002E as separator&apos;,
+			&apos;decoded&apos;: &apos;ma\xF1ana\x2Ecom&apos;,
+			&apos;encoded&apos;: &apos;xn--maana-pta.com&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Using U+3002 as separator&apos;,
+			&apos;decoded&apos;: &apos;ma\xF1ana\u3002com&apos;,
+			&apos;encoded&apos;: &apos;xn--maana-pta.com&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Using U+FF0E as separator&apos;,
+			&apos;decoded&apos;: &apos;ma\xF1ana\uFF0Ecom&apos;,
+			&apos;encoded&apos;: &apos;xn--maana-pta.com&apos;
+		},
+		{
+			&apos;description&apos;: &apos;Using U+FF61 as separator&apos;,
+			&apos;decoded&apos;: &apos;ma\xF1ana\uFF61com&apos;,
+			&apos;encoded&apos;: &apos;xn--maana-pta.com&apos;
+		}
+	]
+};
+
+
+for (let object of testData.ucs2) {
+	const decoded = punycode.ucs2.decode(object.encoded);
+	const compare = object.decoded;
+	assert.deepEqual(
+		punycode.ucs2.decode(object.encoded),
+		object.decoded,
+		object.description
+	);
+}
+
+const codePoints = [0x61, 0x62, 0x63];
+const result = punycode.ucs2.encode(codePoints);
+assert.deepEqual(result, &apos;abc&apos;, &apos;Does encode correctly&apos;);
+assert.deepEqual(codePoints, [0x61, 0x62, 0x63], &apos;extracts the right code points&apos;);
+
+for (const object of testData.strings) {
+		assert.deepEqual(
+			punycode.decode(object.encoded),
+			object.decoded
+		);
+}
+assert.deepEqual(punycode.decode(&apos;ZZZ&apos;), &apos;\u7BA5&apos;);
+
+for (const object of testData.strings) {
+		assert.deepEqual(
+			punycode.encode(object.decoded),
+			object.encoded
+		);
+}
+
+for (const object of testData.domains) {
+		assert.deepEqual(
+			punycode.toUnicode(object.encoded),
+			object.decoded
+		);
+}
+for (const object of testData.strings) {
+		assert.deepEqual(
+			punycode.toUnicode(object.encoded),
+			object.encoded
+		);
+		assert.deepEqual(
+			punycode.toUnicode(object.decoded),
+			object.decoded
+		);
+}
+
+	for (const object of testData.domains) {
+		assert.deepEqual(
+			punycode.toASCII(object.decoded),
+			object.encoded
+		);
+	}
+	for (const object of testData.strings) {
+		assert.deepEqual(
+			punycode.toASCII(object.encoded),
+			object.encoded
+		);
+	}
+	for (const object of testData.separators) {
+			assert.deepEqual(
+				punycode.toASCII(object.decoded),
+				object.encoded
+			);
+	}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

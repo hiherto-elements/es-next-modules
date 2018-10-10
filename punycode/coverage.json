@@ -1,0 +1,33 @@
+{
+  "coverage": "56.25%",
+  "expectCount": 32,
+  "actualCount": 18,
+  "files": {
+    "punycode/punycode.js": {
+      "expectCount": 29,
+      "actualCount": 18,
+      "undocumentLines": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        16,
+        17,
+        28,
+        29
+      ]
+    },
+    "punycode/test/punycode.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        252,
+        253
+      ]
+    }
+  }
+}

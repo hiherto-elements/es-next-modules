@@ -1,0 +1,1864 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "assert/Assert.js",
+    "content": "\t\nimport InvalidValueException from './InvalidValueException.js';\nimport ValueConverter from './ValueConverter.js';\n\nexport class Assert\n{\n    /**\n     * @param {object} objectValue\n     * @param {function} expectedInstance\n     * @param {string} [message]\n     */\n    static instanceOf(objectValue, expectedInstance, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.instanceOf needs to be a valid string.\");\n\n        if (typeof objectValue !== 'object') {\n            throw InvalidValueException.expected(\"object\", objectValue, message);\n        }\n\n        if (!(objectValue instanceof expectedInstance)) {\n            throw InvalidValueException.expected(\n                expectedInstance.name,\n                objectValue,\n                message.length ? message : \"Expected instance of \\\"${expected}\\\" but got \\\"${received}\\\".\"\n            );\n        }\n    }\n\n    static instanceOneOf(objectValue, expectedInstances, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.instanceOf needs to be a valid string.\");\n        this.array(expectedInstances);\n\n        let instance = expectedInstances.find((expectedInstance) => {\n            return (objectValue instanceof expectedInstance)\n        });\n\n        if (instance === undefined) {\n            throw InvalidValueException.expected(\n                expectedInstances.map((instance) => {return ValueConverter.toString(instance); }).join(', '),\n                objectValue,\n                message.length ? message : \"Expected instance of \\\"${expected}\\\" but got \\\"${received}\\\".\"\n            );\n        }\n    }\n\n    /**\n     * @param {int} integerValue\n     * @param {string} [message]\n     */\n    static integer(integerValue, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.integer needs to be a valid string.\");\n\n        if (!Number.isInteger(integerValue)) {\n            throw InvalidValueException.expected(\"integer\", integerValue, message);\n        }\n    }\n\n    /**\n     * @param {number} numberValue\n     * @param {string} [message]\n     */\n    static number(numberValue, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.number needs to be a valid string.\");\n\n        if (typeof numberValue !== 'number') {\n            throw InvalidValueException.expected(\"number\", numberValue);\n        }\n    }\n\n    /**\n     * @param {string} stringValue\n     * @param {string} [message]\n     */\n    static string(stringValue, message = \"\")\n    {\n        if (typeof message !== \"string\") {\n            throw \"Custom error message passed to Assert.string needs to be a valid string.\";\n        }\n\n        if (typeof stringValue !== \"string\") {\n            throw InvalidValueException.expected(\"string\", stringValue, message);\n        }\n    }\n\n    /**\n     * @param {boolean} booleanValue\n     * @param {string} [message]\n     */\n    static boolean(booleanValue, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.boolean needs to be a valid string.\");\n\n        if (typeof booleanValue !== 'boolean') {\n            throw InvalidValueException.expected(\"boolean\", booleanValue, message);\n        }\n    }\n\n    /**\n     * @param {boolean} value\n     * @param {string} [message]\n     */\n    static true(value, message = \"\")\n    {\n        this.boolean(value);\n        this.string(message, \"Custom error message passed to Assert.true needs to be a valid string.\");\n\n        if (value !== true) {\n            throw InvalidValueException.expected(\"true\", value, message);\n        }\n    }\n\n    /**\n     * @param {boolean} value\n     * @param {string} [message]\n     */\n    static false(value, message = \"\")\n    {\n        this.boolean(value);\n        this.string(message, \"Custom error message passed to Assert.false needs to be a valid string.\");\n\n        if (value !== false) {\n            throw InvalidValueException.expected(\"false\", value, message);\n        }\n    }\n    \n    /**\n     * @param value\n     * @param expectedValue\n     * @param {string} [message]\n     */\n    static equal(value, expectedValue, message = \"\")\n    {\n        if (typeof value !== 'object') {\n            this.true(value === expectedValue, message ? message : `Expected value ${ValueConverter.toString(value)} to be equals ${ValueConverter.toString(expectedValue)} but it's not.`);\n        } else {\n            this.objectEqual(value, expectedValue, message ? message : `Expected value ${ValueConverter.toString(value)} to be equals ${ValueConverter.toString(expectedValue)} but it's not.`);\n        }\n    }\n\n    \n\n    /**\n     * @param value\n     * @param otherValue\n     * @param {string} [message]\n     */\n    static deepEqual(value, otherValue, message = \"\")\n    {        \n        this.string(message, \"Custom error message passed to Assert.false needs to be a valid string.\");\n        \n        let valueJson = JSON.stringify(value);\n        let otherValueJson = JSON.stringify(otherValue);\n        \n        if (valueJson !== otherValueJson) {\n            throw InvalidValueException.expected(\"value to deeply equal otherValue\", JSON.stringify(value) + ' !== ' + JSON.stringify(otherValue) , message);\n        }\n    }\n\n    /**\n     * @param value\n     * @param otherValue\n     * @param {string} [message]\n     */\n    static strictEqual(value, otherValue, message = \"\")\n    {        \n        this.string(message, \"Custom error message passed to Assert.false needs to be a valid string.\");\n\n        if (value !== otherValue) {\n            throw InvalidValueException.expected(\"value to strictly equal otherValue\", value + ' !== ' + otherValue , message);\n        }\n    }\n\n    /**\n     * @param value\n     * @param otherValue\n     * @param {string} [message]\n     */\n    static equal(value, otherValue, message = \"\")\n    {        \n        this.string(message, \"Custom error message passed to Assert.false needs to be a valid string.\");\n\n        if (value != otherValue) {\n            throw InvalidValueException.expected(\"value to equal otherValue\", value + ' != ' + otherValue , message);\n        }\n    }\n\n    /**\n     * @param {boolean} value\n     * @param {string} [message]\n     */\n    static ok(value, message = \"\")\n    {        \n        this.string(message, \"Custom error message passed to Assert.false needs to be a valid string.\");\n\n        if (!value) {\n            throw InvalidValueException.expected(\"truthy\", typeof value + ' ' + value , message);\n        }\n    }\n\n\n    /**\n     * @param {object} objectValue\n     * @param {string} [message]\n     */\n    static object(objectValue, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.object needs to be a valid string.\");\n\n        if (typeof objectValue !== 'object') {\n            throw InvalidValueException.expected(\"object\", objectValue, message);\n        }\n    }\n\n    /**\n     * @param {string} expectedFunctionName\n     * @param {object} objectValue\n     * @param {string} [message]\n     */\n    static hasFunction(expectedFunctionName, objectValue, message = \"\")\n    {\n        this.string(expectedFunctionName);\n        this.object(objectValue);\n        this.string(message, \"Custom error message passed to Assert.hasFunction needs to be a valid string.\");\n\n        if (typeof objectValue[expectedFunctionName] !== 'function') {\n            throw InvalidValueException.expected(`object to has function \"${expectedFunctionName}\"`, objectValue, message);\n        }\n    }\n\n    /**\n     * @param {string} expectedPropertyName\n     * @param {object} objectValue\n     * @param {string} [message]\n     */\n    static hasProperty(expectedPropertyName, objectValue, message = \"\")\n    {\n        this.string(expectedPropertyName);\n        this.object(objectValue);\n        this.string(message, \"Custom error message passed to Assert.hasProperty needs to be a valid string.\");\n\n        if (typeof objectValue[expectedPropertyName] === 'undefined') {\n            throw InvalidValueException.expected(`object to has property \"${expectedPropertyName}\"`, objectValue, message);\n        }\n    }\n\n    /**\n     * @param {array} expectedProperties\n     * @param {object} objectValue\n     * @param {string} [message]\n     */\n    static hasProperties(expectedProperties, objectValue, message = \"\")\n    {\n        this.object(objectValue);\n        this.containsOnlyString(expectedProperties);\n        this.string(message, \"Custom error message passed to Assert.hasProperties needs to be a valid string.\");\n\n        expectedProperties.map((expectedProperty) => {\n            if (typeof objectValue[expectedProperty] === 'undefined') {\n                throw InvalidValueException.expected(`object to has properties \"${expectedProperties.join(', ')}\"`, objectValue, message);\n            }\n        });\n    }\n\n    /**\n     * @param {array} arrayValue\n     * @param {string} [message]\n     */\n    static array(arrayValue, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.array needs to be a valid string.\");\n\n        if (!Array.isArray(arrayValue)) {\n            throw InvalidValueException.expected(\"array\", arrayValue, message);\n        }\n    }\n\n    /**\n     * @param {*} value\n     * @param {array} expectedElements\n     * @param {string} [message]\n     */\n    static oneOf(value, expectedElements, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.array needs to be a valid string.\");\n        this.array(expectedElements);\n\n        let foundValue = expectedElements.find((expectedInstance) => {\n            return value === expectedInstance;\n        });\n\n        if (foundValue === undefined) {\n            throw InvalidValueException.expected(\n                expectedElements.map((elemenet) => {return ValueConverter.toString(elemenet); }).join(', '),\n                value,\n                message.length ? message : \"Expected one of \\\"${expected}\\\" but got \\\"${received}\\\".\"\n            );\n        }\n    }\n\n    /**\n     * @param {function} functionValue\n     * @param {string} [message]\n     */\n    static isFunction(functionValue, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.isFunction needs to be a valid string.\");\n\n        if (typeof functionValue !== 'function') {\n            throw InvalidValueException.expected(\"function\", functionValue, message);\n        }\n    }\n\n    /**\n     * @param {int} expected\n     * @param {int} integerValue\n     * @param {string} [message]\n     */\n    static greaterThan(expected, integerValue, message = \"\")\n    {\n        this.number(expected);\n        this.number(integerValue);\n        this.string(message, \"Custom error message passed to Assert.greaterThan needs to be a valid string.\");\n\n        if (integerValue <= expected) {\n            throw message.length > 0 ? message : `Expected value ${integerValue} to be greater than ${expected}`;\n        }\n    }\n\n    /**\n     * @param {int} expected\n     * @param {int} integerValue\n     * @param {string} [message]\n     */\n    static greaterThanOrEqual(expected, integerValue, message = \"\")\n    {\n        this.number(expected);\n        this.number(integerValue);\n        this.string(message, \"Custom error message passed to Assert.greaterThanOrEqual needs to be a valid string.\");\n\n        if (integerValue < expected) {\n            throw message.length > 0 ? message : `Expected value ${integerValue} to be greater than ${expected} or equal`;\n        }\n    }\n\n    /**\n     * @param {int} expected\n     * @param {int} integerValue\n     * @param {string} [message]\n     */\n    static lessThan(expected, integerValue, message = \"\")\n    {\n        this.number(expected);\n        this.number(integerValue);\n        this.string(message, \"Custom error message passed to Assert.lessThan needs to be a valid string.\");\n\n        if (integerValue >= expected) {\n            throw message.length > 0 ? message : `Expected value ${integerValue} to be less than ${expected}`;\n        }\n    }\n\n    /**\n     * @param {int} expected\n     * @param {int} integerValue\n     * @param {string} [message]\n     */\n    static lessThanOrEqual(expected, integerValue, message = \"\")\n    {\n        this.number(expected);\n        this.number(integerValue);\n        this.string(message, \"Custom error message passed to Assert.lessThanOrEqual needs to be a valid string.\");\n\n        if (integerValue > expected) {\n            throw message.length > 0 ? message : `Expected value ${integerValue} to be less than ${expected} or equal`;\n        }\n    }\n\n    /**\n     * @param {array} arrayValue\n     * @param {function} expectedInstance\n     * @param {string} [message]\n     */\n    static containsOnly(arrayValue, expectedInstance, message = \"\")\n    {\n        this.array(arrayValue, \"Assert.containsOnly require valid array, got \\\"${received}\\\".\");\n        this.string(message, \"Custom error message passed to Assert.containsOnly needs to be a valid string.\");\n\n        for (let element of arrayValue) {\n            try {\n                this.instanceOf(element, expectedInstance, message);\n            } catch (error) {\n                throw InvalidValueException.expected(\n                    expectedInstance.name,\n                    element,\n                    message.length ? message : \"Expected instance of \\\"${expected}\\\" but got \\\"${received}\\\".\"\n                );\n            }\n        }\n    }\n\n    /**\n     * @param {array} arrayValue\n     * @param {string} [message]\n     */\n    static containsOnlyString(arrayValue, message = \"\")\n    {\n        this.array(arrayValue, \"Assert.containsOnlyString require valid array, got \\\"${received}\\\".\");\n        this.string(message, \"Custom error message passed to Assert.containsOnly needs to be a valid string.\");\n\n        for (let element of arrayValue) {\n            try {\n                this.string(element, message);\n            } catch (error) {\n                throw InvalidValueException.expected(\n                    'string',\n                    arrayValue.map((value) => { return ValueConverter.toString(value); }).join(', '),\n                    message.length ? message : \"Expected array of \\\"${expected}\\\" but got \\\"${received}\\\".\"\n                );\n            }\n        }\n    }\n\n    /**\n     * @param {array} arrayValue\n     * @param {string} [message]\n     */\n    static containsOnlyInteger(arrayValue, message = \"\")\n    {\n        this.array(arrayValue, \"Assert.containsOnlyInteger require valid array, got \\\"${received}\\\".\");\n        this.string(message, \"Custom error message passed to Assert.containsOnly needs to be a valid string.\");\n\n        for (let element of arrayValue) {\n            try {\n                this.integer(element, message);\n            } catch (error) {\n                throw InvalidValueException.expected(\n                    'integer',\n                    arrayValue.map((value) => { return ValueConverter.toString(value); }).join(', '),\n                    message.length ? message : \"Expected array of \\\"${expected}\\\" but got \\\"${received}\\\".\"\n                );\n            }\n        }\n    }\n\n    /**\n     * @param {array} arrayValue\n     * @param {string} [message]\n     */\n    static containsOnlyNumber(arrayValue, message = \"\")\n    {\n        this.array(arrayValue, \"Assert.containsOnlyNumber require valid array, got \\\"${received}\\\".\");\n        this.string(message, \"Custom error message passed to Assert.containsOnly needs to be a valid string.\");\n\n        for (let element of arrayValue) {\n            try {\n                this.number(element, message);\n            } catch (error) {\n                throw InvalidValueException.expected(\n                    'number',\n                    arrayValue.map((value) => { return ValueConverter.toString(value); }).join(', '),\n                    message.length ? message : \"Expected array of \\\"${expected}\\\" but got \\\"${received}\\\".\"\n                );\n            }\n        }\n    }\n\n    /**\n     * @param {int} expectedCount\n     * @param {array} arrayValue\n     * @param {string} [message]\n     */\n    static count(expectedCount, arrayValue, message = \"\")\n    {\n        this.integer(expectedCount);\n        this.array(arrayValue);\n        this.string(message, \"Custom error message passed to Assert.count needs to be a valid string.\");\n\n        if (arrayValue.length !== expectedCount) {\n            throw message.length ? message : `Expected count ${expectedCount}, got ${arrayValue.length}`;\n        }\n    }\n\n    /**\n     * @param {*} value\n     * @param {string} [message]\n     */\n    static notEmpty(value, message = \"\")\n    {\n        this.string(message, \"Custom error message passed to Assert.empty needs to be a valid string.\");\n\n        if (value.length === 0) {\n            throw InvalidValueException.expected(\"not empty value\", value, message);\n        }\n    }\n\n\n    /**\n     * @param {int} integerValue\n     * @param {string} [message]\n     */\n    static oddNumber(integerValue, message = \"\")\n    {\n        this.integer(integerValue);\n        this.string(message, \"Custom error message passed to Assert.oddNumber needs to be a valid string.\");\n\n        if ((integerValue % 2) !== 1) {\n            throw InvalidValueException.expected(\"odd number\", integerValue, message);\n        }\n    }\n\n    /**\n     * @param {int} integerValue\n     * @param {string} [message]\n     */\n    static evenNumber(integerValue, message = \"\")\n    {\n        this.integer(integerValue);\n        this.string(message, \"Custom error message passed to Assert.evenNumber needs to be a valid string.\");\n\n        if ((integerValue % 2) !== 0) {\n            throw InvalidValueException.expected(\"even number\", integerValue, message);\n        }\n    }\n\n    /**\n     * @param {string} stringValue\n     * @param {string} [message]\n     */\n    static jsonString(stringValue, message = \"\")\n    {\n        this.string(stringValue);\n        this.string(message, \"Custom error message passed to Assert.jsonString needs to be a valid string.\");\n\n        try {\n            JSON.parse(stringValue);\n        } catch (e) {\n            throw InvalidValueException.expected(\"json string\", stringValue, message);\n        }\n    }\n\n    /**\n     * @param {string} emailValue\n     * @param {string} [message]\n     */\n    static email(emailValue, message = \"\")\n    {\n        this.string(emailValue);\n        this.string(message, \"Custom error message passed to Assert.email needs to be a valid string.\");\n\n        let regexp = /^[-a-z0-9~!$%^&*_=+}{\\'?]+(\\.[-a-z0-9~!$%^&*_=+}{\\'?]+)*@([a-z0-9_][-a-z0-9_]*(\\.[-a-z0-9_]+)*\\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;\n\n        if (!regexp.test(emailValue)) {\n            throw InvalidValueException.expected(\"valid email address\", emailValue, message);\n        }\n    }\n\n    /**\n     * @param {string} urlValue\n     * @param {string} [message]\n     */\n    static url(urlValue, message = \"\")\n    {\n        this.string(urlValue);\n        this.string(message, \"Custom error message passed to Assert.url needs to be a valid string.\");\n\n        let regexp = /((([A-Za-z]{3,9}:(?:\\/\\/)?)(?:[\\-;:&=\\+\\$,\\w]+@)?[A-Za-z0-9\\.\\-]+|(?:www\\.|[\\-;:&=\\+\\$,\\w]+@)[A-Za-z0-9\\.\\-]+)((?:\\/[\\+~%\\/\\.\\w\\-_]*)?\\??(?:[\\-\\+=&;%@\\.\\w_]*)#?(?:[\\.\\!\\/\\\\\\w]*))?)/;\n\n        if (!regexp.test(urlValue)) {\n            throw InvalidValueException.expected(\"valid url\", urlValue, message);\n        }\n    }\n\n    /**\n     * @param {string} uuidValue\n     * @param {string} [message]\n     */\n    static uuid(uuidValue, message = \"\")\n    {\n        this.string(uuidValue);\n        this.string(message, \"Custom error message passed to Assert.uuid needs to be a valid string.\");\n\n        let regexp = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;\n\n        if (!regexp.test(uuidValue)) {\n            throw InvalidValueException.expected(\"valid uuid\", uuidValue, message);\n        }\n    }\n\n    /**\n     * @param {string} selector\n     * @param {HTMLElement|HTMLDocument} htmlElement\n     * @param {string} [message]\n     */\n    static hasElement(selector, htmlElement, message = \"\")\n    {\n        this.string(selector);\n        this.instanceOneOf(htmlElement, [HTMLElement, HTMLDocument]);\n        this.string(message, \"Custom error message passed to Assert.hasProperty needs to be a valid string.\");\n\n        if (null === htmlElement.querySelector(selector)) {\n            throw InvalidValueException.expected(`html element to has element under selector \"${selector}\"`, htmlElement.outerHTML, message);\n        }\n    }\n\n    /**\n     * @param {string} attributeName\n     * @param {HTMLElement} htmlElement\n     * @param {string} [message]\n     */\n    static hasAttribute(attributeName, htmlElement, message = \"\")\n    {\n        this.string(attributeName);\n        this.instanceOf(htmlElement, HTMLElement);\n        this.string(message, \"Custom error message passed to Assert.hasAttribute needs to be a valid string.\");\n\n        let attribute = htmlElement.getAttribute(attributeName);\n\n        if (null ===  attribute) {\n            throw InvalidValueException.expected(`html element with attribute \"${attributeName}\"`, htmlElement.outerHTML, message);\n        }\n    }\n\n    /**\n     * @param {array} attributes\n     * @param {HTMLElement} htmlElement\n     * @param {string} [message]\n     */\n    static hasAttributes(attributes, htmlElement, message = \"\")\n    {\n        this.containsOnlyString(attributes);\n        this.instanceOf(htmlElement, HTMLElement);\n        this.string(message, \"Custom error message passed to Assert.hasAttributes needs to be a valid string.\");\n\n        attributes.map((attribute) => {\n            try {\n                this.hasAttribute(attribute, htmlElement)\n            } catch (e) {\n                throw InvalidValueException.expected(`html element with attributes \"${attributes.join(', ')}\"`, htmlElement.outerHTML, message);\n            }\n        })\n    }\n}\n",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/assert/Assert.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "class",
+    "name": "Assert",
+    "memberof": "assert/Assert.js",
+    "static": true,
+    "longname": "assert/Assert.js~Assert",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/assert/assert/Assert.js",
+    "importStyle": "{Assert}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 2,
+    "kind": "method",
+    "name": "instanceOf",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.instanceOf",
+    "access": "public",
+    "description": "",
+    "lineNumber": 12,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "objectValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expectedInstance",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 3,
+    "kind": "method",
+    "name": "instanceOneOf",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.instanceOneOf",
+    "access": "public",
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectValue",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "expectedInstances",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "message",
+        "optional": true,
+        "types": [
+          "string"
+        ],
+        "defaultRaw": "",
+        "defaultValue": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 4,
+    "kind": "method",
+    "name": "integer",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.integer",
+    "access": "public",
+    "description": "",
+    "lineNumber": 51,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "integerValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 5,
+    "kind": "method",
+    "name": "number",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.number",
+    "access": "public",
+    "description": "",
+    "lineNumber": 64,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "numberValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 6,
+    "kind": "method",
+    "name": "string",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.string",
+    "access": "public",
+    "description": "",
+    "lineNumber": 77,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "stringValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 7,
+    "kind": "method",
+    "name": "boolean",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.boolean",
+    "access": "public",
+    "description": "",
+    "lineNumber": 92,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "booleanValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 8,
+    "kind": "method",
+    "name": "true",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.true",
+    "access": "public",
+    "description": "",
+    "lineNumber": 105,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 9,
+    "kind": "method",
+    "name": "false",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.false",
+    "access": "public",
+    "description": "",
+    "lineNumber": 119,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 10,
+    "kind": "method",
+    "name": "equal",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.equal",
+    "access": "public",
+    "description": "",
+    "lineNumber": 134,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expectedValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 11,
+    "kind": "method",
+    "name": "deepEqual",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.deepEqual",
+    "access": "public",
+    "description": "",
+    "lineNumber": 150,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "otherValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 12,
+    "kind": "method",
+    "name": "strictEqual",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.strictEqual",
+    "access": "public",
+    "description": "",
+    "lineNumber": 167,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "otherValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 13,
+    "kind": "method",
+    "name": "equal",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.equal",
+    "access": "public",
+    "description": "",
+    "lineNumber": 181,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "otherValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 14,
+    "kind": "method",
+    "name": "ok",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.ok",
+    "access": "public",
+    "description": "",
+    "lineNumber": 194,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 15,
+    "kind": "method",
+    "name": "object",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.object",
+    "access": "public",
+    "description": "",
+    "lineNumber": 208,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "objectValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 16,
+    "kind": "method",
+    "name": "hasFunction",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.hasFunction",
+    "access": "public",
+    "description": "",
+    "lineNumber": 222,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expectedFunctionName",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "objectValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 17,
+    "kind": "method",
+    "name": "hasProperty",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.hasProperty",
+    "access": "public",
+    "description": "",
+    "lineNumber": 238,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expectedPropertyName",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "objectValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 18,
+    "kind": "method",
+    "name": "hasProperties",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.hasProperties",
+    "access": "public",
+    "description": "",
+    "lineNumber": 254,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expectedProperties",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "objectValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 19,
+    "kind": "method",
+    "name": "array",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.array",
+    "access": "public",
+    "description": "",
+    "lineNumber": 271,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "arrayValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 20,
+    "kind": "method",
+    "name": "oneOf",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.oneOf",
+    "access": "public",
+    "description": "",
+    "lineNumber": 285,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expectedElements",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 21,
+    "kind": "method",
+    "name": "isFunction",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.isFunction",
+    "access": "public",
+    "description": "",
+    "lineNumber": 307,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "functionValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 22,
+    "kind": "method",
+    "name": "greaterThan",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.greaterThan",
+    "access": "public",
+    "description": "",
+    "lineNumber": 321,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expected",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "integerValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 23,
+    "kind": "method",
+    "name": "greaterThanOrEqual",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.greaterThanOrEqual",
+    "access": "public",
+    "description": "",
+    "lineNumber": 337,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expected",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "integerValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 24,
+    "kind": "method",
+    "name": "lessThan",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.lessThan",
+    "access": "public",
+    "description": "",
+    "lineNumber": 353,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expected",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "integerValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 25,
+    "kind": "method",
+    "name": "lessThanOrEqual",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.lessThanOrEqual",
+    "access": "public",
+    "description": "",
+    "lineNumber": 369,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expected",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "integerValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 26,
+    "kind": "method",
+    "name": "containsOnly",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.containsOnly",
+    "access": "public",
+    "description": "",
+    "lineNumber": 385,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "arrayValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expectedInstance",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 27,
+    "kind": "method",
+    "name": "containsOnlyString",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.containsOnlyString",
+    "access": "public",
+    "description": "",
+    "lineNumber": 407,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "arrayValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 28,
+    "kind": "method",
+    "name": "containsOnlyInteger",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.containsOnlyInteger",
+    "access": "public",
+    "description": "",
+    "lineNumber": 429,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "arrayValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 29,
+    "kind": "method",
+    "name": "containsOnlyNumber",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.containsOnlyNumber",
+    "access": "public",
+    "description": "",
+    "lineNumber": 451,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "arrayValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 30,
+    "kind": "method",
+    "name": "count",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.count",
+    "access": "public",
+    "description": "",
+    "lineNumber": 474,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expectedCount",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "arrayValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 31,
+    "kind": "method",
+    "name": "notEmpty",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.notEmpty",
+    "access": "public",
+    "description": "",
+    "lineNumber": 489,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 32,
+    "kind": "method",
+    "name": "oddNumber",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.oddNumber",
+    "access": "public",
+    "description": "",
+    "lineNumber": 503,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "integerValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 33,
+    "kind": "method",
+    "name": "evenNumber",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.evenNumber",
+    "access": "public",
+    "description": "",
+    "lineNumber": 517,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "int"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "integerValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 34,
+    "kind": "method",
+    "name": "jsonString",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.jsonString",
+    "access": "public",
+    "description": "",
+    "lineNumber": 531,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "stringValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 35,
+    "kind": "method",
+    "name": "email",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.email",
+    "access": "public",
+    "description": "",
+    "lineNumber": 547,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "emailValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 36,
+    "kind": "method",
+    "name": "url",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.url",
+    "access": "public",
+    "description": "",
+    "lineNumber": 563,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "urlValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 37,
+    "kind": "method",
+    "name": "uuid",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.uuid",
+    "access": "public",
+    "description": "",
+    "lineNumber": 579,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "uuidValue",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 38,
+    "kind": "method",
+    "name": "hasElement",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.hasElement",
+    "access": "public",
+    "description": "",
+    "lineNumber": 596,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "selector",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "HTMLElement",
+          "HTMLDocument"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "htmlElement",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 39,
+    "kind": "method",
+    "name": "hasAttribute",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.hasAttribute",
+    "access": "public",
+    "description": "",
+    "lineNumber": 612,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "attributeName",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "HTMLElement"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "htmlElement",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 40,
+    "kind": "method",
+    "name": "hasAttributes",
+    "memberof": "assert/Assert.js~Assert",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/Assert.js~Assert.hasAttributes",
+    "access": "public",
+    "description": "",
+    "lineNumber": 630,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "attributes",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "HTMLElement"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "htmlElement",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 41,
+    "kind": "file",
+    "name": "assert/InvalidValueException.js",
+    "content": "import MessageFactory from './MessageFactory.js';\nimport ValueConverter from './ValueConverter.js';\n\nclass InvalidValueException\n{\n    /**\n     * @param {string} type\n     * @param {*} value\n     * @param {string} [message]\n     * @returns {Error}\n     */\n    static expected(type, value, message = \"\")\n    {\n        if (typeof message !== 'string') {\n            throw new Error(`Expected string but got \"${ValueConverter.toString(message)}\".`);\n        }\n\n        if (message.length) {\n            return new Error(MessageFactory.create(message, {expected: type, received: ValueConverter.toString(value)}));\n        }\n\n        return new Error(`Expected ${type} but got \"${ValueConverter.toString(value)}\".`);\n    }\n}\n\n\nexport default InvalidValueException;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/assert/InvalidValueException.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 42,
+    "kind": "class",
+    "name": "InvalidValueException",
+    "memberof": "assert/InvalidValueException.js",
+    "static": true,
+    "longname": "assert/InvalidValueException.js~InvalidValueException",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/assert/assert/InvalidValueException.js",
+    "importStyle": "InvalidValueException",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 43,
+    "kind": "method",
+    "name": "expected",
+    "memberof": "assert/InvalidValueException.js~InvalidValueException",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/InvalidValueException.js~InvalidValueException.expected",
+    "access": "public",
+    "description": "",
+    "lineNumber": 12,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Error}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "message",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Error"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 44,
+    "kind": "file",
+    "name": "assert/MessageFactory.js",
+    "content": "const VALUE_NAME_REGEXP = /\\${(.*?)}/g;\n\nexport class MessageFactory\n{\n    /**\n     * @param {string} template\n     * @param {object} [data]\n     */\n    static create(template, data = {})\n    {\n        if (typeof template !== 'string') {\n            throw new Error(`Expected string but got \"${ValueConverter.toString(template)}\".`);\n        }\n\n        if (typeof data !== 'object') {\n            throw new Error(`Expected string but got \"${ValueConverter.toString(data)}\".`);\n        }\n\n        return template.replace(VALUE_NAME_REGEXP, (placeholder, propertyName) => {\n            if (data.hasOwnProperty(propertyName)) {\n                return data[propertyName];\n            }\n\n            return placeholder;\n        });\n    }\n}\n\nexport default MessageFactory;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/assert/MessageFactory.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 45,
+    "kind": "variable",
+    "name": "VALUE_NAME_REGEXP",
+    "memberof": "assert/MessageFactory.js",
+    "static": true,
+    "longname": "assert/MessageFactory.js~VALUE_NAME_REGEXP",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/assert/assert/MessageFactory.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "undefined"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "class",
+    "name": "MessageFactory",
+    "memberof": "assert/MessageFactory.js",
+    "static": true,
+    "longname": "assert/MessageFactory.js~MessageFactory",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/assert/assert/MessageFactory.js",
+    "importStyle": "{MessageFactory}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 47,
+    "kind": "method",
+    "name": "create",
+    "memberof": "assert/MessageFactory.js~MessageFactory",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/MessageFactory.js~MessageFactory.create",
+    "access": "public",
+    "description": "",
+    "lineNumber": 9,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "template",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "assert/ValueConverter.js",
+    "content": "class ValueConverter\n{\n    /**\n     * @param {*} value\n     * @returns {string}\n     */\n    static toString(value)\n    {\n        if (typeof value === 'string') {\n            return `string[\"${value}\"]`;\n        }\n\n        if (typeof value === 'number') {\n            if (Number.isInteger(value)) {\n                return `int[${value}]`;\n            }\n\n            return `float[${value}]`;\n        }\n\n        if (typeof value === 'boolean') {\n            return `boolean[${(value) ? \"true\" : \"false\"}]`;\n        }\n\n        if (typeof value === 'function') {\n            return `function[${value.toString()}]`;\n        }\n\n        if (typeof value === 'object') {\n            if (Array.isArray(value)) {\n                return `array[length: ${value.length}]`;\n            }\n\n            if (value instanceof Map) {\n                return `Map[size: ${value.size}]`;\n            }\n\n            if (value instanceof WeakMap) {\n                return `WeakMap[]`;\n            }\n\n            if (value instanceof Set) {\n                return `Set[size: ${value.size}]`;\n            }\n\n            if (value instanceof WeakSet) {\n                return `WeakSet[]`;\n            }\n\n            if (value instanceof String) {\n                return `String[\"${value}\"]`;\n            }\n\n            if (value instanceof Number) {\n                let source = value.valueOf();\n\n                if (Number.isInteger(source)) {\n                    return `Number:int[${source}]`;\n                }\n\n                return `Number:float[${source}]`;\n            }\n\n            if (value instanceof Boolean) {\n                return `Boolean[${(value.valueOf()) ? \"true\" : \"false\"}]`;\n            }\n\n            if (value instanceof Date) {\n                return `Date[\"${value.toUTCString()}\"]`;\n            }\n\n            if (value instanceof RegExp) {\n                return `RegExp[${value.toString()}]`;\n            }\n\n            return `object[${JSON.stringify(value)}]`;\n        }\n\n        if (typeof value === 'undefined') {\n            return 'undefined';\n        }\n\n        throw `Unhandled type ${typeof value}`;\n    }\n}\n\nexport default ValueConverter;",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/assert/ValueConverter.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "ValueConverter",
+    "memberof": "assert/ValueConverter.js",
+    "static": true,
+    "longname": "assert/ValueConverter.js~ValueConverter",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/assert/assert/ValueConverter.js",
+    "importStyle": "ValueConverter",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "method",
+    "name": "toString",
+    "memberof": "assert/ValueConverter.js~ValueConverter",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "assert/ValueConverter.js~ValueConverter.toString",
+    "access": "public",
+    "description": "",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# @hiherto-elements/assert\n\nA simple, es6 only assert  lib. Forked from [assert-js](https://github.com/Tiliqua/assert-js).\n\n",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/assert/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  }
+]
