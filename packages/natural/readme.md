@@ -1,1 +1,4 @@
-https://github.com/NaturalNode/natural/blob/master/lib/natural/classifiers/classifier.js
+# @hiherto-elements/natural
+
+A es6 module version of [natual js](https://github.com/NaturalNode/natural);
+
