@@ -1,0 +1,32 @@
+{
+  "name": "@hiherto-elements/test",
+  "version": "0.0.1",
+  "description": "a very simple test runner, delivered as es module",
+  "main": "test.js",
+  "directories": {
+    "test": "test"
+  },
+  "esdoc": {
+    "source": ".",
+    "includes": ["test.js", "tdd.js"],
+    "destination": "./docs",
+    "plugins": [{"name": "esdoc-standard-plugin"}]
+  },
+  "dependencies": {
+    "@hiherto-elements/assert": "^0.0.4"
+  },
+  "scripts": {
+    "docs": "rm -rf ./docs && esdoc",
+    "test": "sh test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiherto-elements/es-next-modules.git"
+  },
+  "author": "Sebastian Schürmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hiherto-elements/es-next-modules/issues"
+  },
+  "homepage": "https://github.com/hiherto-elements/es-next-modules#readme"
+}
