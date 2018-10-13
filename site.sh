@@ -6,4 +6,5 @@ cp -r ./packages/gherkin/docs site/gherkin
 cp -r ./packages/natural/docs site/natural
 cp -r ./packages/punycode/docs site/punycode
 cp -r ./packages/querystring/docs site/querystring
+cp -r ./packages/test/docs site/test
 cp -r ./packages/url/docs site/url
