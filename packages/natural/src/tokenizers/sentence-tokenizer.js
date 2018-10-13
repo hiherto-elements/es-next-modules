@@ -1,4 +1,4 @@
-import Tokenizer from './tokenizer';
+import Tokenizer from './tokenizer.js';
 
 export class SentenceTokenizer extends Tokenizer{
     tokenize(text) {

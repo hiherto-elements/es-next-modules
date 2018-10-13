@@ -1,9 +1,4 @@
-
-import { assert } from 'chai';
+import { Assert } from '../../node_modules/@hiherto-elements/assert/Assert.js';
 import { TreebankWordTokenizer } from '../../src/tokenizers/treebank-word-tokenizer';
 
-describe('TreebankWordTokenizer', ()=>{
-	it('exist', ()=>{
-		assert.ok(TreebankWordTokenizer); 
-	})
-})
+Assert.ok(TreebankWordTokenizer); 

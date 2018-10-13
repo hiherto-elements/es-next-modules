@@ -3,3 +3,4 @@
 ~/.deno/bin/deno test/tokenizers/aggressive-tokenizer.js
 ~/.deno/bin/deno test/tokenizers/case-tokenizer.js
 ~/.deno/bin/deno test/tokenizers/regexp-tokenizer.js
+~/.deno/bin/deno test/tokenizers/sentence-tokenizer.js
