@@ -1,8 +1,3 @@
-import { assert } from 'chai';
-import { RegexpTokenizer } from '../../src/tokenizers/regexp-tokenizer';
-
-describe('RegexpTokenizer', ()=>{
-	it('exist', ()=>{
-		assert.ok(RegexpTokenizer); 
-	})
-})
+import { Assert } from '../../node_modules/@hiherto-elements/assert/Assert.js';
+import { RegexpTokenizer } from '../../src/tokenizers/regexp-tokenizer.js';
+Assert.isFunction(RegexpTokenizer);

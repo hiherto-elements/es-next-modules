@@ -1,4 +1,4 @@
-import Tokenizer from './tokenizer';
+import Tokenizer from './tokenizer.js';
 
 export class CaseTokenizer extends Tokenizer {
   constructor() {

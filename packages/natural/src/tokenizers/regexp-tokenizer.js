@@ -1,6 +1,4 @@
-import Tokenizer from './tokenizer';
-
-import {_} from 'underscore';
+import Tokenizer from './tokenizer.js';
 
 // Base Class for RegExp Matching
 export class RegexpTokenizer extends Tokenizer {
@@ -21,9 +19,19 @@ export class RegexpTokenizer extends Tokenizer {
     tokenize(s) {
         let results;
 
+
+        function without(results) {
+            const EMPTY_STING = '';
+            const BLANK_SPACE = ' ';
+            return results
+                .filter(result => result === EMPTY_STING)
+                .filter(result => result === BLANK_SPACE)
+        }
+
+
         if (this._gaps) {
             results = s.split(this._pattern);
-            return (this.discardEmpty) ? _.without(results,'',' ') : results;
+            return (this.discardEmpty) ? without(results) : results;
         } else {
             return s.match(this._pattern);
         }
