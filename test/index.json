@@ -1,0 +1,380 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "test/node_modules/@hiherto-elements/assert/test/test.js",
+    "content": "// test\nimport { Assert } from '../Assert.js';\nAssert.true(true);\nAssert.false(false);\nAssert.equal(1, 1);\nAssert.ok(true);\nAssert.strictEqual(true, true);\n\n\n\nlet c = {\n\tc: 1\n};\nlet d = {\n\tc: 1\n};\n\n\nlet a = [1, 2];\nlet b = [1, 2];\n\nAssert.deepEqual(a, b);\nAssert.deepEqual(c, d);\n\n",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/node_modules/@hiherto-elements/assert/test/test.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "variable",
+    "name": "c",
+    "memberof": "test/node_modules/@hiherto-elements/assert/test/test.js",
+    "static": true,
+    "longname": "test/node_modules/@hiherto-elements/assert/test/test.js~c",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/test/test/node_modules/@hiherto-elements/assert/test/test.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"c\": number}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "variable",
+    "name": "d",
+    "memberof": "test/node_modules/@hiherto-elements/assert/test/test.js",
+    "static": true,
+    "longname": "test/node_modules/@hiherto-elements/assert/test/test.js~d",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/test/test/node_modules/@hiherto-elements/assert/test/test.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"c\": number}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "variable",
+    "name": "a",
+    "memberof": "test/node_modules/@hiherto-elements/assert/test/test.js",
+    "static": true,
+    "longname": "test/node_modules/@hiherto-elements/assert/test/test.js~a",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/test/test/node_modules/@hiherto-elements/assert/test/test.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number[]"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "variable",
+    "name": "b",
+    "memberof": "test/node_modules/@hiherto-elements/assert/test/test.js",
+    "static": true,
+    "longname": "test/node_modules/@hiherto-elements/assert/test/test.js~b",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/test/test/node_modules/@hiherto-elements/assert/test/test.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number[]"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "file",
+    "name": "test/tdd.js",
+    "content": "\nconst suites = [];\nconst tests = [];\n\nexport const plan = () => {\n\t// run all describe/suite\n\tsuites.map(suite=>suite.suiteFn());\n}\n\nexport const test = (name, test) => {\n\ttests.push({ name, test});\n};\n\nexport const stats = () => { \n\t\treturn {\n\t\t\ttests, suites\n\t\t}\n};\n\nexport const suite = (name, suiteFn) => {\n\t\tsuites.push({name, suiteFn});\n};",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/tdd.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 6,
+    "kind": "variable",
+    "name": "suites",
+    "memberof": "test/tdd.js",
+    "static": true,
+    "longname": "test/tdd.js~suites",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/test/test/tdd.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "variable",
+    "name": "tests",
+    "memberof": "test/tdd.js",
+    "static": true,
+    "longname": "test/tdd.js~tests",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/test/test/tdd.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "function",
+    "name": "plan",
+    "memberof": "test/tdd.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "test/tdd.js~plan",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/test/test/tdd.js",
+    "importStyle": "{plan}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 9,
+    "kind": "function",
+    "name": "test",
+    "memberof": "test/tdd.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "test/tdd.js~test",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/test/test/tdd.js",
+    "importStyle": "{test}",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "test",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 10,
+    "kind": "function",
+    "name": "stats",
+    "memberof": "test/tdd.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "test/tdd.js~stats",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/test/test/tdd.js",
+    "importStyle": "{stats}",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "{\"tests\": *, \"suites\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "function",
+    "name": "suite",
+    "memberof": "test/tdd.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "test/tdd.js~suite",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/test/test/tdd.js",
+    "importStyle": "{suite}",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "suiteFn",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 12,
+    "kind": "file",
+    "name": "test/test/tdd.js",
+    "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { test, suite, stats, plan } from '../tdd.js';\nAssert.isFunction(test);\nAssert.isFunction(suite);\nAssert.isFunction(stats);\n\nsuite('foo', ()=>{});\nlet res = stats();\nAssert.equal(res.suites.length, 1);\ntest('bar', ()=>{});\nres = stats();\nAssert.equal(res.tests.length, 1);\n",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/test/tdd.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 13,
+    "kind": "variable",
+    "name": "res",
+    "memberof": "test/test/tdd.js",
+    "static": true,
+    "longname": "test/test/tdd.js~res",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/test/test/test/tdd.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "file",
+    "name": "test/test/test.js",
+    "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { test } from '../test.js';\nAssert.equal(typeof test, 'object');\nAssert.isFunction(test.bdd.it);\nAssert.isFunction(test.bdd.describe);\nAssert.isFunction(test.tdd.test);\nAssert.isFunction(test.tdd.suite);\n\n\n",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/test/test.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 15,
+    "kind": "file",
+    "name": "test/test.js",
+    "content": "import { test as tddTest, suite } from './tdd.js';\n\nconst it = tddTest;\nconst describe = suite;\n\nexport const test = {\n\ttdd: {\n\t\ttest: tddTest, \n\t\tsuite\n\t},\n\tbdd: {\n\t\tit, describe\n\t}\n}",
+    "static": true,
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/test.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 16,
+    "kind": "variable",
+    "name": "it",
+    "memberof": "test/test.js",
+    "static": true,
+    "longname": "test/test.js~it",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/test/test/test.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "variable",
+    "name": "describe",
+    "memberof": "test/test.js",
+    "static": true,
+    "longname": "test/test.js~describe",
+    "access": "public",
+    "export": false,
+    "importPath": "@hiherto-elements/test/test/test.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "variable",
+    "name": "test",
+    "memberof": "test/test.js",
+    "static": true,
+    "longname": "test/test.js~test",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/test/test/test.js",
+    "importStyle": "{test}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"tdd\": *, \"bdd\": *}"
+      ]
+    }
+  },
+  {
+    "kind": "index",
+    "content": "",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  }
+]

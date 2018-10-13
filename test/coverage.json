@@ -1,0 +1,45 @@
+{
+  "coverage": "0%",
+  "expectCount": 14,
+  "actualCount": 0,
+  "files": {
+    "test/node_modules/@hiherto-elements/assert/test/test.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        11,
+        14,
+        19,
+        20
+      ]
+    },
+    "test/tdd.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        2,
+        3,
+        5,
+        10,
+        14,
+        20
+      ]
+    },
+    "test/test/tdd.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        8
+      ]
+    },
+    "test/test.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        6
+      ]
+    }
+  }
+}
