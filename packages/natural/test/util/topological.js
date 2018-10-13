@@ -1,9 +1,3 @@
-
-import { assert } from 'chai';
-import { Topological } from '../../src/util/topological';
-
-describe('Topological', ()=>{
-	it('exist', ()=>{
-		assert.ok(Topological); 
-	})
-})
+import { Assert } from '../../node_modules/@hiherto-elements/assert/Assert.js';
+import { Topological } from '../../src/util/topological.js';
+Assert.isFunction(Topological); 
