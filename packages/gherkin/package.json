@@ -1,6 +1,6 @@
 {
   "name": "@hiherto-elements/gherkin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "minimal es6 test gherkin parser",
   "main": "parse.js",
   "directories": {
@@ -17,7 +17,13 @@
     "type": "git",
     "url": "git+https://github.com/hiherto-elements/es-next-modules.git"
   },
-  "keywords": ["es6", "bdd", "gherkin", "cucumber", "parser"],
+  "keywords": [
+    "es6",
+    "bdd",
+    "gherkin",
+    "cucumber",
+    "parser"
+  ],
   "esdoc": {
     "source": ".",
     "includes": [
