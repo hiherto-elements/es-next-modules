@@ -6,6 +6,7 @@
   "directories": {
     "test": "test"
   },
+  "keywords": ["es6", "url", "parser"],
   "esdoc": {
     "source": ".",
     "includes": ["Url.js", "utils.js"],

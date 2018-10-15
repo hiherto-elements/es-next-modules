@@ -6,6 +6,7 @@
   "directories": {
     "test": "test"
   },
+  "keywords": ["es6", "diff", "textprocessing"],
   "esdoc": {
     "source": ".",
     "includes": [

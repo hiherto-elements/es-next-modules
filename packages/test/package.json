@@ -6,6 +6,7 @@
   "directories": {
     "test": "test"
   },
+  "keywords": ["es6", "tdd", "testrunner", "bdd"],
   "esdoc": {
     "source": ".",
     "includes": ["test.js", "tdd.js"],

@@ -17,6 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/hiherto-elements/es-next-modules.git"
   },
+  "keywords": ["es6", "bdd", "gherkin", "cucumber", "parser"],
   "esdoc": {
     "source": ".",
     "includes": [

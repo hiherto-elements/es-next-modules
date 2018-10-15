@@ -9,6 +9,7 @@
         "type": "git",
         "url": "git://github.com/hiherto-elements/es-next-modules.git"
     },
+    "keywords": ["es6", "eveonline", "api", "openapi", "swagger"],
     "esdoc": {
         "source": ".",
         "includes": [
