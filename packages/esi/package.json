@@ -3,7 +3,7 @@
     "description": "A simple es6 module wrapper around the eve online api",
     "version": "0.0.2",
     "author": "sebs <sebs@2xs.org>",
-    "homepage": "https://hiherto-elements.github.io/es-next-modules/assert/",
+    "homepage": "https://hiherto-elements.github.io/es-next-modules/esi/",
     "license": "MIT",
     "repository": {
         "type": "git",
