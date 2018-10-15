@@ -1,17 +1,29 @@
 {
   "name": "@hiherto-elements/querystring",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "es6 version of the original node js url module",
   "main": "querystring.js",
   "directories": {
     "test": "test"
   },
-  "keywords": ["es6", "url", "querystring", "parser"],
+  "keywords": [
+    "es6",
+    "url",
+    "querystring",
+    "parser"
+  ],
   "esdoc": {
     "source": ".",
-    "includes": ["encode.js", "decode.js"],
+    "includes": [
+      "encode.js",
+      "decode.js"
+    ],
     "destination": "./docs",
-    "plugins": [{"name": "esdoc-standard-plugin"}]
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      }
+    ]
   },
   "dependencies": {
     "@hiherto-elements/assert": "^0.0.4"
