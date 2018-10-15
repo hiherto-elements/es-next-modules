@@ -1,4 +1,4 @@
-import { test as tddTest, suite } from './tdd.js';
+import { test as tddTest, suite, run } from './tdd.js';
 
 const it = tddTest;
 const describe = suite;
