@@ -1,6 +1,6 @@
 {
   "name": "@hiherto-elements/natural",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "minimal es6 natural language detection",
   "main": "Assert.js",
   "directories": {
