@@ -1,16 +1,25 @@
 {
   "name": "@hiherto-elements/diff",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "es6 version of jsDiff",
   "main": "Url.js",
   "directories": {
     "test": "test"
   },
-  "keywords": ["es6", "diff", "textprocessing"],
+  "keywords": [
+    "es6",
+    "diff",
+    "textprocessing"
+  ],
   "esdoc": {
     "source": ".",
     "includes": [
-      "diff.js", "array.js", "character.js", "css.js", "json.js", "line.js"
+      "diff.js",
+      "array.js",
+      "character.js",
+      "css.js",
+      "json.js",
+      "line.js"
     ],
     "destination": "./docs",
     "plugins": [
