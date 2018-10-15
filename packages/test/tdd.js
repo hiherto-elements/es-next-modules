@@ -8,7 +8,6 @@ export const plan = () => {
 }
 
 export const test = (name, test) => {
-
 	tests.push({ name, test});
 	let lastSuiteIndex = suites.length-1;
 	suites[lastSuiteIndex].tests.push(tests.length-1)

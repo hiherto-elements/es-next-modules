@@ -1,17 +1,29 @@
 {
   "name": "@hiherto-elements/test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a very simple test runner, delivered as es module",
   "main": "test.js",
   "directories": {
     "test": "test"
   },
-  "keywords": ["es6", "tdd", "testrunner", "bdd"],
+  "keywords": [
+    "es6",
+    "tdd",
+    "testrunner",
+    "bdd"
+  ],
   "esdoc": {
     "source": ".",
-    "includes": ["test.js", "tdd.js"],
+    "includes": [
+      "test.js",
+      "tdd.js"
+    ],
     "destination": "./docs",
-    "plugins": [{"name": "esdoc-standard-plugin"}]
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      }
+    ]
   },
   "dependencies": {
     "@hiherto-elements/assert": "^0.0.4"
