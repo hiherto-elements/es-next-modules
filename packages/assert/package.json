@@ -6,6 +6,7 @@
   "directories": {
     "test": "test"
   },
+  "keywords": ["test", "tdd", "assert"]
   "private": false,
   "scripts": {
     "docs": "rm -rf ./docs && esdoc",
