@@ -1,6 +1,6 @@
 {
-  "coverage": "8.06%",
-  "expectCount": 62,
+  "coverage": "8.62%",
+  "expectCount": 58,
   "actualCount": 5,
   "files": {
     "src/classifiers/classifier.js": {
@@ -26,22 +26,6 @@
         418
       ]
     },
-    "src/stemmers/stemmer.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        5
-      ]
-    },
-    "src/tokenizers/aggressive-tokenizer.js": {
-      "expectCount": 3,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        4,
-        8
-      ]
-    },
     "src/tokenizers/case-tokenizer.js": {
       "expectCount": 4,
       "actualCount": 0,
@@ -63,12 +47,12 @@
       "expectCount": 6,
       "actualCount": 0,
       "undocumentLines": [
-        4,
-        5,
-        8,
-        9,
-        12,
-        19
+        6,
+        7,
+        10,
+        11,
+        14,
+        21
       ]
     },
     "src/tokenizers/sentence-tokenizer.js": {

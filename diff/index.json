@@ -5,7 +5,7 @@
     "name": "diff/array.js",
     "content": "\nimport { Diff } from './diff.js';\n\nexport const arrayDiff = new Diff();\narrayDiff.tokenize = function(value) {\n  return value.slice();\n};\narrayDiff.join = arrayDiff.removeEmpty = function(value) {\n  return value;\n};\n\nexport const diffArrays = function(oldArr, newArr, callback) { return arrayDiff.diff(oldArr, newArr, callback); }\n",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/array.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/array.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -109,7 +109,7 @@
     "name": "diff/character.js",
     "content": "import {Diff} from './diff.js';\n\nexport const characterDiff = new Diff();\n\nexport function diffChars(oldStr, newStr, options) { return characterDiff.diff(oldStr, newStr, options); }",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/character.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/character.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -182,7 +182,7 @@
     "name": "diff/css.js",
     "content": "import { Diff } from './diff.js';\n\nexport const cssDiff = new Diff();\ncssDiff.tokenize = function(value) {\n  return value.split(/([{}:;,]|\\s+)/);\n};\n\nexport function diffCss(oldStr, newStr, callback) { return cssDiff.diff(oldStr, newStr, callback); }",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/css.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/css.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -286,7 +286,7 @@
     "name": "diff/diff.js",
     "content": "export function Diff() {}\n\nDiff.prototype = {\n  diff(oldString, newString, options = {}) {\n    let callback = options.callback;\n    if (typeof options === 'function') {\n      callback = options;\n      options = {};\n    }\n    this.options = options;\n\n    let self = this;\n\n    function done(value) {\n      if (callback) {\n        setTimeout(function() { callback(undefined, value); }, 0);\n        return true;\n      } else {\n        return value;\n      }\n    }\n\n    // Allow subclasses to massage the input prior to running\n    oldString = this.castInput(oldString);\n    newString = this.castInput(newString);\n\n    oldString = this.removeEmpty(this.tokenize(oldString));\n    newString = this.removeEmpty(this.tokenize(newString));\n\n    let newLen = newString.length, oldLen = oldString.length;\n    let editLength = 1;\n    let maxEditLength = newLen + oldLen;\n    let bestPath = [{ newPos: -1, components: [] }];\n\n    // Seed editLength = 0, i.e. the content starts with the same values\n    let oldPos = this.extractCommon(bestPath[0], newString, oldString, 0);\n    if (bestPath[0].newPos + 1 >= newLen && oldPos + 1 >= oldLen) {\n      // Identity per the equality and tokenizer\n      return done([{value: this.join(newString), count: newString.length}]);\n    }\n\n    // Main worker method. checks all permutations of a given edit length for acceptance.\n    function execEditLength() {\n      for (let diagonalPath = -1 * editLength; diagonalPath <= editLength; diagonalPath += 2) {\n        let basePath;\n        let addPath = bestPath[diagonalPath - 1],\n            removePath = bestPath[diagonalPath + 1],\n            oldPos = (removePath ? removePath.newPos : 0) - diagonalPath;\n        if (addPath) {\n          // No one else is going to attempt to use this value, clear it\n          bestPath[diagonalPath - 1] = undefined;\n        }\n\n        let canAdd = addPath && addPath.newPos + 1 < newLen,\n            canRemove = removePath && 0 <= oldPos && oldPos < oldLen;\n        if (!canAdd && !canRemove) {\n          // If this path is a terminal then prune\n          bestPath[diagonalPath] = undefined;\n          continue;\n        }\n\n        // Select the diagonal that we want to branch from. We select the prior\n        // path whose position in the new string is the farthest from the origin\n        // and does not pass the bounds of the diff graph\n        if (!canAdd || (canRemove && addPath.newPos < removePath.newPos)) {\n          basePath = clonePath(removePath);\n          self.pushComponent(basePath.components, undefined, true);\n        } else {\n          basePath = addPath;   // No need to clone, we've pulled it from the list\n          basePath.newPos++;\n          self.pushComponent(basePath.components, true, undefined);\n        }\n\n        oldPos = self.extractCommon(basePath, newString, oldString, diagonalPath);\n\n        // If we have hit the end of both strings, then we are done\n        if (basePath.newPos + 1 >= newLen && oldPos + 1 >= oldLen) {\n          return done(buildValues(self, basePath.components, newString, oldString, self.useLongestToken));\n        } else {\n          // Otherwise track this path as a potential candidate and continue.\n          bestPath[diagonalPath] = basePath;\n        }\n      }\n\n      editLength++;\n    }\n\n    // Performs the length of edit iteration. Is a bit fugly as this has to support the\n    // sync and async mode which is never fun. Loops over execEditLength until a value\n    // is produced.\n    if (callback) {\n      (function exec() {\n        setTimeout(function() {\n          // This should not happen, but we want to be safe.\n          /* istanbul ignore next */\n          if (editLength > maxEditLength) {\n            return callback();\n          }\n\n          if (!execEditLength()) {\n            exec();\n          }\n        }, 0);\n      }());\n    } else {\n      while (editLength <= maxEditLength) {\n        let ret = execEditLength();\n        if (ret) {\n          return ret;\n        }\n      }\n    }\n  },\n\n  pushComponent(components, added, removed) {\n    let last = components[components.length - 1];\n    if (last && last.added === added && last.removed === removed) {\n      // We need to clone here as the component clone operation is just\n      // as shallow array clone\n      components[components.length - 1] = {count: last.count + 1, added: added, removed: removed };\n    } else {\n      components.push({count: 1, added: added, removed: removed });\n    }\n  },\n  extractCommon(basePath, newString, oldString, diagonalPath) {\n    let newLen = newString.length,\n        oldLen = oldString.length,\n        newPos = basePath.newPos,\n        oldPos = newPos - diagonalPath,\n\n        commonCount = 0;\n    while (newPos + 1 < newLen && oldPos + 1 < oldLen && this.equals(newString[newPos + 1], oldString[oldPos + 1])) {\n      newPos++;\n      oldPos++;\n      commonCount++;\n    }\n\n    if (commonCount) {\n      basePath.components.push({count: commonCount});\n    }\n\n    basePath.newPos = newPos;\n    return oldPos;\n  },\n\n  equals(left, right) {\n    if (this.options.comparator) {\n      return this.options.comparator(left, right);\n    } else {\n      return left === right\n        || (this.options.ignoreCase && left.toLowerCase() === right.toLowerCase());\n    }\n  },\n  removeEmpty(array) {\n    let ret = [];\n    for (let i = 0; i < array.length; i++) {\n      if (array[i]) {\n        ret.push(array[i]);\n      }\n    }\n    return ret;\n  },\n  castInput(value) {\n    return value;\n  },\n  tokenize(value) {\n    return value.split('');\n  },\n  join(chars) {\n    return chars.join('');\n  }\n};\n\nfunction buildValues(diff, components, newString, oldString, useLongestToken) {\n  let componentPos = 0,\n      componentLen = components.length,\n      newPos = 0,\n      oldPos = 0;\n\n  for (; componentPos < componentLen; componentPos++) {\n    let component = components[componentPos];\n    if (!component.removed) {\n      if (!component.added && useLongestToken) {\n        let value = newString.slice(newPos, newPos + component.count);\n        value = value.map(function(value, i) {\n          let oldValue = oldString[oldPos + i];\n          return oldValue.length > value.length ? oldValue : value;\n        });\n\n        component.value = diff.join(value);\n      } else {\n        component.value = diff.join(newString.slice(newPos, newPos + component.count));\n      }\n      newPos += component.count;\n\n      // Common case\n      if (!component.added) {\n        oldPos += component.count;\n      }\n    } else {\n      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count));\n      oldPos += component.count;\n\n      // Reverse add and remove so removes are output first to match common convention\n      // The diffing algorithm is tied to add then remove output and this is the simplest\n      // route to get the desired output with minimal overhead.\n      if (componentPos && components[componentPos - 1].added) {\n        let tmp = components[componentPos - 1];\n        components[componentPos - 1] = components[componentPos];\n        components[componentPos] = tmp;\n      }\n    }\n  }\n\n  // Special case handle for when one terminal is ignored (i.e. whitespace).\n  // For this case we merge the terminal into the prior string and drop the change.\n  // This is only available for string mode.\n  let lastComponent = components[componentLen - 1];\n  if (componentLen > 1\n      && typeof lastComponent.value === 'string'\n      && (lastComponent.added || lastComponent.removed)\n      && diff.equals('', lastComponent.value)) {\n    components[componentLen - 2].value += lastComponent.value;\n    components.pop();\n  }\n\n  return components;\n}\n\nfunction clonePath(path) {\n  return { newPos: path.newPos, components: path.components.slice(0) };\n}\n",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/diff.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/diff.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -402,7 +402,7 @@
     "name": "diff/json.js",
     "content": "import {Diff} from './diff.js';\nimport {lineDiff} from './line.js';\n\nconst objectPrototypeToString = Object.prototype.toString;\n\n\nexport const jsonDiff = new Diff();\n// Discriminate between two lines of pretty-printed, serialized JSON where one of them has a\n// dangling comma and the other doesn't. Turns out including the dangling comma yields the nicest output:\njsonDiff.useLongestToken = true;\n\njsonDiff.tokenize = lineDiff.tokenize;\njsonDiff.castInput = function(value) {\n  const {undefinedReplacement, stringifyReplacer = (k, v) => typeof v === 'undefined' ? undefinedReplacement : v} = this.options;\n\n  return typeof value === 'string' ? value : JSON.stringify(canonicalize(value, null, null, stringifyReplacer), stringifyReplacer, '  ');\n};\njsonDiff.equals = function(left, right) {\n  return Diff.prototype.equals.call(jsonDiff, left.replace(/,([\\r\\n])/g, '$1'), right.replace(/,([\\r\\n])/g, '$1'));\n};\n\nexport function diffJson(oldObj, newObj, options) { return jsonDiff.diff(oldObj, newObj, options); }\n\n// This function handles the presence of circular references by bailing out when encountering an\n// object that is already on the \"stack\" of items being processed. Accepts an optional replacer\nexport function canonicalize(obj, stack, replacementStack, replacer, key) {\n  stack = stack || [];\n  replacementStack = replacementStack || [];\n\n  if (replacer) {\n    obj = replacer(key, obj);\n  }\n\n  let i;\n\n  for (i = 0; i < stack.length; i += 1) {\n    if (stack[i] === obj) {\n      return replacementStack[i];\n    }\n  }\n\n  let canonicalizedObj;\n\n  if ('[object Array]' === objectPrototypeToString.call(obj)) {\n    stack.push(obj);\n    canonicalizedObj = new Array(obj.length);\n    replacementStack.push(canonicalizedObj);\n    for (i = 0; i < obj.length; i += 1) {\n      canonicalizedObj[i] = canonicalize(obj[i], stack, replacementStack, replacer, key);\n    }\n    stack.pop();\n    replacementStack.pop();\n    return canonicalizedObj;\n  }\n\n  if (obj && obj.toJSON) {\n    obj = obj.toJSON();\n  }\n\n  if (typeof obj === 'object' && obj !== null) {\n    stack.push(obj);\n    canonicalizedObj = {};\n    replacementStack.push(canonicalizedObj);\n    let sortedKeys = [],\n        key;\n    for (key in obj) {\n      /* istanbul ignore else */\n      if (obj.hasOwnProperty(key)) {\n        sortedKeys.push(key);\n      }\n    }\n    sortedKeys.sort();\n    for (i = 0; i < sortedKeys.length; i += 1) {\n      key = sortedKeys[i];\n      canonicalizedObj[key] = canonicalize(obj[key], stack, replacementStack, replacer, key);\n    }\n    stack.pop();\n    replacementStack.pop();\n  } else {\n    canonicalizedObj = obj;\n  }\n  return canonicalizedObj;\n}",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/json.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/json.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -618,7 +618,7 @@
     "name": "diff/line.js",
     "content": "import {Diff} from './diff.js';\nimport {generateOptions} from './util/params.js';\n\nexport const lineDiff = new Diff();\nlineDiff.tokenize = function(value) {\n  let retLines = [],\n      linesAndNewlines = value.split(/(\\n|\\r\\n)/);\n\n  // Ignore the final empty token that occurs if the string ends with a new line\n  if (!linesAndNewlines[linesAndNewlines.length - 1]) {\n    linesAndNewlines.pop();\n  }\n\n  // Merge the content and line separators into single tokens\n  for (let i = 0; i < linesAndNewlines.length; i++) {\n    let line = linesAndNewlines[i];\n\n    if (i % 2 && !this.options.newlineIsToken) {\n      retLines[retLines.length - 1] += line;\n    } else {\n      if (this.options.ignoreWhitespace) {\n        line = line.trim();\n      }\n      retLines.push(line);\n    }\n  }\n\n  return retLines;\n};\n\nexport function diffLines(oldStr, newStr, callback) { return lineDiff.diff(oldStr, newStr, callback); }\nexport function diffTrimmedLines(oldStr, newStr, callback) {\n  let options = generateOptions(callback, {ignoreWhitespace: true});\n  return lineDiff.diff(oldStr, newStr, options);\n}",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/line.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/line.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -764,7 +764,7 @@
     "name": "diff/test/array.js",
     "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { diffArrays } from '../array.js';\n\nlet a = [1, 2];\nlet b = [2, 3];\n\nlet res = diffArrays(a, b);\nAssert.equal(res.length, 3)",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/test/array.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/test/array.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -838,7 +838,7 @@
     "name": "diff/test/character.js",
     "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { diffChars } from '../character.js';\n\nlet a = 'bar';\nlet b = 'bbaz';\nlet res = diffChars(a, b);\nAssert.equal(res.length, 5);",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/test/character.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/test/character.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -912,7 +912,7 @@
     "name": "diff/test/css.js",
     "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { diffCss } from '../css.js';\t\n\nconst diffResult = diffCss(\n\t'.test,#value .test{margin-left:50px;margin-right:-40px}',\n\t'.test2, #value2 .test {\\nmargin-top:50px;\\nmargin-right:-400px;\\n}');\n\nAssert.equal(diffResult.length, 17);",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/test/css.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/test/css.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -944,7 +944,7 @@
     "name": "diff/test/diff.js",
     "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { Diff } from '../diff.js';\nAssert.isFunction(Diff)\nlet diff = new Diff();\nAssert.instanceOf(diff, Diff)\n\nlet a = 'foo';\nlet b = 'foobar';\nlet res = diff.diff(a, b)\n\nAssert.equal(res.length, 2, 'foo to foobar gets 2 changes');\nAssert.equal(res[0].count, 3, 'found out that the first unchaged string is 3 chars long');\nAssert.equal(res[0].value, 'foo', 'foo is the found string');\n\nAssert.equal(res[1].count, 3, 'change starts at 3');\nAssert.equal(res[1].value, 'bar', 'bar is the found string');\n\nlet c = 'barfoo';\nlet d = 'foobar';\nres = diff.diff(c, d)\nAssert.equal(res.length, 3);",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/test/diff.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/test/diff.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1081,7 +1081,7 @@
     "name": "diff/test/json.js",
     "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { diffJson } from '../json.js';\n\n// Assert.isFunction(diffJson)",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/test/json.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/test/json.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1089,7 +1089,7 @@
   {
     "kind": "index",
     "content": "# @hiherto-elements/diff\n\nA es6 module Version of [jsDiff](https://github.com/kpdecker/jsdiff/). It contains some refactorings.\n",
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/diff/README.md",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/diff/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
