@@ -9,6 +9,8 @@
 		"setupdeno": "curl -sSf https://raw.githubusercontent.com/denoland/deno_install/master/install.py | python"
 	},
 	"dependencies": {
+		"esdoc": "^1.1.0",
+		"esdoc-standard-plugin": "^1.0.0",
 		"gh-pages": "^2.0.1"
 	}
 }

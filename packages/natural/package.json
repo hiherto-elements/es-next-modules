@@ -1,18 +1,30 @@
 {
   "name": "@hiherto-elements/natural",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "minimal es6 natural language detection",
   "main": "Assert.js",
   "directories": {
     "test": "test"
   },
+  "keywords": [
+    "es6",
+    "nlp",
+    "textprocessing",
+    "stemmer",
+    "tokenizer"
+  ],
   "esdoc": {
     "source": "./src",
     "destination": "./docs",
-    "plugins": [{"name": "esdoc-standard-plugin"}]
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      }
+    ]
   },
   "dependencies": {
-    "@hiherto-elements/assert": "^0.0.4"
+    "@hiherto-elements/assert": "^0.0.4",
+    "@hiherto-elements/test": "^0.0.2"
   },
   "scripts": {
     "docs": "rm -rf ./docs && esdoc",
@@ -27,5 +39,5 @@
   "bugs": {
     "url": "https://github.com/sebs/deno-assert-js/issues"
   },
-  "homepage": "https://hiherto-elements.github.io/es-next-modules/assert/"
+  "homepage": "https://hiherto-elements.github.io/es-next-modules/natural/"
 }

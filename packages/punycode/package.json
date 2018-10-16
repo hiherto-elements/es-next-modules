@@ -1,16 +1,28 @@
 {
   "name": "@hiherto-elements/punycode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "minimal es6 punycode de- and encoder, forked from the 'original' ",
   "main": "punycode.js",
   "directories": {
     "test": "test"
   },
+  "keywords": [
+    "es6",
+    "utf8",
+    "textprocessing",
+    "parser"
+  ],
   "esdoc": {
     "source": ".",
-    "includes": ["punycode.js"],
+    "includes": [
+      "punycode.js"
+    ],
     "destination": "./docs",
-    "plugins": [{"name": "esdoc-standard-plugin"}]
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      }
+    ]
   },
   "dependencies": {
     "@hiherto-elements/assert": "^0.0.4"

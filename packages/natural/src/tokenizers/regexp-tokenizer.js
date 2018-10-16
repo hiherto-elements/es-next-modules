@@ -19,15 +19,13 @@ export class RegexpTokenizer extends Tokenizer {
     tokenize(s) {
         let results;
 
-
         function without(results) {
             const EMPTY_STING = '';
             const BLANK_SPACE = ' ';
             return results
-                .filter(result => result === EMPTY_STING)
-                .filter(result => result === BLANK_SPACE)
+                .filter(result => result !== EMPTY_STING)
+                .filter(result => result !== BLANK_SPACE)
         }
-
 
         if (this._gaps) {
             results = s.split(this._pattern);

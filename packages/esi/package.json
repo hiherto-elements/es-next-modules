@@ -1,14 +1,21 @@
 {
     "name": "@hiherto-elements/esi",
     "description": "A simple es6 module wrapper around the eve online api",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "sebs <sebs@2xs.org>",
-    "homepage": "https://hiherto-elements.github.io/es-next-modules/assert/",
+    "homepage": "https://hiherto-elements.github.io/es-next-modules/esi/",
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "git://github.com/hiherto-elements/es-next-modules.git"
     },
+    "keywords": [
+        "es6",
+        "eveonline",
+        "api",
+        "openapi",
+        "swagger"
+    ],
     "esdoc": {
         "source": ".",
         "includes": [
@@ -27,7 +34,7 @@
             "Dogma.js",
             "FactionWarfare.js",
             "Fittings.js",
-            "Fleets.js", 
+            "Fleets.js",
             "Incursion.js",
             "Industry.js",
             "Insurance.js",
@@ -50,7 +57,11 @@
             "Wars.js"
         ],
         "destination": "./docs",
-        "plugins": [{"name": "esdoc-standard-plugin"}]
+        "plugins": [
+            {
+                "name": "esdoc-standard-plugin"
+            }
+        ]
     },
     "bugs": "http://github.com/hiherto-elements/es-next-modules/issues",
     "dependencies": {
