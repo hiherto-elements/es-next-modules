@@ -22,9 +22,9 @@
       }
     ]
   },
-  "dependencies": {
-    "@hiherto-elements/assert": "^0.0.4",
-    "@hiherto-elements/test": "^0.0.2"
+  "devDependencies": {
+    "@hiherto-elements/assert": "0.0.9",
+    "@hiherto-elements/test": "0.0.2"
   },
   "scripts": {
     "docs": "rm -rf ./docs && esdoc",

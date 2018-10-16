@@ -24,10 +24,12 @@
       }
     ]
   },
+  "devDependencies": { 
+    "@hiherto-elements/assert": "0.0.9"
+  },
   "dependencies": {
-    "@hiherto-elements/assert": "^0.0.4",
-    "@hiherto-elements/punycode": "^0.0.1",
-    "@hiherto-elements/querystring": "^0.0.1"
+    "@hiherto-elements/punycode": "0.0.1",
+    "@hiherto-elements/querystring": "0.0.1"
   },
   "scripts": {
     "docs": "rm -rf ./docs && esdoc",

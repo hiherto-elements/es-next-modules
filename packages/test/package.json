@@ -25,8 +25,8 @@
       }
     ]
   },
-  "dependencies": {
-    "@hiherto-elements/assert": "^0.0.4"
+  "devDependencies": {
+    "@hiherto-elements/assert": "0.0.9"
   },
   "scripts": {
     "docs": "rm -rf ./docs && esdoc",
