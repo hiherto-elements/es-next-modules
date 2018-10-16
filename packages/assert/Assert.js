@@ -154,8 +154,6 @@ export class Assert
         }
     }
 
-    
-
     /**
      * Asserts that object is equal to expected object
      * @param value
@@ -173,7 +171,6 @@ export class Assert
             throw InvalidValueException.expected("value to deeply equal otherValue", JSON.stringify(value) + ' !== ' + JSON.stringify(otherValue) , message);
         }
     }
-
 
     /**
      * Asserts that object is equal to expected object
@@ -214,6 +211,7 @@ export class Assert
 
 
     /**
+     * Asserts that value is valid object
      * @param {object} objectValue
      * @param {string} [message]
      */
@@ -227,6 +225,7 @@ export class Assert
     }
 
     /**
+     * Asserts that object has function
      * @param {string} expectedFunctionName
      * @param {object} objectValue
      * @param {string} [message]
@@ -243,6 +242,7 @@ export class Assert
     }
 
     /**
+     * Asserts that object has property (it can also be a function)
      * @param {string} expectedPropertyName
      * @param {object} objectValue
      * @param {string} [message]
@@ -259,6 +259,7 @@ export class Assert
     }
 
     /**
+     * Asserts that object has multiple properties
      * @param {array} expectedProperties
      * @param {object} objectValue
      * @param {string} [message]
@@ -277,6 +278,7 @@ export class Assert
     }
 
     /**
+     * Asserts that value is valid array.
      * @param {array} arrayValue
      * @param {string} [message]
      */
@@ -290,6 +292,7 @@ export class Assert
     }
 
     /**
+     * Asserts that value is one of expected values
      * @param {*} value
      * @param {array} expectedElements
      * @param {string} [message]
@@ -313,6 +316,7 @@ export class Assert
     }
 
     /**
+     * Asserts that value is valid function
      * @param {function} functionValue
      * @param {string} [message]
      */
@@ -487,6 +491,7 @@ export class Assert
     }
 
     /**
+     * Asserts that array have specific number of elements
      * @param {int} expectedCount
      * @param {array} arrayValue
      * @param {string} [message]
@@ -503,6 +508,7 @@ export class Assert
     }
 
     /**
+     * Asserts that array is not empty
      * @param {*} value
      * @param {string} [message]
      */
@@ -547,6 +553,7 @@ export class Assert
     }
 
     /**
+     * Asserts that value is valid json string
      * @param {string} stringValue
      * @param {string} [message]
      */
@@ -563,6 +570,7 @@ export class Assert
     }
 
     /**
+     * Asserts that string is valid email address.
      * @param {string} emailValue
      * @param {string} [message]
      */
@@ -579,6 +587,7 @@ export class Assert
     }
 
     /**
+     * Asserts that string is valid url
      * @param {string} urlValue
      * @param {string} [message]
      */
@@ -595,6 +604,7 @@ export class Assert
     }
 
     /**
+     * Asserts that string is valid UUID
      * @param {string} uuidValue
      * @param {string} [message]
      */
@@ -611,6 +621,7 @@ export class Assert
     }
 
     /**
+     * Asserts that element has other element under selector.
      * @param {string} selector
      * @param {HTMLElement|HTMLDocument} htmlElement
      * @param {string} [message]
@@ -627,6 +638,7 @@ export class Assert
     }
 
     /**
+     * Asserts that element has expected attribute (it might be empty)
      * @param {string} attributeName
      * @param {HTMLElement} htmlElement
      * @param {string} [message]
@@ -645,6 +657,7 @@ export class Assert
     }
 
     /**
+     * Asserts that element has expected attributes (it might be empty)
      * @param {array} attributes
      * @param {HTMLElement} htmlElement
      * @param {string} [message]
