@@ -98,7 +98,7 @@
     "__docId__": 5,
     "kind": "file",
     "name": "test/tdd.js",
-    "content": "\nconst suites = [];\nconst tests = [];\n\nexport const plan = () => {\n\t// run all describe/suite\n\tsuites.map(suite=>suite.suiteFn());\n}\n\nexport const test = (name, test) => {\n\ttests.push({ name, test});\n};\n\nexport const stats = () => { \n\t\treturn {\n\t\t\ttests, suites\n\t\t}\n};\n\nexport const suite = (name, suiteFn) => {\n\t\tsuites.push({name, suiteFn});\n};",
+    "content": "\nconst suites = [];\nconst tests = [];\n\nexport const plan = () => {\n\t// run all describe/suite\n\t// suites.map(suite=>suite.suiteFn());\n}\n\nexport const test = (name, test) => {\n\ttests.push({ name, test});\n\tlet lastSuiteIndex = suites.length-1;\n\tsuites[lastSuiteIndex].tests.push(tests.length-1)\n\n};\n\nexport const stats = () => { \n\t\treturn {\n\t\t\ttests, suites\n\t\t}\n};\n\nexport const suite = (name, suiteFn) => {\n\tlet tests = [];\n\tsuites.push({name, suiteFn, tests});\n\tsuiteFn();\n};\n\n\nexport const run = () => {\n\tsuites.map(suite => suite.tests.map(testId => tests[testId].test()))\n}",
     "static": true,
     "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/tdd.js",
     "access": "public",
@@ -212,7 +212,7 @@
     "importPath": "@hiherto-elements/test/test/tdd.js",
     "importStyle": "{stats}",
     "description": null,
-    "lineNumber": 14,
+    "lineNumber": 17,
     "undocument": true,
     "params": [],
     "return": {
@@ -235,7 +235,7 @@
     "importPath": "@hiherto-elements/test/test/tdd.js",
     "importStyle": "{suite}",
     "description": null,
-    "lineNumber": 20,
+    "lineNumber": 23,
     "undocument": true,
     "params": [
       {
@@ -255,9 +255,28 @@
   },
   {
     "__docId__": 12,
+    "kind": "function",
+    "name": "run",
+    "memberof": "test/tdd.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "test/tdd.js~run",
+    "access": "public",
+    "export": true,
+    "importPath": "@hiherto-elements/test/test/tdd.js",
+    "importStyle": "{run}",
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 13,
     "kind": "file",
     "name": "test/test/tdd.js",
-    "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { test, suite, stats, plan } from '../tdd.js';\nAssert.isFunction(test);\nAssert.isFunction(suite);\nAssert.isFunction(stats);\n\nsuite('foo', ()=>{});\nlet res = stats();\nAssert.equal(res.suites.length, 1);\ntest('bar', ()=>{});\nres = stats();\nAssert.equal(res.tests.length, 1);\n",
+    "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { test, suite, stats, plan } from '../tdd.js';\nAssert.isFunction(test);\nAssert.isFunction(suite);\nAssert.isFunction(stats);\n\nsuite('foo', ()=>{});\nlet res = stats();\nAssert.equal(res.suites.length, 1);\ntest('bar', ()=>{});\nres = stats();\nconsole.log(JSON.stringify(res));",
     "static": true,
     "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/test/tdd.js",
     "access": "public",
@@ -265,7 +284,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 13,
+    "__docId__": 14,
     "kind": "variable",
     "name": "res",
     "memberof": "test/test/tdd.js",
@@ -286,7 +305,7 @@
     "ignore": true
   },
   {
-    "__docId__": 14,
+    "__docId__": 15,
     "kind": "file",
     "name": "test/test/test.js",
     "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { test } from '../test.js';\nAssert.equal(typeof test, 'object');\nAssert.isFunction(test.bdd.it);\nAssert.isFunction(test.bdd.describe);\nAssert.isFunction(test.tdd.test);\nAssert.isFunction(test.tdd.suite);\n\n\n",
@@ -297,10 +316,10 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 15,
+    "__docId__": 16,
     "kind": "file",
     "name": "test/test.js",
-    "content": "import { test as tddTest, suite } from './tdd.js';\n\nconst it = tddTest;\nconst describe = suite;\n\nexport const test = {\n\ttdd: {\n\t\ttest: tddTest, \n\t\tsuite\n\t},\n\tbdd: {\n\t\tit, describe\n\t}\n}",
+    "content": "import { test as tddTest, suite, run } from './tdd.js';\n\nconst it = tddTest;\nconst describe = suite;\n\nexport const test = {\n\ttdd: {\n\t\ttest: tddTest, \n\t\tsuite\n\t},\n\tbdd: {\n\t\tit, describe\n\t}\n}",
     "static": true,
     "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/test.js",
     "access": "public",
@@ -308,7 +327,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 16,
+    "__docId__": 17,
     "kind": "variable",
     "name": "it",
     "memberof": "test/test.js",
@@ -329,7 +348,7 @@
     "ignore": true
   },
   {
-    "__docId__": 17,
+    "__docId__": 18,
     "kind": "variable",
     "name": "describe",
     "memberof": "test/test.js",
@@ -350,7 +369,7 @@
     "ignore": true
   },
   {
-    "__docId__": 18,
+    "__docId__": 19,
     "kind": "variable",
     "name": "test",
     "memberof": "test/test.js",
