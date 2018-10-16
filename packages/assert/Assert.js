@@ -5,6 +5,7 @@ import ValueConverter from './ValueConverter.js';
 export class Assert
 {
     /**
+     * Asserts that value is an instance of (at least one) specific class.
      * @param {object} objectValue
      * @param {function} expectedInstance
      * @param {string} [message]
@@ -25,7 +26,13 @@ export class Assert
             );
         }
     }
-
+     
+    /**
+     * Asserts that value is an instance of at least one specific class.
+     * @param {object} objectValue
+     * @param {array} expectedInstances
+     * @param {string} [message]
+     */   
     static instanceOneOf(objectValue, expectedInstances, message = "")
     {
         this.string(message, "Custom error message passed to Assert.instanceOf needs to be a valid string.");
@@ -45,6 +52,7 @@ export class Assert
     }
 
     /**
+     * Asserts that value is valid integer
      * @param {int} integerValue
      * @param {string} [message]
      */
@@ -58,6 +66,7 @@ export class Assert
     }
 
     /**
+     * Asserts that value is valid number (integer, float)
      * @param {number} numberValue
      * @param {string} [message]
      */
@@ -71,6 +80,7 @@ export class Assert
     }
 
     /**
+     * Assert that value is valid string
      * @param {string} stringValue
      * @param {string} [message]
      */
@@ -86,6 +96,7 @@ export class Assert
     }
 
     /**
+     * Asserts that value is valid boolean  
      * @param {boolean} booleanValue
      * @param {string} [message]
      */
@@ -99,6 +110,7 @@ export class Assert
     }
 
     /**
+     * Asserts that expression or value is equal to true.
      * @param {boolean} value
      * @param {string} [message]
      */
@@ -113,6 +125,7 @@ export class Assert
     }
 
     /**
+     * Asserts that expression or value is equal to false.
      * @param {boolean} value
      * @param {string} [message]
      */
@@ -127,6 +140,7 @@ export class Assert
     }
     
     /**
+     * Asserts that value is equal to expected value
      * @param value
      * @param expectedValue
      * @param {string} [message]
@@ -143,6 +157,7 @@ export class Assert
     
 
     /**
+     * Asserts that object is equal to expected object
      * @param value
      * @param otherValue
      * @param {string} [message]
@@ -159,6 +174,17 @@ export class Assert
         }
     }
 
+
+    /**
+     * Asserts that object is equal to expected object
+     * @param value
+     * @param otherValue
+     * @param {string} [message]
+     */
+    static objectEqual(value, otherValue, message) {
+        return this.deepEqual(value, otherValue, message);
+    }
+
     /**
      * @param value
      * @param otherValue
@@ -170,20 +196,6 @@ export class Assert
 
         if (value !== otherValue) {
             throw InvalidValueException.expected("value to strictly equal otherValue", value + ' !== ' + otherValue , message);
-        }
-    }
-
-    /**
-     * @param value
-     * @param otherValue
-     * @param {string} [message]
-     */
-    static equal(value, otherValue, message = "")
-    {        
-        this.string(message, "Custom error message passed to Assert.false needs to be a valid string.");
-
-        if (value != otherValue) {
-            throw InvalidValueException.expected("value to equal otherValue", value + ' != ' + otherValue , message);
         }
     }
 
@@ -314,6 +326,7 @@ export class Assert
     }
 
     /**
+     * Asserts that number is greater than
      * @param {int} expected
      * @param {int} integerValue
      * @param {string} [message]
@@ -330,6 +343,7 @@ export class Assert
     }
 
     /**
+     * Asserts that number is greater than or equal
      * @param {int} expected
      * @param {int} integerValue
      * @param {string} [message]
@@ -346,6 +360,7 @@ export class Assert
     }
 
     /**
+     * Asserts that number is less than
      * @param {int} expected
      * @param {int} integerValue
      * @param {string} [message]
@@ -362,6 +377,7 @@ export class Assert
     }
 
     /**
+     * Asserts that number is less than or equal
      * @param {int} expected
      * @param {int} integerValue
      * @param {string} [message]
@@ -378,6 +394,7 @@ export class Assert
     }
 
     /**
+     * Asserts that array contains only instances of specific class.
      * @param {array} arrayValue
      * @param {function} expectedInstance
      * @param {string} [message]
@@ -401,6 +418,7 @@ export class Assert
     }
 
     /**
+     * Asserts that array contains only strings
      * @param {array} arrayValue
      * @param {string} [message]
      */
@@ -423,6 +441,7 @@ export class Assert
     }
 
     /**
+     * Asserts that array contains only integers
      * @param {array} arrayValue
      * @param {string} [message]
      */
@@ -445,6 +464,7 @@ export class Assert
     }
 
     /**
+     * Asserts that array contains only numbers
      * @param {array} arrayValue
      * @param {string} [message]
      */
@@ -497,6 +517,7 @@ export class Assert
 
 
     /**
+     * Asserts that value is odd number
      * @param {int} integerValue
      * @param {string} [message]
      */
@@ -511,6 +532,7 @@ export class Assert
     }
 
     /**
+     * Asserts that value is even number
      * @param {int} integerValue
      * @param {string} [message]
      */

@@ -22,3 +22,4 @@ let b = [1, 2];
 Assert.deepEqual(a, b);
 Assert.deepEqual(c, d);
 
+Assert.equal({foo:null}, {foo:null}, 'should not trigger a error')

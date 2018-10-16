@@ -2,3 +2,8 @@
 
 A simple, es6 only assert  lib. Forked from [assert-js](https://github.com/Tiliqua/assert-js).
 
+## Installation 
+
+```
+npm install @hiherto-elements/assert --save
+```
