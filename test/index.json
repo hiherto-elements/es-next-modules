@@ -5,7 +5,7 @@
     "name": "test/node_modules/@hiherto-elements/assert/test/test.js",
     "content": "// test\nimport { Assert } from '../Assert.js';\nAssert.true(true);\nAssert.false(false);\nAssert.equal(1, 1);\nAssert.ok(true);\nAssert.strictEqual(true, true);\n\n\n\nlet c = {\n\tc: 1\n};\nlet d = {\n\tc: 1\n};\n\n\nlet a = [1, 2];\nlet b = [1, 2];\n\nAssert.deepEqual(a, b);\nAssert.deepEqual(c, d);\n\n",
     "static": true,
-    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/node_modules/@hiherto-elements/assert/test/test.js",
+    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/node_modules/@hiherto-elements/assert/test/test.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -100,7 +100,7 @@
     "name": "test/tdd.js",
     "content": "\nconst suites = [];\nconst tests = [];\n\nexport const plan = () => {\n\t// run all describe/suite\n\tsuites.map(suite=>suite.suiteFn());\n}\n\nexport const test = (name, test) => {\n\ttests.push({ name, test});\n};\n\nexport const stats = () => { \n\t\treturn {\n\t\t\ttests, suites\n\t\t}\n};\n\nexport const suite = (name, suiteFn) => {\n\t\tsuites.push({name, suiteFn});\n};",
     "static": true,
-    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/tdd.js",
+    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/tdd.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -259,7 +259,7 @@
     "name": "test/test/tdd.js",
     "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { test, suite, stats, plan } from '../tdd.js';\nAssert.isFunction(test);\nAssert.isFunction(suite);\nAssert.isFunction(stats);\n\nsuite('foo', ()=>{});\nlet res = stats();\nAssert.equal(res.suites.length, 1);\ntest('bar', ()=>{});\nres = stats();\nAssert.equal(res.tests.length, 1);\n",
     "static": true,
-    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/test/tdd.js",
+    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/test/tdd.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -291,7 +291,7 @@
     "name": "test/test/test.js",
     "content": "import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';\nimport { test } from '../test.js';\nAssert.equal(typeof test, 'object');\nAssert.isFunction(test.bdd.it);\nAssert.isFunction(test.bdd.describe);\nAssert.isFunction(test.tdd.test);\nAssert.isFunction(test.tdd.suite);\n\n\n",
     "static": true,
-    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/test/test.js",
+    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/test/test.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -302,7 +302,7 @@
     "name": "test/test.js",
     "content": "import { test as tddTest, suite } from './tdd.js';\n\nconst it = tddTest;\nconst describe = suite;\n\nexport const test = {\n\ttdd: {\n\t\ttest: tddTest, \n\t\tsuite\n\t},\n\tbdd: {\n\t\tit, describe\n\t}\n}",
     "static": true,
-    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/test.js",
+    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/test.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -372,7 +372,7 @@
   {
     "kind": "index",
     "content": "",
-    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/test/README.md",
+    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
