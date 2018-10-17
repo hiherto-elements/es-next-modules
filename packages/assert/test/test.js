@@ -1,12 +1,15 @@
 // test
 import { Assert } from '../Assert.js';
+/** @test {Assert#true} */
 Assert.true(true);
+/** @test {Asser#false} */
 Assert.false(false);
+/** @test {Asser#equal} */
 Assert.equal(1, 1);
+/** @test {Asser#ok} */
 Assert.ok(true);
+/** @test {Asser#strictEqual} */
 Assert.strictEqual(true, true);
-
-
 
 let c = {
 	c: 1

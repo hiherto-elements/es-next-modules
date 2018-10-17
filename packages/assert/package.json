@@ -22,7 +22,8 @@
       "Assert.js",
       "MessageFactory.js",
       "InvalidValueException.js",
-      "ValueConverter.js"
+      "ValueConverter.js",
+      "test/test.js"
     ],
     "destination": "./docs",
     "plugins": [

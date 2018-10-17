@@ -9,6 +9,7 @@ export class Assert
      * @param {object} objectValue
      * @param {function} expectedInstance
      * @param {string} [message]
+     * @example class X {}; Asssert.instanceOf(new X, X);
      */
     static instanceOf(objectValue, expectedInstance, message = "")
     {
@@ -55,6 +56,7 @@ export class Assert
      * Asserts that value is valid integer
      * @param {int} integerValue
      * @param {string} [message]
+     * @example Assert.integer(1) 
      */
     static integer(integerValue, message = "")
     {
@@ -197,6 +199,7 @@ export class Assert
     }
 
     /**
+     * Asserts that a value is truthy
      * @param {boolean} value
      * @param {string} [message]
      */
