@@ -4,5 +4,3 @@ Assert.isFunction(RegexpTokenizer);
 const res = new RegexpTokenizer({
     pattern: /^The/
 }).tokenize('The quick brown');
-console.log(res);
-

@@ -25,13 +25,14 @@
     ]
   },
   "devDependencies": { 
-    "@hiherto-elements/assert": "0.0.9"
+    "@hiherto-elements/assert": "0.0.11"
   },
   "dependencies": {
     "@hiherto-elements/punycode": "0.0.1",
     "@hiherto-elements/querystring": "0.0.1"
   },
   "scripts": {
+    "reset": "rm -rf node_modules && rm -rf package-lock.json",
     "docs": "rm -rf ./docs && esdoc",
     "test": "sh test.sh"
   },
