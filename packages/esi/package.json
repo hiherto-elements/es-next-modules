@@ -70,7 +70,7 @@
         "swagger-es6": "^1.0.0"
     },
     "devDependencies": {
-        "@hiherto-elements/assert": "^0.0.4"
+        "@hiherto-elements/assert": "0.0.9"
     },
     "scripts": {
         "docs": "rm -rf ./docs && esdoc",
