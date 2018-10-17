@@ -54,7 +54,7 @@ export class Assert
 
     /**
      * Asserts that value is valid integer
-     * @param {int} integerValue
+     * @param {int} integerValue - Integer value to check
      * @param {string} [message] - Error message for the for the user
      * @example Assert.integer(1) 
      */
@@ -69,7 +69,7 @@ export class Assert
 
     /**
      * Asserts that value is valid number (integer, float)
-     * @param {number} numberValue
+     * @param {number} numberValue - Numeric value to check
      * @param {string} [message] - Error message for the for the user
      * @example Assert.number(1.5)
      */
@@ -84,9 +84,9 @@ export class Assert
 
     /**
      * Assert that value is valid string
-     * @param {string} stringValue
+     * @param {string} stringValue - String value to check
      * @param {string} [message] - Error message for the for the user
-     * @example: Assert.string('fooo')
+     * @example: Assert.string('foo')
      */
     static string(stringValue, message = "")
     {
@@ -101,7 +101,7 @@ export class Assert
 
     /**
      * Asserts that value is valid boolean  
-     * @param {boolean} booleanValue
+     * @param {boolean} booleanValue - Boolean value to check
      * @param {string} [message] - Error message for the for the user
      * @example Assert.boolean(true);
      */
@@ -115,8 +115,8 @@ export class Assert
     }
 
     /**
-     * Asserts that expression or value is equal to true.
-     * @param {boolean} value
+     * Asserts that expression or value is exactly equal to true.
+     * @param {boolean} value - Value to check
      * @param {string} [message] - Error message for the for the user
      * @example  Assert.true(true);
      */
@@ -132,7 +132,7 @@ export class Assert
 
     /**
      * Asserts that expression or value is equal to false.
-     * @param {boolean} value
+     * @param {boolean} value - Value to check
      * @param {string} [message] - Error message for the for the user
      * @example Assert.false(false)
      */
@@ -148,8 +148,8 @@ export class Assert
     
     /**
      * Asserts that value is equal to expected value
-     * @param value
-     * @param expectedValue
+     * @param value - Value to check
+     * @param expectedValue - Value to compare
      * @param {string} [message] - Error message for the for the user
      * @example Assert.equal(1, 1)
      */
@@ -164,8 +164,8 @@ export class Assert
 
     /**
      * Asserts that object is equal to expected object
-     * @param value
-     * @param otherValue
+     * @param value - Value to check
+     * @param otherValue - Value to compare
      * @param {string} [message] - Error message for the for the user
      * @example Assert.deepEqua({foo: 1}, {foo: 1});
      */
@@ -183,8 +183,8 @@ export class Assert
 
     /**
      * Asserts that object is equal to expected object
-     * @param value
-     * @param otherValue
+     * @param {object} value - Value to check
+     * @param {object} otherValue -  Value to compare
      * @param {string} [message] - Error message for the for the user
      * @example Assert.objectEqual({foo: 1}, {foo: 1});
      */
@@ -193,8 +193,8 @@ export class Assert
     }
 
     /**
-     * @param value
-     * @param otherValue
+     * @param value - Value to check
+     * @param otherValue - Value to compare 
      * @param {string} [message] - Error message for the for the user
      * @example Assert.strictEqual(1, 1);
      */
@@ -209,7 +209,7 @@ export class Assert
 
     /**
      * Asserts that a value is truthy
-     * @param {boolean} value
+     * @param {boolean} value - Truthy value to check
      * @param {string} [message] - Error message for the for the user
      * @example Assert.ok('Anytzhing but null false or undefined')
      */
