@@ -6,12 +6,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "@hiherto-elements/test/test/tdd.js~run",
-    "function/index.html#static-function-run",
-    "<span>run</span> <span class=\"search-result-import-path\">@hiherto-elements/test/test/tdd.js</span>",
-    "function"
-  ],
-  [
     "@hiherto-elements/test/test/tdd.js~stats",
     "function/index.html#static-function-stats",
     "<span>stats</span> <span class=\"search-result-import-path\">@hiherto-elements/test/test/tdd.js</span>",

@@ -1,13 +1,14 @@
 {
-  "coverage": "89.36%",
+  "coverage": "87.23%",
   "expectCount": 47,
-  "actualCount": 42,
+  "actualCount": 41,
   "files": {
     "assert/Assert.js": {
       "expectCount": 40,
-      "actualCount": 39,
+      "actualCount": 38,
       "undocumentLines": [
-        5
+        5,
+        29
       ]
     },
     "assert/InvalidValueException.js": {

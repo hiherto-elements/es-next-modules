@@ -1,11 +1,5 @@
 window.esdocSearchIndex = [
   [
-    "@hiherto-elements/natural/src/tokenizers/aggressive-tokenizer.js~aggressivetokenizer",
-    "class/src/tokenizers/aggressive-tokenizer.js~AggressiveTokenizer.html",
-    "<span>AggressiveTokenizer</span> <span class=\"search-result-import-path\">@hiherto-elements/natural/src/tokenizers/aggressive-tokenizer.js</span>",
-    "class"
-  ],
-  [
     "@hiherto-elements/natural/src/util/bag.js~bag",
     "class/src/util/bag.js~Bag.html",
     "<span>Bag</span> <span class=\"search-result-import-path\">@hiherto-elements/natural/src/util/bag.js</span>",
@@ -75,12 +69,6 @@ window.esdocSearchIndex = [
     "@hiherto-elements/natural/src/util/utils.js~replacer",
     "function/index.html#static-function-replacer",
     "<span>replacer</span> <span class=\"search-result-import-path\">@hiherto-elements/natural/src/util/utils.js</span>",
-    "function"
-  ],
-  [
-    "@hiherto-elements/natural/src/stemmers/stemmer.js~stemmer",
-    "function/index.html#static-function-stemmer",
-    "<span>stemmer</span> <span class=\"search-result-import-path\">@hiherto-elements/natural/src/stemmers/stemmer.js</span>",
     "function"
   ],
   [
@@ -376,30 +364,6 @@ window.esdocSearchIndex = [
     "file/src/classifiers/classifier.js.html",
     "src/classifiers/classifier.js",
     "file"
-  ],
-  [
-    "src/stemmers/stemmer.js",
-    "file/src/stemmers/stemmer.js.html",
-    "src/stemmers/stemmer.js",
-    "file"
-  ],
-  [
-    "src/tokenizers/aggressive-tokenizer.js",
-    "file/src/tokenizers/aggressive-tokenizer.js.html",
-    "src/tokenizers/aggressive-tokenizer.js",
-    "file"
-  ],
-  [
-    "src/tokenizers/aggressive-tokenizer.js~aggressivetokenizer#constructor",
-    "class/src/tokenizers/aggressive-tokenizer.js~AggressiveTokenizer.html#instance-constructor-constructor",
-    "src/tokenizers/aggressive-tokenizer.js~AggressiveTokenizer#constructor",
-    "method"
-  ],
-  [
-    "src/tokenizers/aggressive-tokenizer.js~aggressivetokenizer#tokenize",
-    "class/src/tokenizers/aggressive-tokenizer.js~AggressiveTokenizer.html#instance-method-tokenize",
-    "src/tokenizers/aggressive-tokenizer.js~AggressiveTokenizer#tokenize",
-    "method"
   ],
   [
     "src/tokenizers/case-tokenizer.js",

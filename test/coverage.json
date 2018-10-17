@@ -1,6 +1,6 @@
 {
   "coverage": "0%",
-  "expectCount": 15,
+  "expectCount": 14,
   "actualCount": 0,
   "files": {
     "test/node_modules/@hiherto-elements/assert/test/test.js": {
@@ -14,16 +14,15 @@
       ]
     },
     "test/tdd.js": {
-      "expectCount": 7,
+      "expectCount": 6,
       "actualCount": 0,
       "undocumentLines": [
         2,
         3,
         5,
         10,
-        17,
-        23,
-        30
+        14,
+        20
       ]
     },
     "test/test/tdd.js": {

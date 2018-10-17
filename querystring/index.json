@@ -5,7 +5,7 @@
     "name": "querystring/decode.js",
     "content": "function hasOwnProperty(obj, prop) {\n  return Object.prototype.hasOwnProperty.call(obj, prop);\n}\n\nexport const decode = (qs, sep, eq, options) => {\n  sep = sep || '&';\n  eq = eq || '=';\n  const obj = {};\n\n  if (typeof qs !== 'string' || qs.length === 0) {\n    return obj;\n  }\n\n  const regexp = /\\+/g;\n  qs = qs.split(sep);\n\n  let maxKeys = 1000;\n  if (options && typeof options.maxKeys === 'number') {\n    maxKeys = options.maxKeys;\n  }\n\n  let len = qs.length;\n  // maxKeys <= 0 means that we should not limit keys count\n  if (maxKeys > 0 && len > maxKeys) {\n    len = maxKeys;\n  }\n\n  for (let i = 0; i < len; ++i) {\n    const x = qs[i].replace(regexp, '%20');\n    const idx = x.indexOf(eq);\n    let kstr;\n    let vstr;\n    let k;\n    let v;\n\n    if (idx >= 0) {\n      kstr = x.substr(0, idx);\n      vstr = x.substr(idx + 1);\n    } else {\n      kstr = x;\n      vstr = '';\n    }\n\n    k = decodeURIComponent(kstr);\n    v = decodeURIComponent(vstr);\n\n    if (!hasOwnProperty(obj, k)) {\n      obj[k] = v;\n    } else if (Array.isArray(obj[k])) {\n      obj[k].push(v);\n    } else {\n      obj[k] = [obj[k], v];\n    }\n  }\n\n  return obj;\n};\n",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/querystring/decode.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/querystring/decode.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -101,7 +101,7 @@
     "name": "querystring/encode.js",
     "content": "const stringifyPrimitive = v => {\n  switch (typeof v) {\n    case 'string':\n      return v;\n\n    case 'boolean':\n      return v ? 'true' : 'false';\n\n    case 'number':\n      return isFinite(v) ? v : '';\n\n    default:\n      return '';\n  }\n};\n\nexport const encode = (obj, sep, eq, name) => {\n  sep = sep || '&';\n  eq = eq || '=';\n  if (obj === null) {\n    obj = undefined;\n  }\n\n  if (typeof obj === 'object') {\n    return Object.keys(obj).map(k => {\n      const ks = encodeURIComponent(stringifyPrimitive(k)) + eq;\n      if (Array.isArray(obj[k])) {\n        return obj[k].map(v => ks + encodeURIComponent(stringifyPrimitive(v))).join(sep);\n      } else {\n        return ks + encodeURIComponent(stringifyPrimitive(obj[k]));\n      }\n    }).filter(Boolean).join(sep);\n\n  }\n\n  if (!name) return '';\n  return encodeURIComponent(stringifyPrimitive(name)) + eq +\n         encodeURIComponent(stringifyPrimitive(obj));\n};",
     "static": true,
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/querystring/encode.js",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/querystring/encode.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -188,7 +188,7 @@
   {
     "kind": "index",
     "content": "# @hioherto-elements/querystring\n\nA es6 module fork of [querystring](https://github.com/Gozala/querystring).\n\n",
-    "longname": "/home/sebs/projects/opensource/es-next-modules/packages/querystring/README.md",
+    "longname": "/Users/sebs/projects/opensource/es-next-modules/packages/querystring/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"

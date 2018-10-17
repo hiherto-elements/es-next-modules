@@ -30,7 +30,6 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plan">plan</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-run">run</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stats">stats</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-suite">suite</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-test">test</a></span></span></li>
@@ -46,14 +45,11 @@ const tests = [];
 
 export const plan = () =&gt; {
 	// run all describe/suite
-	// suites.map(suite=&gt;suite.suiteFn());
+	suites.map(suite=&gt;suite.suiteFn());
 }
 
 export const test = (name, test) =&gt; {
 	tests.push({ name, test});
-	let lastSuiteIndex = suites.length-1;
-	suites[lastSuiteIndex].tests.push(tests.length-1)
-
 };
 
 export const stats = () =&gt; { 
@@ -63,15 +59,8 @@ export const stats = () =&gt; {
 };
 
 export const suite = (name, suiteFn) =&gt; {
-	let tests = [];
-	suites.push({name, suiteFn, tests});
-	suiteFn();
-};
-
-
-export const run = () =&gt; {
-	suites.map(suite =&gt; suite.tests.map(testId =&gt; tests[testId].test()))
-}</code></pre>
+		suites.push({name, suiteFn});
+};</code></pre>
 
 </div>
 
