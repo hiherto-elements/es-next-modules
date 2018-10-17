@@ -28,7 +28,7 @@
       }
     ]
   },
-  "devdDependencies": {
+  "devDependencies": {
     "@hiherto-elements/assert": "0.0.9"
   },
   "scripts": {
