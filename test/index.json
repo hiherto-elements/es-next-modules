@@ -3,7 +3,7 @@
     "__docId__": 0,
     "kind": "file",
     "name": "test/node_modules/@hiherto-elements/assert/test/test.js",
-    "content": "// test\nimport { Assert } from '../Assert.js';\nAssert.true(true);\nAssert.false(false);\nAssert.equal(1, 1);\nAssert.ok(true);\nAssert.strictEqual(true, true);\n\n\n\nlet c = {\n\tc: 1\n};\nlet d = {\n\tc: 1\n};\n\n\nlet a = [1, 2];\nlet b = [1, 2];\n\nAssert.deepEqual(a, b);\nAssert.deepEqual(c, d);\n\n",
+    "content": "// test\nimport { Assert } from '../Assert.js';\n/** @test {Assert#true} */\nAssert.true(true);\n/** @test {Asser#false} */\nAssert.false(false);\n/** @test {Asser#equal} */\nAssert.equal(1, 1);\n/** @test {Asser#ok} */\nAssert.ok(true);\n/** @test {Asser#strictEqual} */\nAssert.strictEqual(true, true);\n\nlet c = {\n\tc: 1\n};\nlet d = {\n\tc: 1\n};\n\n\nlet a = [1, 2];\nlet b = [1, 2];\n\nAssert.deepEqual(a, b);\nAssert.deepEqual(c, d);\n\nAssert.equal({foo:null}, {foo:null}, 'should not trigger a error')",
     "static": true,
     "longname": "/home/sebs/projects/opensource/es-next-modules/packages/test/node_modules/@hiherto-elements/assert/test/test.js",
     "access": "public",
@@ -22,7 +22,7 @@
     "importPath": "@hiherto-elements/test/test/node_modules/@hiherto-elements/assert/test/test.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 11,
+    "lineNumber": 14,
     "undocument": true,
     "type": {
       "types": [
@@ -43,7 +43,7 @@
     "importPath": "@hiherto-elements/test/test/node_modules/@hiherto-elements/assert/test/test.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 14,
+    "lineNumber": 17,
     "undocument": true,
     "type": {
       "types": [
@@ -64,7 +64,7 @@
     "importPath": "@hiherto-elements/test/test/node_modules/@hiherto-elements/assert/test/test.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 19,
+    "lineNumber": 22,
     "undocument": true,
     "type": {
       "types": [
@@ -85,7 +85,7 @@
     "importPath": "@hiherto-elements/test/test/node_modules/@hiherto-elements/assert/test/test.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 20,
+    "lineNumber": 23,
     "undocument": true,
     "type": {
       "types": [

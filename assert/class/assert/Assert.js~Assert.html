@@ -965,7 +965,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/assert/Assert.js~Assert.html#static-method-objectEqual">objectEqual</a></span></span><span class="code" data-ice="signature">(value: <span>*</span>, otherValue: <span>*</span>, message: <span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="class/assert/Assert.js~Assert.html#static-method-objectEqual">objectEqual</a></span></span><span class="code" data-ice="signature">(value: <span><a href="class/assert/Assert.js~Assert.html#static-method-object">object</a></span>, otherValue: <span><a href="class/assert/Assert.js~Assert.html#static-method-object">object</a></span>, message: <span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -1029,7 +1029,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Asserts that a value is truthy</p>
+</div>
       </div>
     </td>
     <td>
@@ -1143,7 +1144,7 @@
       <div>
         
         
-        <div data-ice="description"><p>Asserts that expression or value is equal to true.</p>
+        <div data-ice="description"><p>Asserts that expression or value is exactly equal to true.</p>
 </div>
       </div>
     </td>
@@ -1234,7 +1235,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber285">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber303">source</a></span></span>
     </span>
   </h3>
 
@@ -1264,7 +1265,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1281,7 +1283,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.array([1, 2]);</code></pre>
+    </div>
+</div>
 
   
 
@@ -1300,7 +1309,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber103">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber108">source</a></span></span>
     </span>
   </h3>
 
@@ -1324,13 +1333,15 @@
       <td data-ice="name" class="code" data-depth="0">booleanValue</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-boolean">boolean</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Boolean value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1347,7 +1358,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.boolean(true);</code></pre>
+    </div>
+</div>
 
   
 
@@ -1366,7 +1384,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber406">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber431">source</a></span></span>
     </span>
   </h3>
 
@@ -1402,7 +1420,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1419,7 +1438,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.containsOnly([new Foo, new Foo], Foo)</code></pre>
+    </div>
+</div>
 
   
 
@@ -1438,7 +1464,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber452">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber479">source</a></span></span>
     </span>
   </h3>
 
@@ -1468,7 +1494,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1485,7 +1512,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.containsOnlyInteger([1, 2])</code></pre>
+    </div>
+</div>
 
   
 
@@ -1504,7 +1538,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber475">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber503">source</a></span></span>
     </span>
   </h3>
 
@@ -1534,7 +1568,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1551,7 +1586,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.containsOnlyNumber([1, 2])</code></pre>
+    </div>
+</div>
 
   
 
@@ -1570,7 +1612,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber429">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber455">source</a></span></span>
     </span>
   </h3>
 
@@ -1600,7 +1642,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1617,7 +1660,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.containsOnlyString([&apos;Foo&apos;, &apos;Bar&apos;])</code></pre>
+    </div>
+</div>
 
   
 
@@ -1636,7 +1686,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber499">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber528">source</a></span></span>
     </span>
   </h3>
 
@@ -1672,7 +1722,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1689,7 +1740,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.expectedCount(2, [1, 2])</code></pre>
+    </div>
+</div>
 
   
 
@@ -1708,7 +1766,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber163">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber172">source</a></span></span>
     </span>
   </h3>
 
@@ -1732,19 +1790,22 @@
       <td data-ice="name" class="code" data-depth="0">value</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">otherValue</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to compare</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1761,7 +1822,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.deepEqua({foo: 1}, {foo: 1});</code></pre>
+    </div>
+</div>
 
   
 
@@ -1780,7 +1848,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber577">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber611">source</a></span></span>
     </span>
   </h3>
 
@@ -1810,7 +1878,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1827,7 +1896,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.email(&quot;sebs@2xs.org&quot;)</code></pre>
+    </div>
+</div>
 
   
 
@@ -1846,7 +1922,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber148">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber156">source</a></span></span>
     </span>
   </h3>
 
@@ -1870,19 +1946,22 @@
       <td data-ice="name" class="code" data-depth="0">value</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">expectedValue</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to compare</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1899,7 +1978,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.equal(1, 1)</code></pre>
+    </div>
+</div>
 
   
 
@@ -1918,7 +2004,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber545">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber577">source</a></span></span>
     </span>
   </h3>
 
@@ -1948,7 +2034,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1965,7 +2052,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.evenNumber(2)</code></pre>
+    </div>
+</div>
 
   
 
@@ -1984,7 +2078,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber132">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber139">source</a></span></span>
     </span>
   </h3>
 
@@ -2008,13 +2102,15 @@
       <td data-ice="name" class="code" data-depth="0">value</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-boolean">boolean</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2031,7 +2127,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.false(false)</code></pre>
+    </div>
+</div>
 
   
 
@@ -2050,7 +2153,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber338">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber359">source</a></span></span>
     </span>
   </h3>
 
@@ -2086,7 +2189,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2103,7 +2207,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.greaterThan(12, 13)</code></pre>
+    </div>
+</div>
 
   
 
@@ -2122,7 +2233,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber355">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber377">source</a></span></span>
     </span>
   </h3>
 
@@ -2158,7 +2269,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2175,7 +2287,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.greaterThanOrEqual(12, 12)</code></pre>
+    </div>
+</div>
 
   
 
@@ -2194,7 +2313,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber646">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber682">source</a></span></span>
     </span>
   </h3>
 
@@ -2230,7 +2349,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2266,7 +2386,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber665">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber701">source</a></span></span>
     </span>
   </h3>
 
@@ -2302,7 +2422,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2338,7 +2459,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber629">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber665">source</a></span></span>
     </span>
   </h3>
 
@@ -2374,7 +2495,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2410,7 +2532,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber233">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber248">source</a></span></span>
     </span>
   </h3>
 
@@ -2446,7 +2568,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2463,7 +2586,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.hasFunction(&apos;postMessage&apos;, window)</code></pre>
+    </div>
+</div>
 
   
 
@@ -2482,7 +2612,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber267">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber284">source</a></span></span>
     </span>
   </h3>
 
@@ -2518,7 +2648,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2535,7 +2666,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.hasProperty([&apos;postMessage&apos;, &apos;location&apos;], window)</code></pre>
+    </div>
+</div>
 
   
 
@@ -2554,7 +2692,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber250">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber266">source</a></span></span>
     </span>
   </h3>
 
@@ -2590,7 +2728,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2607,7 +2746,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.hasProperty(&apos;postMessage&apos;, window)</code></pre>
+    </div>
+</div>
 
   
 
@@ -2626,7 +2772,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber13">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber14">source</a></span></span>
     </span>
   </h3>
 
@@ -2650,19 +2796,22 @@
       <td data-ice="name" class="code" data-depth="0">objectValue</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-object">object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>value to compare</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">expectedInstance</td>
       <td data-ice="type" class="code"><span>function</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>expected class Instance</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2679,7 +2828,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">class X {}; Asssert.instanceOf(new X, X);</code></pre>
+    </div>
+</div>
 
   
 
@@ -2698,7 +2854,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber36">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber37">source</a></span></span>
     </span>
   </h3>
 
@@ -2722,19 +2878,22 @@
       <td data-ice="name" class="code" data-depth="0">objectValue</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-object">object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>value to compare</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">expectedInstances</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-array">array</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>instances to compare the value with</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2770,7 +2929,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber59">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber61">source</a></span></span>
     </span>
   </h3>
 
@@ -2794,13 +2953,15 @@
       <td data-ice="name" class="code" data-depth="0">integerValue</td>
       <td data-ice="type" class="code"><span>int</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Integer value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2817,7 +2978,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.integer(1) </code></pre>
+    </div>
+</div>
 
   
 
@@ -2836,7 +3004,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber323">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber343">source</a></span></span>
     </span>
   </h3>
 
@@ -2866,7 +3034,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2883,7 +3052,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.isFunction(window.postMessage)</code></pre>
+    </div>
+</div>
 
   
 
@@ -2902,7 +3078,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber560">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber593">source</a></span></span>
     </span>
   </h3>
 
@@ -2932,7 +3108,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2949,7 +3126,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.jsonString(&quot;[]&quot;)</code></pre>
+    </div>
+</div>
 
   
 
@@ -2968,7 +3152,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber372">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber395">source</a></span></span>
     </span>
   </h3>
 
@@ -3004,7 +3188,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3021,7 +3206,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.lessThan(10, 12)</code></pre>
+    </div>
+</div>
 
   
 
@@ -3040,7 +3232,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber389">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber413">source</a></span></span>
     </span>
   </h3>
 
@@ -3076,7 +3268,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3093,7 +3286,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.lessThanOrEqual(10, 10);</code></pre>
+    </div>
+</div>
 
   
 
@@ -3112,7 +3312,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber515">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber545">source</a></span></span>
     </span>
   </h3>
 
@@ -3142,7 +3342,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3159,7 +3360,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.notEmpty([1])</code></pre>
+    </div>
+</div>
 
   
 
@@ -3178,7 +3386,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber73">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber76">source</a></span></span>
     </span>
   </h3>
 
@@ -3202,13 +3410,15 @@
       <td data-ice="name" class="code" data-depth="0">numberValue</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Numeric value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3225,7 +3435,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.number(1.5)</code></pre>
+    </div>
+</div>
 
   
 
@@ -3244,7 +3461,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber218">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber232">source</a></span></span>
     </span>
   </h3>
 
@@ -3274,7 +3491,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3291,7 +3509,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.object(document)</code></pre>
+    </div>
+</div>
 
   
 
@@ -3306,11 +3531,11 @@
     
     
     
-    <span class="code" data-ice="name">objectEqual</span><span class="code" data-ice="signature">(value: <span>*</span>, otherValue: <span>*</span>, message: <span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span>): <span>*</span></span>
+    <span class="code" data-ice="name">objectEqual</span><span class="code" data-ice="signature">(value: <span><a href="class/assert/Assert.js~Assert.html#static-method-object">object</a></span>, otherValue: <span><a href="class/assert/Assert.js~Assert.html#static-method-object">object</a></span>, message: <span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span>): <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber181">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber191">source</a></span></span>
     </span>
   </h3>
 
@@ -3332,21 +3557,24 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">value</td>
-      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-object">object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">otherValue</td>
-      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-object">object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to compare</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3375,7 +3603,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.objectEqual({foo: 1}, {foo: 1});</code></pre>
+    </div>
+</div>
 
   
 
@@ -3394,7 +3629,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber530">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber561">source</a></span></span>
     </span>
   </h3>
 
@@ -3424,7 +3659,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3441,7 +3677,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.oddNumber(1)</code></pre>
+    </div>
+</div>
 
   
 
@@ -3460,14 +3703,15 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber203">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber216">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Asserts that a value is truthy</p>
+</div>
 
   
 
@@ -3483,13 +3727,15 @@
       <td data-ice="name" class="code" data-depth="0">value</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-boolean">boolean</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Truthy value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3506,7 +3752,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.ok(&apos;Anytzhing but null false or undefined&apos;)</code></pre>
+    </div>
+</div>
 
   
 
@@ -3525,7 +3778,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber300">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber319">source</a></span></span>
     </span>
   </h3>
 
@@ -3561,7 +3814,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3578,7 +3832,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.oneOf([1, 2]);</code></pre>
+    </div>
+</div>
 
   
 
@@ -3597,7 +3858,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber190">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber201">source</a></span></span>
     </span>
   </h3>
 
@@ -3620,19 +3881,22 @@
       <td data-ice="name" class="code" data-depth="0">value</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">otherValue</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to compare</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3649,7 +3913,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.strictEqual(1, 1);</code></pre>
+    </div>
+</div>
 
   
 
@@ -3668,7 +3939,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber87">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber91">source</a></span></span>
     </span>
   </h3>
 
@@ -3692,13 +3963,16 @@
       <td data-ice="name" class="code" data-depth="0">stringValue</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>String value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user
+@example: Assert.string(&apos;foo&apos;)</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3734,14 +4008,14 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber117">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber123">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Asserts that expression or value is equal to true.</p>
+  <div data-ice="description"><p>Asserts that expression or value is exactly equal to true.</p>
 </div>
 
   
@@ -3758,13 +4032,15 @@
       <td data-ice="name" class="code" data-depth="0">value</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-boolean">boolean</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Value to check</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3781,7 +4057,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode"> Assert.true(true);</code></pre>
+    </div>
+</div>
 
   
 
@@ -3800,7 +4083,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber594">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber629">source</a></span></span>
     </span>
   </h3>
 
@@ -3830,7 +4113,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3847,7 +4131,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.url(&quot;http://google.de&quot;)</code></pre>
+    </div>
+</div>
 
   
 
@@ -3866,7 +4157,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber611">source</a></span></span>
+      <span data-ice="source"><span><a href="file/assert/Assert.js.html#lineNumber647">source</a></span></span>
     </span>
   </h3>
 
@@ -3896,7 +4187,8 @@
       <td data-ice="name" class="code" data-depth="0">message</td>
       <td data-ice="type" class="code"><span><a href="class/assert/Assert.js~Assert.html#static-method-string">string</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Error message for the for the user</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3913,7 +4205,14 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">Assert.uuid(&quot;550e8400-e29b-11d4-a716-446655440000&quot;)</code></pre>
+    </div>
+</div>
 
   
 
