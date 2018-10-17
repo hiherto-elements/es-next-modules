@@ -6,9 +6,9 @@ export class Assert
 {
     /**
      * Asserts that value is an instance of (at least one) specific class.
-     * @param {object} objectValue
-     * @param {function} expectedInstance
-     * @param {string} [message]
+     * @param {object} objectValue - value to compare
+     * @param {function} expectedInstance - expected class Instance
+     * @param {string} [message] - Error message for the for the user
      * @example class X {}; Asssert.instanceOf(new X, X);
      */
     static instanceOf(objectValue, expectedInstance, message = "")
@@ -30,9 +30,9 @@ export class Assert
      
     /**
      * Asserts that value is an instance of at least one specific class.
-     * @param {object} objectValue
-     * @param {array} expectedInstances
-     * @param {string} [message]
+     * @param {object} objectValue - value to compare
+     * @param {array} expectedInstances - instances to compare the value with
+     * @param {string} [message] - Error message for the for the user
      */   
     static instanceOneOf(objectValue, expectedInstances, message = "")
     {
@@ -55,7 +55,7 @@ export class Assert
     /**
      * Asserts that value is valid integer
      * @param {int} integerValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
      * @example Assert.integer(1) 
      */
     static integer(integerValue, message = "")
@@ -70,7 +70,8 @@ export class Assert
     /**
      * Asserts that value is valid number (integer, float)
      * @param {number} numberValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.number(1.5)
      */
     static number(numberValue, message = "")
     {
@@ -84,7 +85,8 @@ export class Assert
     /**
      * Assert that value is valid string
      * @param {string} stringValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example: Assert.string('fooo')
      */
     static string(stringValue, message = "")
     {
@@ -100,7 +102,8 @@ export class Assert
     /**
      * Asserts that value is valid boolean  
      * @param {boolean} booleanValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.boolean(true);
      */
     static boolean(booleanValue, message = "")
     {
@@ -114,7 +117,8 @@ export class Assert
     /**
      * Asserts that expression or value is equal to true.
      * @param {boolean} value
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example  Assert.true(true);
      */
     static true(value, message = "")
     {
@@ -129,7 +133,8 @@ export class Assert
     /**
      * Asserts that expression or value is equal to false.
      * @param {boolean} value
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.false(false)
      */
     static false(value, message = "")
     {
@@ -145,7 +150,8 @@ export class Assert
      * Asserts that value is equal to expected value
      * @param value
      * @param expectedValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.equal(1, 1)
      */
     static equal(value, expectedValue, message = "")
     {
@@ -160,7 +166,8 @@ export class Assert
      * Asserts that object is equal to expected object
      * @param value
      * @param otherValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.deepEqua({foo: 1}, {foo: 1});
      */
     static deepEqual(value, otherValue, message = "")
     {        
@@ -178,7 +185,8 @@ export class Assert
      * Asserts that object is equal to expected object
      * @param value
      * @param otherValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.objectEqual({foo: 1}, {foo: 1});
      */
     static objectEqual(value, otherValue, message) {
         return this.deepEqual(value, otherValue, message);
@@ -187,7 +195,8 @@ export class Assert
     /**
      * @param value
      * @param otherValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.strictEqual(1, 1);
      */
     static strictEqual(value, otherValue, message = "")
     {        
@@ -201,7 +210,8 @@ export class Assert
     /**
      * Asserts that a value is truthy
      * @param {boolean} value
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.ok('Anytzhing but null false or undefined')
      */
     static ok(value, message = "")
     {        
@@ -216,7 +226,8 @@ export class Assert
     /**
      * Asserts that value is valid object
      * @param {object} objectValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.object(document)
      */
     static object(objectValue, message = "")
     {
@@ -231,7 +242,8 @@ export class Assert
      * Asserts that object has function
      * @param {string} expectedFunctionName
      * @param {object} objectValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.hasFunction('postMessage', window)
      */
     static hasFunction(expectedFunctionName, objectValue, message = "")
     {
@@ -248,7 +260,8 @@ export class Assert
      * Asserts that object has property (it can also be a function)
      * @param {string} expectedPropertyName
      * @param {object} objectValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.hasProperty('postMessage', window)
      */
     static hasProperty(expectedPropertyName, objectValue, message = "")
     {
@@ -265,7 +278,8 @@ export class Assert
      * Asserts that object has multiple properties
      * @param {array} expectedProperties
      * @param {object} objectValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.hasProperty(['postMessage', 'location'], window)
      */
     static hasProperties(expectedProperties, objectValue, message = "")
     {
@@ -283,7 +297,8 @@ export class Assert
     /**
      * Asserts that value is valid array.
      * @param {array} arrayValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.array([1, 2]);
      */
     static array(arrayValue, message = "")
     {
@@ -298,7 +313,8 @@ export class Assert
      * Asserts that value is one of expected values
      * @param {*} value
      * @param {array} expectedElements
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.oneOf([1, 2]);
      */
     static oneOf(value, expectedElements, message = "")
     {
@@ -321,7 +337,8 @@ export class Assert
     /**
      * Asserts that value is valid function
      * @param {function} functionValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.isFunction(window.postMessage)
      */
     static isFunction(functionValue, message = "")
     {
@@ -336,7 +353,8 @@ export class Assert
      * Asserts that number is greater than
      * @param {int} expected
      * @param {int} integerValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.greaterThan(12, 13)
      */
     static greaterThan(expected, integerValue, message = "")
     {
@@ -353,7 +371,8 @@ export class Assert
      * Asserts that number is greater than or equal
      * @param {int} expected
      * @param {int} integerValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.greaterThanOrEqual(12, 12)
      */
     static greaterThanOrEqual(expected, integerValue, message = "")
     {
@@ -370,7 +389,8 @@ export class Assert
      * Asserts that number is less than
      * @param {int} expected
      * @param {int} integerValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.lessThan(10, 12)
      */
     static lessThan(expected, integerValue, message = "")
     {
@@ -387,7 +407,8 @@ export class Assert
      * Asserts that number is less than or equal
      * @param {int} expected
      * @param {int} integerValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.lessThanOrEqual(10, 10);
      */
     static lessThanOrEqual(expected, integerValue, message = "")
     {
@@ -404,7 +425,8 @@ export class Assert
      * Asserts that array contains only instances of specific class.
      * @param {array} arrayValue
      * @param {function} expectedInstance
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.containsOnly([new Foo, new Foo], Foo)
      */
     static containsOnly(arrayValue, expectedInstance, message = "")
     {
@@ -427,7 +449,8 @@ export class Assert
     /**
      * Asserts that array contains only strings
      * @param {array} arrayValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.containsOnlyString(['Foo', 'Bar'])
      */
     static containsOnlyString(arrayValue, message = "")
     {
@@ -450,7 +473,8 @@ export class Assert
     /**
      * Asserts that array contains only integers
      * @param {array} arrayValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user  
+     * @example Assert.containsOnlyInteger([1, 2])
      */
     static containsOnlyInteger(arrayValue, message = "")
     {
@@ -473,7 +497,8 @@ export class Assert
     /**
      * Asserts that array contains only numbers
      * @param {array} arrayValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.containsOnlyNumber([1, 2])
      */
     static containsOnlyNumber(arrayValue, message = "")
     {
@@ -497,7 +522,8 @@ export class Assert
      * Asserts that array have specific number of elements
      * @param {int} expectedCount
      * @param {array} arrayValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.expectedCount(2, [1, 2])
      */
     static count(expectedCount, arrayValue, message = "")
     {
@@ -513,7 +539,8 @@ export class Assert
     /**
      * Asserts that array is not empty
      * @param {*} value
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.notEmpty([1])
      */
     static notEmpty(value, message = "")
     {
@@ -528,7 +555,8 @@ export class Assert
     /**
      * Asserts that value is odd number
      * @param {int} integerValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.oddNumber(1)
      */
     static oddNumber(integerValue, message = "")
     {
@@ -543,7 +571,8 @@ export class Assert
     /**
      * Asserts that value is even number
      * @param {int} integerValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.evenNumber(2)
      */
     static evenNumber(integerValue, message = "")
     {
@@ -558,7 +587,8 @@ export class Assert
     /**
      * Asserts that value is valid json string
      * @param {string} stringValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.jsonString("[]")
      */
     static jsonString(stringValue, message = "")
     {
@@ -575,7 +605,8 @@ export class Assert
     /**
      * Asserts that string is valid email address.
      * @param {string} emailValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.email("sebs@2xs.org")
      */
     static email(emailValue, message = "")
     {
@@ -592,7 +623,8 @@ export class Assert
     /**
      * Asserts that string is valid url
      * @param {string} urlValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.url("http://google.de")
      */
     static url(urlValue, message = "")
     {
@@ -609,7 +641,8 @@ export class Assert
     /**
      * Asserts that string is valid UUID
      * @param {string} uuidValue
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
+     * @example Assert.uuid("550e8400-e29b-11d4-a716-446655440000")
      */
     static uuid(uuidValue, message = "")
     {
@@ -627,7 +660,7 @@ export class Assert
      * Asserts that element has other element under selector.
      * @param {string} selector
      * @param {HTMLElement|HTMLDocument} htmlElement
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
      */
     static hasElement(selector, htmlElement, message = "")
     {
@@ -644,7 +677,7 @@ export class Assert
      * Asserts that element has expected attribute (it might be empty)
      * @param {string} attributeName
      * @param {HTMLElement} htmlElement
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
      */
     static hasAttribute(attributeName, htmlElement, message = "")
     {
@@ -663,7 +696,7 @@ export class Assert
      * Asserts that element has expected attributes (it might be empty)
      * @param {array} attributes
      * @param {HTMLElement} htmlElement
-     * @param {string} [message]
+     * @param {string} [message] - Error message for the for the user
      */
     static hasAttributes(attributes, htmlElement, message = "")
     {
