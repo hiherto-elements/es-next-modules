@@ -1,12 +1,16 @@
 {
   "name": "@hiherto-elements/assert",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A simple assertion libbrary refactred to es6",
   "main": "Assert.js",
   "directories": {
     "test": "test"
   },
-  "keywords": ["test", "tdd", "assert"],
+  "keywords": [
+    "test",
+    "tdd",
+    "assert"
+  ],
   "private": false,
   "scripts": {
     "docs": "rm -rf ./docs && esdoc",
