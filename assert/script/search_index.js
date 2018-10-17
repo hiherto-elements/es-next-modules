@@ -90,12 +90,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "assert/assert.js~assert.equal",
-    "class/assert/Assert.js~Assert.html#static-method-equal",
-    "assert/Assert.js~Assert.equal",
-    "method"
-  ],
-  [
     "assert/assert.js~assert.evennumber",
     "class/assert/Assert.js~Assert.html#static-method-evenNumber",
     "assert/Assert.js~Assert.evenNumber",
@@ -213,6 +207,12 @@ window.esdocSearchIndex = [
     "assert/assert.js~assert.object",
     "class/assert/Assert.js~Assert.html#static-method-object",
     "assert/Assert.js~Assert.object",
+    "method"
+  ],
+  [
+    "assert/assert.js~assert.objectequal",
+    "class/assert/Assert.js~Assert.html#static-method-objectEqual",
+    "assert/Assert.js~Assert.objectEqual",
     "method"
   ],
   [
