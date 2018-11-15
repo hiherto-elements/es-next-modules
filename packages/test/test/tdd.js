@@ -9,4 +9,3 @@ let res = stats();
 Assert.equal(res.suites.length, 1);
 test('bar', ()=>{});
 res = stats();
-console.log(JSON.stringify(res));

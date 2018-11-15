@@ -19,7 +19,6 @@ res = lexer.parse('Scenario: Bar');
 res = lexer.parse(`Feature: Foo
 Scenario: Bar`);
 
-
 let bigFeature = `
 Feature: Can drink beer when thirsty
   As a drinker
@@ -49,6 +48,3 @@ Feature: Can drink beer when thirsty
 `;
 
 res = lexer.parse(bigFeature);
-
-
-

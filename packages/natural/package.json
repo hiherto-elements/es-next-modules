@@ -23,10 +23,11 @@
     ]
   },
   "devDependencies": {
-    "@hiherto-elements/assert": "0.0.9",
+    "@hiherto-elements/assert": "0.0.11",
     "@hiherto-elements/test": "0.0.2"
   },
   "scripts": {
+    "reset": "rm -rf node_modules && rm -rf package-lock.json",
     "docs": "rm -rf ./docs && esdoc",
     "test": "sh test.sh"
   },
