@@ -16,9 +16,7 @@ plan();
 
 let tests = stats();
 Assert.equal(tests.suites.length, 1)
-Assert.equal(tests.suites[0].tests.length, 2)
-console.log(JSON.stringify(tests));
-
+Assert.equal(tests.suites[0].tests.length, 2);
 run();
 Assert.equal(counts[0], true);
 Assert.equal(counts[1], false);

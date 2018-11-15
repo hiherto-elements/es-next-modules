@@ -24,7 +24,6 @@ export class GherkinLexer {
 	parse(text) {
 		const lines = (text || '').toString().split(R_NEWLINE);
 		return lines.map(line=>{
-			console.log('l',line)
 			let l = this.lex(line);
 			return l;
 		});
