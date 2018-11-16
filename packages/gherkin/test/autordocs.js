@@ -3,11 +3,10 @@ import { Assert } from '../node_modules/@hiherto-elements/assert/Assert.js';
 import { parse } from '../parse.js';
 
 
-let featureText = `Feature: Identity
-As a provider 
-I want to need to provide a way to identify users
+let featureText = `Feature:
+As a provider
+I want need to provide a way to identify users
 In order to track the author of documentation and comments
-
 
 Scenario: An anonymous user requests an iDoc identity with valid details
   Given I am not identified
@@ -114,36 +113,8 @@ Scenario: An identified user attempts to re-identify
   And I should see "Email"
   And I should see "Password"
 
-Scenario: An identified user requFeature: Can drink beer when thirsty
-  As a drinker
-  I want to take beer off the wall
-  In order to satisfy my thirst
-
-  Scenario: Can take a single beer
-    Given 100 bottles of beer on the wall
-    When a bottle is taken down
-		Then there are 99 bottles of beer on the wall
-		And Then foo
-
-	Scenario: Bar
-		Given 200 Bottles are sold
-		When the Barkeeper deilvers them 
-		Then the Baarkeeper is tireddentity
-  Given I have created an accountFeature: Can drink beer when thirsty
-  As a drinker
-  I want to take beer off the wall
-  In order to satisfy my thirst
-
-  Scenario: Can take a single beer
-    Given 100 bottles of beer on the wall
-    When a bottle is taken down
-		Then there are 99 bottles of beer on the wall
-		And Then foo
-
-	Scenario: Bar
-		Given 200 Bottles are sold
-		When the Barkeeper deilvers them 
-		Then the Baarkeeper is tired
+Scenario: An identified user request an iDoc identity
+  Given I have created an account
   And I have activated my account
   And I have logged in to my account
   When I go to the new account page
