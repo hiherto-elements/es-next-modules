@@ -9,15 +9,9 @@ Object.keys(parseTests).forEach(u => {
 	tests.map(test => {
 		assert.equal(parsed[test], testStrings[test], `parsing ${u} checking ${test} expects ${testStrings[test]} but got ${parsed[test]}`)
 	});
-
-/*
-	// this is the only one that seems broken after porting punycode, querystring and url
-  '<http://goo.corn/bread> Is a URL!': {
-    'href': '%3Chttp://goo.corn/bread%3E%20Is%20a%20URL!',
-    'pathname': '%3Chttp://goo.corn/bread%3E%20Is%20a%20URL!',
-    'path': '%3Chttp://goo.corn/bread%3E%20Is%20a%20URL!'
-  },
-*/
-
-
 });
+
+
+let wellKnown = 'http://foo.com/.well-known/example';
+let parsedUrl = parse(wellKnown);
+console.log(parsedUrl);
