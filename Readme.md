@@ -1,4 +1,4 @@
-# es6 without any babel
+# JS Development without Babel <3
 
 [![Build Status](https://travis-ci.org/hiherto-elements/es-next-modules.svg?branch=master)](https://travis-ci.org/hiherto-elements/es-next-modules)
 
