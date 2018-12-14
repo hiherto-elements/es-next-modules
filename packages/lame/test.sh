@@ -15,5 +15,6 @@
 ~/.deno/bin/deno test/QuantizePVT.js
 ~/.deno/bin/deno test/ScaleFac.js
 ~/.deno/bin/deno test/Tables.js
+~/.deno/bin/deno test/TakeHiro.js
 ~/.deno/bin/deno test/VBRSeekInfo.js
 ~/.deno/bin/deno test/Version.js
