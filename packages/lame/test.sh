@@ -1,7 +1,11 @@
 ~/.deno/bin/deno test/ATH.js
 ~/.deno/bin/deno test/BitStream.js
+~/.deno/bin/deno test/CalcNoiseData.js
+~/.deno/bin/deno test/CalcNoiseResult.js
+~/.deno/bin/deno test/CBRNewIterationLoop.js
 ~/.deno/bin/deno test/common.js
 ~/.deno/bin/deno test/Encoder.js
+~/.deno/bin/deno test/FFT.js
 ~/.deno/bin/deno test/GainAnalysis.js
 ~/.deno/bin/deno test/GrInfo.js
 ~/.deno/bin/deno test/L3Side.js
