@@ -322,12 +322,12 @@ export function NewMDCT() {
 			7.47204e-04 / 2.384e-06, 4.9591e-05 / 2.384e-06,
 			4.756451e-03 / 2.384e-06, 2.1458e-05 / 2.384e-06,
 			-6.9618e-05 / 2.384e-06, /* 2.384e-06/2.384e-06 */
-	];
-
-	const NS = 12;
-	const NL = 36;
-
-	const win = [
+    ];
+    
+    const NS = 12;
+    const NL = 36;
+    
+    var win = [
 	    [
 	     2.382191739347913e-13,
 	     6.423305872147834e-13,
@@ -493,14 +493,14 @@ export function NewMDCT() {
 	     -6.423305872147841e-13,
 	     -2.382191739347918e-13,
 	     ]
-	];
-
-	const tantab_l = win[Encoder.SHORT_TYPE];
-	const cx = win[Encoder.SHORT_TYPE];
-	const ca = win[Encoder.SHORT_TYPE];
-	const cs = win[Encoder.SHORT_TYPE];
-
-	/**
+    ];
+    
+    var tantab_l = win[Encoder.SHORT_TYPE];
+	var cx = win[Encoder.SHORT_TYPE];
+	var ca = win[Encoder.SHORT_TYPE];
+    var cs = win[Encoder.SHORT_TYPE];
+    
+    /**
 	 * new IDCT routine written by Takehiro TOMINAGA
 	 *
 	 * PURPOSE: Overlapping window on PCM samples<BR>
@@ -511,122 +511,117 @@ export function NewMDCT() {
 	 * buffer #x# is then windowed by the analysis window #c# to produce the
 	 * windowed sample #z#
 	 */
-	const order = [
+	var order = [
 	    0, 1, 16, 17, 8, 9, 24, 25, 4, 5, 20, 21, 12, 13, 28, 29,
 	    2, 3, 18, 19, 10, 11, 26, 27, 6, 7, 22, 23, 14, 15, 30, 31
-	];
+    ];
 
-	/**
+    /**
 	 * returns sum_j=0^31 a[j]*cos(PI*j*(k+1/2)/32), 0<=k<32
 	 */
 	function window_subband(x1, x1Pos, a) {
-		let wp = 10;
+		var wp = 10;
 
-		let x2 = x1Pos + 238 - 14 - 286;
+		var x2 = x1Pos + 238 - 14 - 286;
 
-		for (let i = -15; i < 0; i++) {
-            let w;
-            var s;
-            var t;
+		for (var i = -15; i < 0; i++) {
+			var w, s, t;
 
-            w = enwindow[wp + -10];
-            s = x1[x2 + -224] * w;
-            t = x1[x1Pos + 224] * w;
-            w = enwindow[wp + -9];
-            s += x1[x2 + -160] * w;
-            t += x1[x1Pos + 160] * w;
-            w = enwindow[wp + -8];
-            s += x1[x2 + -96] * w;
-            t += x1[x1Pos + 96] * w;
-            w = enwindow[wp + -7];
-            s += x1[x2 + -32] * w;
-            t += x1[x1Pos + 32] * w;
-            w = enwindow[wp + -6];
-            s += x1[x2 + 32] * w;
-            t += x1[x1Pos + -32] * w;
-            w = enwindow[wp + -5];
-            s += x1[x2 + 96] * w;
-            t += x1[x1Pos + -96] * w;
-            w = enwindow[wp + -4];
-            s += x1[x2 + 160] * w;
-            t += x1[x1Pos + -160] * w;
-            w = enwindow[wp + -3];
-            s += x1[x2 + 224] * w;
-            t += x1[x1Pos + -224] * w;
+			w = enwindow[wp + -10];
+			s = x1[x2 + -224] * w;
+			t = x1[x1Pos + 224] * w;
+			w = enwindow[wp + -9];
+			s += x1[x2 + -160] * w;
+			t += x1[x1Pos + 160] * w;
+			w = enwindow[wp + -8];
+			s += x1[x2 + -96] * w;
+			t += x1[x1Pos + 96] * w;
+			w = enwindow[wp + -7];
+			s += x1[x2 + -32] * w;
+			t += x1[x1Pos + 32] * w;
+			w = enwindow[wp + -6];
+			s += x1[x2 + 32] * w;
+			t += x1[x1Pos + -32] * w;
+			w = enwindow[wp + -5];
+			s += x1[x2 + 96] * w;
+			t += x1[x1Pos + -96] * w;
+			w = enwindow[wp + -4];
+			s += x1[x2 + 160] * w;
+			t += x1[x1Pos + -160] * w;
+			w = enwindow[wp + -3];
+			s += x1[x2 + 224] * w;
+			t += x1[x1Pos + -224] * w;
 
-            w = enwindow[wp + -2];
-            s += x1[x1Pos + -256] * w;
-            t -= x1[x2 + 256] * w;
-            w = enwindow[wp + -1];
-            s += x1[x1Pos + -192] * w;
-            t -= x1[x2 + 192] * w;
-            w = enwindow[wp + 0];
-            s += x1[x1Pos + -128] * w;
-            t -= x1[x2 + 128] * w;
-            w = enwindow[wp + 1];
-            s += x1[x1Pos + -64] * w;
-            t -= x1[x2 + 64] * w;
-            w = enwindow[wp + 2];
-            s += x1[x1Pos + 0] * w;
-            t -= x1[x2 + 0] * w;
-            w = enwindow[wp + 3];
-            s += x1[x1Pos + 64] * w;
-            t -= x1[x2 + -64] * w;
-            w = enwindow[wp + 4];
-            s += x1[x1Pos + 128] * w;
-            t -= x1[x2 + -128] * w;
-            w = enwindow[wp + 5];
-            s += x1[x1Pos + 192] * w;
-            t -= x1[x2 + -192] * w;
+			w = enwindow[wp + -2];
+			s += x1[x1Pos + -256] * w;
+			t -= x1[x2 + 256] * w;
+			w = enwindow[wp + -1];
+			s += x1[x1Pos + -192] * w;
+			t -= x1[x2 + 192] * w;
+			w = enwindow[wp + 0];
+			s += x1[x1Pos + -128] * w;
+			t -= x1[x2 + 128] * w;
+			w = enwindow[wp + 1];
+			s += x1[x1Pos + -64] * w;
+			t -= x1[x2 + 64] * w;
+			w = enwindow[wp + 2];
+			s += x1[x1Pos + 0] * w;
+			t -= x1[x2 + 0] * w;
+			w = enwindow[wp + 3];
+			s += x1[x1Pos + 64] * w;
+			t -= x1[x2 + -64] * w;
+			w = enwindow[wp + 4];
+			s += x1[x1Pos + 128] * w;
+			t -= x1[x2 + -128] * w;
+			w = enwindow[wp + 5];
+			s += x1[x1Pos + 192] * w;
+			t -= x1[x2 + -192] * w;
 
-            /*
+			/*
 			 * this multiplyer could be removed, but it needs more 256 FLOAT
 			 * data. thinking about the data cache performance, I think we
 			 * should not use such a huge table. tt 2000/Oct/25
 			 */
-            s *= enwindow[wp + 6];
-            w = t - s;
-            a[30 + i * 2] = t + s;
-            a[31 + i * 2] = enwindow[wp + 7] * w;
-            wp += 18;
-            x1Pos--;
-            x2++;
-        }
+			s *= enwindow[wp + 6];
+			w = t - s;
+			a[30 + i * 2] = t + s;
+			a[31 + i * 2] = enwindow[wp + 7] * w;
+			wp += 18;
+			x1Pos--;
+			x2++;
+		}
 		{
-            const s;
-            const t;
-            let u;
-            let v;
-            t = x1[x1Pos + -16] * enwindow[wp + -10];
-            s = x1[x1Pos + -32] * enwindow[wp + -2];
-            t += (x1[x1Pos + -48] - x1[x1Pos + 16]) * enwindow[wp + -9];
-            s += x1[x1Pos + -96] * enwindow[wp + -1];
-            t += (x1[x1Pos + -80] + x1[x1Pos + 48]) * enwindow[wp + -8];
-            s += x1[x1Pos + -160] * enwindow[wp + 0];
-            t += (x1[x1Pos + -112] - x1[x1Pos + 80]) * enwindow[wp + -7];
-            s += x1[x1Pos + -224] * enwindow[wp + 1];
-            t += (x1[x1Pos + -144] + x1[x1Pos + 112]) * enwindow[wp + -6];
-            s -= x1[x1Pos + 32] * enwindow[wp + 2];
-            t += (x1[x1Pos + -176] - x1[x1Pos + 144]) * enwindow[wp + -5];
-            s -= x1[x1Pos + 96] * enwindow[wp + 3];
-            t += (x1[x1Pos + -208] + x1[x1Pos + 176]) * enwindow[wp + -4];
-            s -= x1[x1Pos + 160] * enwindow[wp + 4];
-            t += (x1[x1Pos + -240] - x1[x1Pos + 208]) * enwindow[wp + -3];
-            s -= x1[x1Pos + 224];
+			var s, t, u, v;
+			t = x1[x1Pos + -16] * enwindow[wp + -10];
+			s = x1[x1Pos + -32] * enwindow[wp + -2];
+			t += (x1[x1Pos + -48] - x1[x1Pos + 16]) * enwindow[wp + -9];
+			s += x1[x1Pos + -96] * enwindow[wp + -1];
+			t += (x1[x1Pos + -80] + x1[x1Pos + 48]) * enwindow[wp + -8];
+			s += x1[x1Pos + -160] * enwindow[wp + 0];
+			t += (x1[x1Pos + -112] - x1[x1Pos + 80]) * enwindow[wp + -7];
+			s += x1[x1Pos + -224] * enwindow[wp + 1];
+			t += (x1[x1Pos + -144] + x1[x1Pos + 112]) * enwindow[wp + -6];
+			s -= x1[x1Pos + 32] * enwindow[wp + 2];
+			t += (x1[x1Pos + -176] - x1[x1Pos + 144]) * enwindow[wp + -5];
+			s -= x1[x1Pos + 96] * enwindow[wp + 3];
+			t += (x1[x1Pos + -208] + x1[x1Pos + 176]) * enwindow[wp + -4];
+			s -= x1[x1Pos + 160] * enwindow[wp + 4];
+			t += (x1[x1Pos + -240] - x1[x1Pos + 208]) * enwindow[wp + -3];
+			s -= x1[x1Pos + 224];
 
-            u = s - t;
-            v = s + t;
+			u = s - t;
+			v = s + t;
 
-            t = a[14];
-            s = a[15] - t;
+			t = a[14];
+			s = a[15] - t;
 
-            a[31] = v + t;/* A0 */
-            a[30] = u + s;/* A1 */
-            a[15] = u - s;/* A2 */
-            a[14] = v - t; /* A3 */
-        }
+			a[31] = v + t; /* A0 */
+			a[30] = u + s; /* A1 */
+			a[15] = u - s; /* A2 */
+			a[14] = v - t; /* A3 */
+		}
 		{
-			let xr;
+			var xr;
 			xr = a[28] - a[0];
 			a[0] += a[28];
 			a[28] = xr * enwindow[wp + -2 * 18 + 7];
@@ -904,9 +899,8 @@ export function NewMDCT() {
 			a[29] += a[2];
 			a[2] -= xr;
 		}
-	}
-
-	/**
+    }
+    /**
 	 * Function: Calculation of the MDCT In the case of long blocks (type 0,1,3)
 	 * there are 36 coefficents in the time domain and 18 in the frequency
 	 * domain.<BR>
@@ -918,262 +912,240 @@ export function NewMDCT() {
 	 * New layer3
 	 */
 	function mdct_short(inout, inoutPos) {
-		for (let l = 0; l < 3; l++) {
-            let tc0;
-            let tc1;
-            let tc2;
-            let ts0;
-            let ts1;
-            let ts2;
+		for (var l = 0; l < 3; l++) {
+			var tc0, tc1, tc2, ts0, ts1, ts2;
 
-            ts0 = inout[inoutPos + 2 * 3] * win[Encoder.SHORT_TYPE][0]
+			ts0 = inout[inoutPos + 2 * 3] * win[Encoder.SHORT_TYPE][0]
 					- inout[inoutPos + 5 * 3];
-            tc0 = inout[inoutPos + 0 * 3] * win[Encoder.SHORT_TYPE][2]
+			tc0 = inout[inoutPos + 0 * 3] * win[Encoder.SHORT_TYPE][2]
 					- inout[inoutPos + 3 * 3];
-            tc1 = ts0 + tc0;
-            tc2 = ts0 - tc0;
+			tc1 = ts0 + tc0;
+			tc2 = ts0 - tc0;
 
-            ts0 = inout[inoutPos + 5 * 3] * win[Encoder.SHORT_TYPE][0]
+			ts0 = inout[inoutPos + 5 * 3] * win[Encoder.SHORT_TYPE][0]
 					+ inout[inoutPos + 2 * 3];
-            tc0 = inout[inoutPos + 3 * 3] * win[Encoder.SHORT_TYPE][2]
+			tc0 = inout[inoutPos + 3 * 3] * win[Encoder.SHORT_TYPE][2]
 					+ inout[inoutPos + 0 * 3];
-            ts1 = ts0 + tc0;
-            ts2 = -ts0 + tc0;
+			ts1 = ts0 + tc0;
+			ts2 = -ts0 + tc0;
 
-            tc0 = (inout[inoutPos + 1 * 3] * win[Encoder.SHORT_TYPE][1] - inout[inoutPos + 4 * 3]) * 2.069978111953089e-11;
-            /*
+			tc0 = (inout[inoutPos + 1 * 3] * win[Encoder.SHORT_TYPE][1] - inout[inoutPos + 4 * 3]) * 2.069978111953089e-11;
+			/*
 			 * tritab_s [ 1 ]
 			 */
-            ts0 = (inout[inoutPos + 4 * 3] * win[Encoder.SHORT_TYPE][1] + inout[inoutPos + 1 * 3]) * 2.069978111953089e-11;
-            /*
+			ts0 = (inout[inoutPos + 4 * 3] * win[Encoder.SHORT_TYPE][1] + inout[inoutPos + 1 * 3]) * 2.069978111953089e-11;
+			/*
 			 * tritab_s [ 1 ]
 			 */
-            inout[inoutPos + 3 * 0] = tc1 * 1.907525191737280e-11 + tc0;
-            /*
+			inout[inoutPos + 3 * 0] = tc1 * 1.907525191737280e-11 + tc0;
+			/*
 			 * tritab_s[ 2 ]
 			 */
-            inout[inoutPos + 3 * 5] = -ts1 * 1.907525191737280e-11 + ts0;
-            /*
+			inout[inoutPos + 3 * 5] = -ts1 * 1.907525191737280e-11 + ts0;
+			/*
 			 * tritab_s[0 ]
 			 */
-            tc2 = tc2 * 0.86602540378443870761 * 1.907525191737281e-11;
-            /*
+			tc2 = tc2 * 0.86602540378443870761 * 1.907525191737281e-11;
+			/*
 			 * tritab_s[ 2]
 			 */
-            ts1 = ts1 * 0.5 * 1.907525191737281e-11 + ts0;
-            inout[inoutPos + 3 * 1] = tc2 - ts1;
-            inout[inoutPos + 3 * 2] = tc2 + ts1;
+			ts1 = ts1 * 0.5 * 1.907525191737281e-11 + ts0;
+			inout[inoutPos + 3 * 1] = tc2 - ts1;
+			inout[inoutPos + 3 * 2] = tc2 + ts1;
 
-            tc1 = tc1 * 0.5 * 1.907525191737281e-11 - tc0;
-            ts2 = ts2 * 0.86602540378443870761 * 1.907525191737281e-11;
-            /*
+			tc1 = tc1 * 0.5 * 1.907525191737281e-11 - tc0;
+			ts2 = ts2 * 0.86602540378443870761 * 1.907525191737281e-11;
+			/*
 			 * tritab_s[ 0]
 			 */
-            inout[inoutPos + 3 * 3] = tc1 + ts2;
-            inout[inoutPos + 3 * 4] = tc1 - ts2;
+			inout[inoutPos + 3 * 3] = tc1 + ts2;
+			inout[inoutPos + 3 * 4] = tc1 - ts2;
 
-            inoutPos++;
-        }
+			inoutPos++;
+		}
 	}
 
 	function mdct_long(out, outPos, _in) {
-        let ct;
-        let st;
-        {
-            let tc1;
-            let tc2;
-            let tc3;
-            let tc4;
-            let ts5;
-            let ts6;
-            let ts7;
-            let ts8;
-            /* 1,2, 5,6, 9,10, 13,14, 17 */
-            tc1 = _in[17] - _in[9];
-            tc3 = _in[15] - _in[11];
-            tc4 = _in[14] - _in[12];
-            ts5 = _in[0] + _in[8];
-            ts6 = _in[1] + _in[7];
-            ts7 = _in[2] + _in[6];
-            ts8 = _in[3] + _in[5];
+		var ct, st;
+		{
+			var tc1, tc2, tc3, tc4, ts5, ts6, ts7, ts8;
+			/* 1,2, 5,6, 9,10, 13,14, 17 */
+			tc1 = _in[17] - _in[9];
+			tc3 = _in[15] - _in[11];
+			tc4 = _in[14] - _in[12];
+			ts5 = _in[0] + _in[8];
+			ts6 = _in[1] + _in[7];
+			ts7 = _in[2] + _in[6];
+			ts8 = _in[3] + _in[5];
 
-            out[outPos + 17] = (ts5 + ts7 - ts8) - (ts6 - _in[4]);
-            st = (ts5 + ts7 - ts8) * cx[12 + 7] + (ts6 - _in[4]);
-            ct = (tc1 - tc3 - tc4) * cx[12 + 6];
-            out[outPos + 5] = ct + st;
-            out[outPos + 6] = ct - st;
+			out[outPos + 17] = (ts5 + ts7 - ts8) - (ts6 - _in[4]);
+			st = (ts5 + ts7 - ts8) * cx[12 + 7] + (ts6 - _in[4]);
+			ct = (tc1 - tc3 - tc4) * cx[12 + 6];
+			out[outPos + 5] = ct + st;
+			out[outPos + 6] = ct - st;
 
-            tc2 = (_in[16] - _in[10]) * cx[12 + 6];
-            ts6 = ts6 * cx[12 + 7] + _in[4];
-            ct = tc1 * cx[12 + 0] + tc2 + tc3 * cx[12 + 1] + tc4 * cx[12 + 2];
-            st = -ts5 * cx[12 + 4] + ts6 - ts7 * cx[12 + 5] + ts8 * cx[12 + 3];
-            out[outPos + 1] = ct + st;
-            out[outPos + 2] = ct - st;
+			tc2 = (_in[16] - _in[10]) * cx[12 + 6];
+			ts6 = ts6 * cx[12 + 7] + _in[4];
+			ct = tc1 * cx[12 + 0] + tc2 + tc3 * cx[12 + 1] + tc4 * cx[12 + 2];
+			st = -ts5 * cx[12 + 4] + ts6 - ts7 * cx[12 + 5] + ts8 * cx[12 + 3];
+			out[outPos + 1] = ct + st;
+			out[outPos + 2] = ct - st;
 
-            ct = tc1 * cx[12 + 1] - tc2 - tc3 * cx[12 + 2] + tc4 * cx[12 + 0];
-            st = -ts5 * cx[12 + 5] + ts6 - ts7 * cx[12 + 3] + ts8 * cx[12 + 4];
-            out[outPos + 9] = ct + st;
-            out[outPos + 10] = ct - st;
+			ct = tc1 * cx[12 + 1] - tc2 - tc3 * cx[12 + 2] + tc4 * cx[12 + 0];
+			st = -ts5 * cx[12 + 5] + ts6 - ts7 * cx[12 + 3] + ts8 * cx[12 + 4];
+			out[outPos + 9] = ct + st;
+			out[outPos + 10] = ct - st;
 
-            ct = tc1 * cx[12 + 2] - tc2 + tc3 * cx[12 + 0] - tc4 * cx[12 + 1];
-            st = ts5 * cx[12 + 3] - ts6 + ts7 * cx[12 + 4] - ts8 * cx[12 + 5];
-            out[outPos + 13] = ct + st;
-            out[outPos + 14] = ct - st;
-        }
-        {
-            let ts1;
-            let ts2;
-            let ts3;
-            let ts4;
-            let tc5;
-            let tc6;
-            let tc7;
-            let tc8;
-
-            ts1 = _in[8] - _in[0];
-            ts3 = _in[6] - _in[2];
-            ts4 = _in[5] - _in[3];
-            tc5 = _in[17] + _in[9];
-            tc6 = _in[16] + _in[10];
-            tc7 = _in[15] + _in[11];
-            tc8 = _in[14] + _in[12];
-
-            out[outPos + 0] = (tc5 + tc7 + tc8) + (tc6 + _in[13]);
-            ct = (tc5 + tc7 + tc8) * cx[12 + 7] - (tc6 + _in[13]);
-            st = (ts1 - ts3 + ts4) * cx[12 + 6];
-            out[outPos + 11] = ct + st;
-            out[outPos + 12] = ct - st;
-
-            ts2 = (_in[7] - _in[1]) * cx[12 + 6];
-            tc6 = _in[13] - tc6 * cx[12 + 7];
-            ct = tc5 * cx[12 + 3] - tc6 + tc7 * cx[12 + 4] + tc8 * cx[12 + 5];
-            st = ts1 * cx[12 + 2] + ts2 + ts3 * cx[12 + 0] + ts4 * cx[12 + 1];
-            out[outPos + 3] = ct + st;
-            out[outPos + 4] = ct - st;
-
-            ct = -tc5 * cx[12 + 5] + tc6 - tc7 * cx[12 + 3] - tc8 * cx[12 + 4];
-            st = ts1 * cx[12 + 1] + ts2 - ts3 * cx[12 + 2] - ts4 * cx[12 + 0];
-            out[outPos + 7] = ct + st;
-            out[outPos + 8] = ct - st;
-
-            ct = -tc5 * cx[12 + 4] + tc6 - tc7 * cx[12 + 5] - tc8 * cx[12 + 3];
-            st = ts1 * cx[12 + 0] - ts2 + ts3 * cx[12 + 1] - ts4 * cx[12 + 2];
-            out[outPos + 15] = ct + st;
-            out[outPos + 16] = ct - st;
-        }
-    }
-
-	this.mdct_sub48 = (gfc, w0, w1) => {
-		let wk = w0;
-		let wkPos = 286;
-		/* thinking cache performance, ch->gr loop is better than gr->ch loop */
-		for (let ch = 0; ch < gfc.channels_out; ch++) {
-			for (let gr = 0; gr < gfc.mode_gr; gr++) {
-				let band;
-				const gi = (gfc.l3_side.tt[gr][ch]);
-				const mdct_enc = gi.xr;
-				let mdct_encPos = 0;
-				const samp = gfc.sb_sample[ch][1 - gr];
-				let sampPos = 0;
-
-				for (var k = 0; k < 18 / 2; k++) {
-					window_subband(wk, wkPos, samp[sampPos]);
-					window_subband(wk, wkPos + 32, samp[sampPos + 1]);
-					sampPos += 2;
-					wkPos += 64;
-					/*
-					 * Compensate for inversion in the analysis filter
-					 */
-					for (band = 1; band < 32; band += 2) {
-						samp[sampPos - 1][band] *= -1;
-					}
-				}
-
-				/*
-				 * Perform imdct of 18 previous subband samples + 18 current
-				 * subband samples
-				 */
-				for (band = 0; band < 32; band++, mdct_encPos += 18) {
-					let type = gi.block_type;
-					const band0 = gfc.sb_sample[ch][gr];
-					const band1 = gfc.sb_sample[ch][1 - gr];
-					if (gi.mixed_block_flag != 0 && band < 2)
-						type = 0;
-					if (gfc.amp_filter[band] < 1e-12) {
-						Arrays.fill(mdct_enc, mdct_encPos + 0,
-								mdct_encPos + 18, 0);
-					} else {
-						if (gfc.amp_filter[band] < 1.0) {
-							for (var k = 0; k < 18; k++)
-								band1[k][order[band]] *= gfc.amp_filter[band];
-						}
-						if (type == Encoder.SHORT_TYPE) {
-							for (var k = -NS / 4; k < 0; k++) {
-								const w = win[Encoder.SHORT_TYPE][k + 3];
-								mdct_enc[mdct_encPos + k * 3 + 9] = band0[9 + k][order[band]]
-										* w - band0[8 - k][order[band]];
-								mdct_enc[mdct_encPos + k * 3 + 18] = band0[14 - k][order[band]]
-										* w + band0[15 + k][order[band]];
-								mdct_enc[mdct_encPos + k * 3 + 10] = band0[15 + k][order[band]]
-										* w - band0[14 - k][order[band]];
-								mdct_enc[mdct_encPos + k * 3 + 19] = band1[2 - k][order[band]]
-										* w + band1[3 + k][order[band]];
-								mdct_enc[mdct_encPos + k * 3 + 11] = band1[3 + k][order[band]]
-										* w - band1[2 - k][order[band]];
-								mdct_enc[mdct_encPos + k * 3 + 20] = band1[8 - k][order[band]]
-										* w + band1[9 + k][order[band]];
-							}
-							mdct_short(mdct_enc, mdct_encPos);
-						} else {
-							const work = new_float(18);
-							for (var k = -NL / 4; k < 0; k++) {
-                                let a;
-                                let b;
-                                a = win[type][k + 27]
-										* band1[k + 9][order[band]]
-										+ win[type][k + 36]
-										* band1[8 - k][order[band]];
-                                b = win[type][k + 9]
-										* band0[k + 9][order[band]]
-										- win[type][k + 18]
-										* band0[8 - k][order[band]];
-                                work[k + 9] = a - b * tantab_l[3 + k + 9];
-                                work[k + 18] = a * tantab_l[3 + k + 9] + b;
-                            }
-
-							mdct_long(mdct_enc, mdct_encPos, work);
-						}
-					}
-					/*
-					 * Perform aliasing reduction butterfly
-					 */
-					if (type != Encoder.SHORT_TYPE && band != 0) {
-						for (var k = 7; k >= 0; --k) {
-                            let bu;
-                            let bd;
-                            bu = mdct_enc[mdct_encPos + k] * ca[20 + k]
-									+ mdct_enc[mdct_encPos + -1 - k]
-									* cs[28 + k];
-                            bd = mdct_enc[mdct_encPos + k] * cs[28 + k]
-									- mdct_enc[mdct_encPos + -1 - k]
-									* ca[20 + k];
-
-                            mdct_enc[mdct_encPos + -1 - k] = bu;
-                            mdct_enc[mdct_encPos + k] = bd;
-                        }
-					}
-				}
-			}
-			wk = w1;
-			wkPos = 286;
-			if (gfc.mode_gr == 1) {
-				for (let i = 0; i < 18; i++) {
-					System.arraycopy(gfc.sb_sample[ch][1][i], 0,
-							gfc.sb_sample[ch][0][i], 0, 32);
-				}
-			}
+			ct = tc1 * cx[12 + 2] - tc2 + tc3 * cx[12 + 0] - tc4 * cx[12 + 1];
+			st = ts5 * cx[12 + 3] - ts6 + ts7 * cx[12 + 4] - ts8 * cx[12 + 5];
+			out[outPos + 13] = ct + st;
+			out[outPos + 14] = ct - st;
 		}
+		{
+			var ts1, ts2, ts3, ts4, tc5, tc6, tc7, tc8;
+
+			ts1 = _in[8] - _in[0];
+			ts3 = _in[6] - _in[2];
+			ts4 = _in[5] - _in[3];
+			tc5 = _in[17] + _in[9];
+			tc6 = _in[16] + _in[10];
+			tc7 = _in[15] + _in[11];
+			tc8 = _in[14] + _in[12];
+
+			out[outPos + 0] = (tc5 + tc7 + tc8) + (tc6 + _in[13]);
+			ct = (tc5 + tc7 + tc8) * cx[12 + 7] - (tc6 + _in[13]);
+			st = (ts1 - ts3 + ts4) * cx[12 + 6];
+			out[outPos + 11] = ct + st;
+			out[outPos + 12] = ct - st;
+
+			ts2 = (_in[7] - _in[1]) * cx[12 + 6];
+			tc6 = _in[13] - tc6 * cx[12 + 7];
+			ct = tc5 * cx[12 + 3] - tc6 + tc7 * cx[12 + 4] + tc8 * cx[12 + 5];
+			st = ts1 * cx[12 + 2] + ts2 + ts3 * cx[12 + 0] + ts4 * cx[12 + 1];
+			out[outPos + 3] = ct + st;
+			out[outPos + 4] = ct - st;
+
+			ct = -tc5 * cx[12 + 5] + tc6 - tc7 * cx[12 + 3] - tc8 * cx[12 + 4];
+			st = ts1 * cx[12 + 1] + ts2 - ts3 * cx[12 + 2] - ts4 * cx[12 + 0];
+			out[outPos + 7] = ct + st;
+			out[outPos + 8] = ct - st;
+
+			ct = -tc5 * cx[12 + 4] + tc6 - tc7 * cx[12 + 5] - tc8 * cx[12 + 3];
+			st = ts1 * cx[12 + 0] - ts2 + ts3 * cx[12 + 1] - ts4 * cx[12 + 2];
+			out[outPos + 15] = ct + st;
+			out[outPos + 16] = ct - st;
+        }
+
+        this.mdct_sub48 = function(gfc, w0, w1) {
+            var wk = w0;
+            var wkPos = 286;
+            /* thinking cache performance, ch->gr loop is better than gr->ch loop */
+            for (var ch = 0; ch < gfc.channels_out; ch++) {
+                for (var gr = 0; gr < gfc.mode_gr; gr++) {
+                    var band;
+                    var gi = (gfc.l3_side.tt[gr][ch]);
+                    var mdct_enc = gi.xr;
+                    var mdct_encPos = 0;
+                    var samp = gfc.sb_sample[ch][1 - gr];
+                    var sampPos = 0;
+    
+                    for (var k = 0; k < 18 / 2; k++) {
+                        window_subband(wk, wkPos, samp[sampPos]);
+                        window_subband(wk, wkPos + 32, samp[sampPos + 1]);
+                        sampPos += 2;
+                        wkPos += 64;
+                        /*
+                         * Compensate for inversion in the analysis filter
+                         */
+                        for (band = 1; band < 32; band += 2) {
+                            samp[sampPos - 1][band] *= -1;
+                        }
+                    }
+    
+                    /*
+                     * Perform imdct of 18 previous subband samples + 18 current
+                     * subband samples
+                     */
+                    for (band = 0; band < 32; band++, mdct_encPos += 18) {
+                        var type = gi.block_type;
+                        var band0 = gfc.sb_sample[ch][gr];
+                        var band1 = gfc.sb_sample[ch][1 - gr];
+                        if (gi.mixed_block_flag != 0 && band < 2)
+                            type = 0;
+                        if (gfc.amp_filter[band] < 1e-12) {
+                            Arrays.fill(mdct_enc, mdct_encPos + 0,
+                                    mdct_encPos + 18, 0);
+                        } else {
+                            if (gfc.amp_filter[band] < 1.0) {
+                                for (var k = 0; k < 18; k++)
+                                    band1[k][order[band]] *= gfc.amp_filter[band];
+                            }
+                            if (type == Encoder.SHORT_TYPE) {
+                                for (var k = -NS / 4; k < 0; k++) {
+                                    var w = win[Encoder.SHORT_TYPE][k + 3];
+                                    mdct_enc[mdct_encPos + k * 3 + 9] = band0[9 + k][order[band]]
+                                            * w - band0[8 - k][order[band]];
+                                    mdct_enc[mdct_encPos + k * 3 + 18] = band0[14 - k][order[band]]
+                                            * w + band0[15 + k][order[band]];
+                                    mdct_enc[mdct_encPos + k * 3 + 10] = band0[15 + k][order[band]]
+                                            * w - band0[14 - k][order[band]];
+                                    mdct_enc[mdct_encPos + k * 3 + 19] = band1[2 - k][order[band]]
+                                            * w + band1[3 + k][order[band]];
+                                    mdct_enc[mdct_encPos + k * 3 + 11] = band1[3 + k][order[band]]
+                                            * w - band1[2 - k][order[band]];
+                                    mdct_enc[mdct_encPos + k * 3 + 20] = band1[8 - k][order[band]]
+                                            * w + band1[9 + k][order[band]];
+                                }
+                                mdct_short(mdct_enc, mdct_encPos);
+                            } else {
+                                var work = new_float(18);
+                                for (var k = -NL / 4; k < 0; k++) {
+                                    var a, b;
+                                    a = win[type][k + 27]
+                                            * band1[k + 9][order[band]]
+                                            + win[type][k + 36]
+                                            * band1[8 - k][order[band]];
+                                    b = win[type][k + 9]
+                                            * band0[k + 9][order[band]]
+                                            - win[type][k + 18]
+                                            * band0[8 - k][order[band]];
+                                    work[k + 9] = a - b * tantab_l[3 + k + 9];
+                                    work[k + 18] = a * tantab_l[3 + k + 9] + b;
+                                }
+    
+                                mdct_long(mdct_enc, mdct_encPos, work);
+                            }
+                        }
+                        /*
+                         * Perform aliasing reduction butterfly
+                         */
+                        if (type != Encoder.SHORT_TYPE && band != 0) {
+                            for (var k = 7; k >= 0; --k) {
+                                var bu, bd;
+                                bu = mdct_enc[mdct_encPos + k] * ca[20 + k]
+                                        + mdct_enc[mdct_encPos + -1 - k]
+                                        * cs[28 + k];
+                                bd = mdct_enc[mdct_encPos + k] * cs[28 + k]
+                                        - mdct_enc[mdct_encPos + -1 - k]
+                                        * ca[20 + k];
+    
+                                mdct_enc[mdct_encPos + -1 - k] = bu;
+                                mdct_enc[mdct_encPos + k] = bd;
+                            }
+                        }
+                    }
+                }
+                wk = w1;
+                wkPos = 286;
+                if (gfc.mode_gr == 1) {
+                    for (var i = 0; i < 18; i++) {
+                        System.arraycopy(gfc.sb_sample[ch][1][i], 0,
+                                gfc.sb_sample[ch][0][i], 0, 32);
+                    }
+                }
+            }
+        }
 	}
-}
+}; 
 
 export default NewMDCT;

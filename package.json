@@ -4,7 +4,7 @@
 	},
 	"scripts": {
 		"outdated": "npm outdated",
-		"test": "lerna run test",
+		"test": "lerna run test --concurrency 12",
 		"pretest": "lerna bootstrap",
 		"setupdeno": "curl -sSf https://raw.githubusercontent.com/denoland/deno_install/master/install.py | python"
 	},

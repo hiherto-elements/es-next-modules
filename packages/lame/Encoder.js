@@ -7,6 +7,9 @@ import {
     new_int, 
 } from './common.js';
 
+
+import { NewMDCT } from './NewMDCT.js';
+
 const assert = function() {};
 
 /**
