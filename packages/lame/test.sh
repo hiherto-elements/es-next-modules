@@ -1,7 +1,15 @@
+~/.deno/bin/deno test/ATH.js
 ~/.deno/bin/deno test/common.js
 ~/.deno/bin/deno test/Encoder.js
+~/.deno/bin/deno test/GainAnalysis.js
+~/.deno/bin/deno test/GrInfo.js
+~/.deno/bin/deno test/L3Side.js
+~/.deno/bin/deno test/MeanBits.js
 ~/.deno/bin/deno test/III_psy_xmin.js
 ~/.deno/bin/deno test/III_psy_ratio.js
+~/.deno/bin/deno test/IIISideInfo.js
 ~/.deno/bin/deno test/NewMDCT.js
+~/.deno/bin/deno test/NsPsy.js
+~/.deno/bin/deno test/ScaleFac.js
 ~/.deno/bin/deno test/Tables.js
 ~/.deno/bin/deno test/Version.js
