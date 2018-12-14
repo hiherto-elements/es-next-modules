@@ -9,6 +9,7 @@ import {
 
 
 import { NewMDCT } from './NewMDCT.js';
+import { III_psy_ratio } from './III_psy_ratio.js';
 
 const assert = function() {};
 
@@ -105,10 +106,6 @@ Encoder.fircoef = [-0.0207887 * 5, -0.0378413 * 5,
     0.10091 * 5, 0.151365 * 5, 0.187098 * 5];
 
 export function Encoder() {
-    return 
-    // const NewMDCT = require('./NewMDCT.js');
-    // const III_psy_ratio = require('./III_psy_ratio.js');
-
     const FFTOFFSET = Encoder.FFTOFFSET;
     const MPG_MD_MS_LR = Encoder.MPG_MD_MS_LR;
     //BitStream bs;
