@@ -8,9 +8,11 @@
 ~/.deno/bin/deno test/III_psy_xmin.js
 ~/.deno/bin/deno test/III_psy_ratio.js
 ~/.deno/bin/deno test/IIISideInfo.js
+~/.deno/bin/deno test/LameGlobalFlags.js
 ~/.deno/bin/deno test/LameInternalFlags.js
 ~/.deno/bin/deno test/NewMDCT.js
 ~/.deno/bin/deno test/NsPsy.js
+~/.deno/bin/deno test/QuantizePVT.js
 ~/.deno/bin/deno test/ScaleFac.js
 ~/.deno/bin/deno test/Tables.js
 ~/.deno/bin/deno test/VBRSeekInfo.js
