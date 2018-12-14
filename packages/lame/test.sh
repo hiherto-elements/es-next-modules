@@ -1,4 +1,5 @@
 ~/.deno/bin/deno test/ATH.js
+~/.deno/bin/deno test/BitStream.js
 ~/.deno/bin/deno test/common.js
 ~/.deno/bin/deno test/Encoder.js
 ~/.deno/bin/deno test/GainAnalysis.js
