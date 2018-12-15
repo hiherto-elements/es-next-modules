@@ -8,6 +8,7 @@
 ~/.deno/bin/deno test/FFT.js
 ~/.deno/bin/deno test/GainAnalysis.js
 ~/.deno/bin/deno test/GrInfo.js
+~/.deno/bin/deno test/ID3TagSpec.js
 ~/.deno/bin/deno test/L3Side.js
 ~/.deno/bin/deno test/MeanBits.js
 ~/.deno/bin/deno test/III_psy_xmin.js
@@ -15,11 +16,17 @@
 ~/.deno/bin/deno test/IIISideInfo.js
 ~/.deno/bin/deno test/LameGlobalFlags.js
 ~/.deno/bin/deno test/LameInternalFlags.js
+~/.deno/bin/deno test/Lame.js
 ~/.deno/bin/deno test/NewMDCT.js
 ~/.deno/bin/deno test/NsPsy.js
+~/.deno/bin/deno test/Presets.js
+~/.deno/bin/deno test/PsyModel.js
+~/.deno/bin/deno test/Quantize.js
 ~/.deno/bin/deno test/QuantizePVT.js
+~/.deno/bin/deno test/Reservoir.js
 ~/.deno/bin/deno test/ScaleFac.js
 ~/.deno/bin/deno test/Tables.js
 ~/.deno/bin/deno test/TakeHiro.js
 ~/.deno/bin/deno test/VBRSeekInfo.js
+~/.deno/bin/deno test/VBRTag.js
 ~/.deno/bin/deno test/Version.js
