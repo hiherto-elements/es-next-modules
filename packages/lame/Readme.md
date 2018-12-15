@@ -15,4 +15,4 @@
     * provides XHR functionality
   * Because I already used EMScripten and it was not free from problems. 
 * Isnt the emscripten comiled file the "fastest"? 
-  * Looking at the code, I am not so sure anymore, if the compiled emscripten output will be faster. It re-implements everything, as well as it wraps all Math.* as well. This is not really how you write a fast JS program. 
+  * Looking at the code, I am not so sure anymore, if the compiled emscripten output will be faster. It re-implements everything, as well as it wraps all Math.* too. This is not really how you write a fast JS program. 
