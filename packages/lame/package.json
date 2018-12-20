@@ -26,7 +26,15 @@
   },
   "esdoc": {
     "source": ".",
-    "includes": [],
+    "includes": [
+      "ATH.js",
+      "Bitstream.js",
+      "CalcNoiseData.js",
+      "CalcNoiseResult.js",
+      "CBRNewIteration.js",
+      "common.js", 
+      "encoder.js"
+    ],
     "destination": "./docs",
     "plugins": [
       {
