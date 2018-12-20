@@ -7,7 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "@hiherto-elements/assert": "0.0.11"
+    "@hiherto-elements/assert": "0.0.12"
   },
   "scripts": {
     "reset": "rm -rf node_modules && rm -rf package-lock.json",
